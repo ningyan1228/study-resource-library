@@ -6694,6 +6694,7 @@ body.has-animated-background .app-shell {
 .hero-live-header, .hero-live-panel p, .hero-live-services { position: relative; z-index: 1; }
 .hero-live-status { color: #c9ffdf; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
 .hero-live-status b { padding: 2px 6px; border: 1px solid rgba(88, 249, 184, 0.44); border-radius: 4px; color: #74ffb6; font-size: 9px; letter-spacing: 0.12em; }
+.site-global-online { color: #f2fff8; font-family: inherit; font-size: 0.88em; font-weight: 760; letter-spacing: 0.02em; white-space: nowrap; }
 .hero-live-panel time { color: #aeeece; font-size: 12px; letter-spacing: 0.08em; text-shadow: 0 0 14px rgba(94, 255, 197, 0.36); }
 .hero-live-panel p { display: flex; align-items: baseline; gap: 8px; margin: 13px 0 15px; color: rgba(236, 255, 244, 0.92); font-size: 15px; font-weight: 720; letter-spacing: 0.015em; }
 .hero-live-panel p span { color: rgba(112, 255, 188, 0.72); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.12em; }

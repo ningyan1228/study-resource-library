@@ -197,6 +197,40 @@ function sendServerEvent(type, payload = {}) {
   }
 }
 
+// Site-wide anonymous presence is intentionally separate from the study-room seats.
+// A browser sends only its existing random visitor id; the server keeps it in memory
+// briefly and never writes this presence list to disk.
+function startSitePresence() {
+  const online = document.querySelector("#siteGlobalOnline");
+  const visitorId = getVisitorId();
+  if (!online || !serverApiBase || !visitorId) return;
+
+  const render = (data) => {
+    const count = Math.max(0, Number(data?.onlineCount || 0));
+    online.textContent = `${count} 人在线`;
+  };
+
+  const refresh = async () => {
+    try {
+      const response = await fetch(`${serverApiBase}/api/site-presence`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ visitorId }),
+        cache: "no-store",
+        keepalive: true
+      });
+      const data = await response.json();
+      if (response.ok && data?.ok) render(data);
+    } catch (_) {
+      // Keep the last successful count if the API is temporarily unavailable.
+    }
+  };
+
+  refresh();
+  window.setInterval(() => { if (!document.hidden) refresh(); }, 25000);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) refresh(); });
+}
+
 function getPanSearchStats(keyword) {
   const queryTokens = panSearchTokens(keyword);
   if (!queryTokens.length) {
@@ -1810,6 +1844,7 @@ async function loadSiteNotice() {
 }
 
 loadSiteNotice();
+startSitePresence();
 // 2026-08-14: homepage companion components.
 const SHORE_LETTER_DEFAULT = {
   title: "一封给备考路上的你",
