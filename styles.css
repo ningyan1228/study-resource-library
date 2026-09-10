@@ -8752,3 +8752,14 @@ body.theme-light .main .hero-live-panel { background: linear-gradient(135deg, rg
 body.theme-light .main .hero-live-panel :is(.hero-live-status, .hero-live-panel p, .hero-live-services b, .hero-live-services small, #siteLiveClock) { color: #263750 !important; }
 body.theme-light .main .hero-live-panel p > span, body.theme-light .main .hero-live-status b, body.theme-light .site-global-online { color: #a76d18 !important; }
 body.theme-light .main .hero-art.study-room-teaser { background: linear-gradient(135deg, rgba(38, 58, 88, .96), rgba(60, 82, 112, .9)) !important; border-color: rgba(190, 140, 56, .68) !important; }
+
+/* The notice layout has stronger legacy white-text rules than the panel itself.
+   Explicitly restore ink contrast whenever that panel is rendered in light mode. */
+body.theme-light .main .hero-live-panel.has-site-notice > p { color: #263750 !important; }
+body.theme-light .main .hero-live-panel.has-site-notice > p > strong { color: #263750 !important; text-shadow: none !important; }
+body.theme-light .main .hero-live-panel.has-site-notice > p > small { color: #52647d !important; text-shadow: none !important; }
+body.theme-light .main .hero-live-panel.has-site-notice > p > span { background: rgba(255, 252, 244, .76) !important; border-color: rgba(167, 109, 24, .32) !important; color: #9c6517 !important; }
+body.theme-light .main .hero-live-panel.has-site-notice .hero-live-services > span + span { border-left-color: rgba(67, 86, 114, .2) !important; }
+body.theme-light .main .hero-live-panel.has-site-notice .hero-live-services > span > b { color: #263750 !important; text-shadow: none !important; }
+body.theme-light .main .hero-live-panel.has-site-notice .hero-live-services > span > small { color: #52647d !important; text-shadow: none !important; }
+body.theme-light .main .hero-live-panel.has-site-notice .hero-live-services > span > i { border-color: #405a7d !important; background: #405a7d !important; }
