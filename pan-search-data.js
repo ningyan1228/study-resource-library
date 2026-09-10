@@ -1,5 +1,5 @@
 window.PAN_SEARCH_DATA = {
-  "generatedAt": "2026-09-09T03:58:13.531Z",
+  "generatedAt": "2026-09-10T07:48:28.006Z",
   "sourceDir": "F:/DeskTop/网盘链接.txt; C:/Users/zhiwu/.codex/attachments/5fe01c05-d295-45d7-93b9-e083ff9e2f7e/pasted-text.txt; F:/DeskTop/国省考电子资料/百度网盘链接.txt",
   "missingSources": [],
   "totals": {
@@ -15730,10 +15730,10 @@ window.PAN_SEARCH_DATA = {
       "id": "r922",
       "title": "行测申论】2027超格行测+申论全家桶课程（精讲桶）",
       "platform": "baidu",
-      "url": "https://pan.baidu.com/s/1z1hT5JQN2QyeTMLpT7lWVQ?pwd=bssm",
+      "url": "https://pan.baidu.com/s/1hGzwmHek4wlfKvkau46r6w?pwd=2b4d",
       "code": "bssm",
       "section": "公考类",
-      "context": "行测申论】2027超格行测+申论全家桶课程（精讲桶） 链接：https://pan.baidu.com/s/1z1hT5JQN2QyeTMLpT7lWVQ?pwd=bssm 提取码：bssm",
+      "context": "行测申论】2027超格行测+申论全家桶课程（精讲桶） 链接：https://pan.baidu.com/s/1hGzwmHek4wlfKvkau46r6w?pwd=2b4d 提取码：bssm",
       "sources": [
         {
           "file": "百度网盘链接.txt",
@@ -15741,7 +15741,7 @@ window.PAN_SEARCH_DATA = {
           "section": "公考类"
         }
       ],
-      "searchText": "行测申论】2027超格行测+申论全家桶课程（精讲桶） 公考类 行测申论】2027超格行测+申论全家桶课程（精讲桶） 链接：https://pan.baidu.com/s/1z1hT5JQN2QyeTMLpT7lWVQ?pwd=bssm 提取码：bssm bssm baidu https://pan.baidu.com/s/1z1hT5JQN2QyeTMLpT7lWVQ?pwd=bssm"
+      "searchText": "行测申论】2027超格行测+申论全家桶课程（精讲桶） 公考类 行测申论】2027超格行测+申论全家桶课程（精讲桶） 链接：https://pan.baidu.com/s/1hGzwmHek4wlfKvkau46r6w?pwd=2b4d 提取码：bssm bssm baidu https://pan.baidu.com/s/1hGzwmHek4wlfKvkau46r6w?pwd=2b4d"
     },
     {
       "id": "r923",
