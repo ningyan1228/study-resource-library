@@ -8700,3 +8700,55 @@ body .main .hero-art.study-room-teaser > .study-room-teaser-bottom{z-index:3!imp
 
 /* First paint keeps the same static artwork visible while the desktop movie finishes loading. */
 body.has-ambient-video:not(.has-animated-background) .site-animated-background{display:block;opacity:0;}
+
+/* 2026-09-10: ink-and-amber visual refresh. Keep the moving background, but
+   replace the dominant green UI with midnight ink, warm paper and amber cues. */
+body:not(.theme-light) {
+  --bg: #0d1422;
+  --surface: rgba(20, 30, 47, .84);
+  --surface-strong: #172238;
+  --surface-soft: #202d44;
+  --text: #f7f1e5;
+  --muted: #c7d0df;
+  --subtle: #9aa9bc;
+  --line: rgba(225, 197, 142, .18);
+  --line-strong: rgba(231, 178, 83, .58);
+  --accent: #e4ab4d;
+  --accent-2: #f1ce7a;
+  --accent-soft: rgba(226, 171, 77, .16);
+  --mint: #86a9d0;
+  --mint-soft: rgba(134, 169, 208, .16);
+  background: #0d1422;
+}
+body:not(.theme-light).has-ambient-video::before { background: radial-gradient(circle at 84% 6%, rgba(232, 181, 92, .18), transparent 28%), linear-gradient(180deg, rgba(8, 13, 24, .44), rgba(8, 13, 24, .7)) !important; }
+body:not(.theme-light) :is(.sidebar, .topbar) { background: rgba(12, 19, 32, .76) !important; border-color: rgba(231, 198, 137, .18) !important; box-shadow: 0 12px 30px rgba(3, 8, 17, .26) !important; }
+body:not(.theme-light) .main .hero-copy { background: linear-gradient(135deg, rgba(15, 24, 39, .9), rgba(29, 42, 62, .76)) !important; border-color: rgba(231, 202, 145, .28) !important; box-shadow: 0 24px 60px rgba(2, 7, 16, .34), inset 0 1px 0 rgba(255, 245, 220, .1) !important; -webkit-backdrop-filter: blur(27px) saturate(112%) !important; backdrop-filter: blur(27px) saturate(112%) !important; }
+body:not(.theme-light) .main .hero-copy::before { opacity: .2 !important; background: linear-gradient(130deg, rgba(255, 229, 173, .28), transparent 36%, rgba(128, 167, 211, .16)) !important; animation: none !important; }
+body:not(.theme-light) .main .hero-live-panel { background: linear-gradient(135deg, rgba(21, 31, 50, .94), rgba(28, 43, 66, .9)) !important; border-color: rgba(230, 177, 75, .76) !important; box-shadow: 0 18px 42px rgba(3, 9, 20, .28) !important; color: #f8f2e7 !important; }
+body:not(.theme-light) .main .hero-live-panel :is(.hero-live-status, .hero-live-panel p, .hero-live-services b, .hero-live-services small, #siteLiveClock) { color: #f7f1e5 !important; }
+body:not(.theme-light) .main .hero-live-panel p > span, body:not(.theme-light) .main .hero-live-status b, body:not(.theme-light) .site-global-online { color: #f0c56c !important; }
+body:not(.theme-light) .main .hero-live-panel :is(.hero-live-status i, .hero-live-services i) { background: #e4ab4d !important; box-shadow: 0 0 12px rgba(228, 171, 77, .7) !important; }
+body:not(.theme-light) .main .hero-art.study-room-teaser { background: radial-gradient(circle at 89% 9%, rgba(230, 177, 75, .18), transparent 22%), linear-gradient(135deg, #18253c, #263958 62%, #1d2b45) !important; border-color: rgba(230, 177, 75, .72) !important; box-shadow: 0 18px 38px rgba(3, 9, 20, .26) !important; }
+body:not(.theme-light) .study-room-teaser-head { border-color: rgba(232, 194, 111, .64) !important; }
+body:not(.theme-light) .study-room-teaser-head span, body:not(.theme-light) .study-room-teaser-head > b strong { color: #f0c56c !important; }
+body:not(.theme-light) .study-room-teaser-head > b { border-color: rgba(219, 205, 177, .34) !important; color: #f3efe7 !important; }
+body:not(.theme-light) .study-room-teaser-head > b i { background: #91b3d6 !important; box-shadow: 0 0 12px #91b3d6 !important; }
+body:not(.theme-light) .study-room-preview-seats > span { background: rgba(9, 16, 29, .22) !important; border-color: rgba(226, 213, 181, .16) !important; }
+body:not(.theme-light) .study-room-teaser-bottom a { background: linear-gradient(135deg, #f0c567, #d89a39) !important; color: #202b3d !important; }
+body:not(.theme-light) :is(.search-box, .hot-searches button, .hero-stats .hero-stat) { background: rgba(11, 18, 31, .7) !important; border-color: rgba(226, 208, 174, .2) !important; }
+body:not(.theme-light) .search-box input { color: #f7f1e5 !important; }
+body:not(.theme-light) :is(.search-box button, .primary-action) { background: linear-gradient(135deg, #e4ab4d, #cf8d31) !important; color: #202b3d !important; }
+body:not(.theme-light) .secondary-action { border-color: rgba(231, 200, 138, .5) !important; color: #f5e7c6 !important; }
+body:not(.theme-light) :is(.countdown-wall, .daily-learning-sign, .drift-bottle-board) { color: #f7f1e5 !important; background: linear-gradient(135deg, rgba(22, 33, 52, .94), rgba(35, 50, 75, .86)) !important; }
+body:not(.theme-light) :is(.daily-learning-sign h2, .daily-learning-sign p, .drift-bottle-board h2, .companion-heading > p, .daily-learning-sign small, .drift-bottle-hint) { color: #f5eedf !important; }
+body:not(.theme-light) .companion-kicker, body:not(.theme-light) .countdown-list strong { color: #f0c56c !important; }
+body:not(.theme-light) :is(.featured-panel, .quick-panel, .section-block, .pan-search-results, .notice, .resource-card, .overview-card) { background: rgba(20, 30, 47, .8) !important; border-color: rgba(225, 202, 151, .18) !important; box-shadow: 0 16px 36px rgba(3, 8, 18, .2) !important; }
+body.theme-light { --accent: #ad731e; --accent-2: #d79d42; --accent-soft: rgba(183, 126, 36, .12); --mint: #4f789f; --mint-soft: rgba(79, 120, 159, .13); }
+body.theme-light.has-ambient-video::before { background: radial-gradient(circle at 84% 6%, rgba(235, 190, 102, .24), transparent 30%), linear-gradient(180deg, rgba(255, 250, 238, .44), rgba(247, 241, 227, .62)) !important; }
+body.theme-light :is(.sidebar, .topbar) { background: rgba(255, 250, 240, .72) !important; border-color: rgba(255, 255, 255, .72) !important; }
+body.theme-light .main .hero-copy { background: linear-gradient(135deg, rgba(255, 252, 245, .88), rgba(240, 235, 226, .7)) !important; box-shadow: 0 24px 58px rgba(63, 50, 35, .16), inset 0 1px 0 #fff !important; }
+body.theme-light .main .hero-copy::before { opacity: .15 !important; animation: none !important; background: linear-gradient(135deg, rgba(230, 178, 83, .2), transparent 48%, rgba(94, 133, 171, .14)) !important; }
+body.theme-light .main .hero-live-panel { background: linear-gradient(135deg, rgba(249, 246, 238, .94), rgba(227, 235, 244, .86)) !important; border-color: rgba(188, 137, 58, .54) !important; color: #25334a !important; }
+body.theme-light .main .hero-live-panel :is(.hero-live-status, .hero-live-panel p, .hero-live-services b, .hero-live-services small, #siteLiveClock) { color: #263750 !important; }
+body.theme-light .main .hero-live-panel p > span, body.theme-light .main .hero-live-status b, body.theme-light .site-global-online { color: #a76d18 !important; }
+body.theme-light .main .hero-art.study-room-teaser { background: linear-gradient(135deg, rgba(38, 58, 88, .96), rgba(60, 82, 112, .9)) !important; border-color: rgba(190, 140, 56, .68) !important; }
