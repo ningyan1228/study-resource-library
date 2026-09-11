@@ -246,6 +246,32 @@ html body:not(.theme-light) .ios-clock-card { background: rgba(255,255,255,.09);
 html body:not(.theme-light) .ios-clock-card > span { color: #b6bcc6; }
 html body:not(.theme-light) .ios-clock-card > time { color: #f5f5f7; }
 
+/* A readable live analog face, paired with the digital time rather than replacing it. */
+.ios-clock-card { min-width: 166px; }
+.ios-clock-face {
+  display: block !important;
+  width: 48px;
+  height: 48px;
+  flex-basis: 48px;
+  border-color: rgba(48,68,89,.22);
+  background: radial-gradient(circle, rgba(255,255,255,.92) 0 61%, transparent 62%), repeating-conic-gradient(from -1deg, #5e7184 0deg 2deg, transparent 2deg 30deg);
+  box-shadow: inset 0 0 0 3px rgba(239,244,247,.9), 0 2px 6px rgba(35,58,76,.10);
+}
+.ios-clock-face::before,
+.ios-clock-face::after { color: #40546a; font-size: 7px; }
+.ios-clock-face i { width: 2px; }
+.ios-clock-hour { height: 13px; background: #263e55; }
+.ios-clock-minute { height: 18px; background: #0a84ff; }
+.ios-clock-face b { width: 6px; height: 6px; background: #0a84ff; }
+html body:not(.theme-light) .ios-clock-face {
+  border-color: rgba(255,255,255,.20);
+  background: radial-gradient(circle, #303136 0 61%, transparent 62%), repeating-conic-gradient(from -1deg, #c8ccd4 0deg 2deg, transparent 2deg 30deg);
+  box-shadow: inset 0 0 0 3px #26272b;
+}
+html body:not(.theme-light) .ios-clock-face::before,
+html body:not(.theme-light) .ios-clock-face::after { color: #e7e9ed; }
+html body:not(.theme-light) .ios-clock-hour { background: #f5f5f7; }
+
 /* Light silver room: supporting copy must stay dark enough against the card. */
 html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser .study-room-teaser-lead,
 html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser .study-room-teaser-bottom > span,
