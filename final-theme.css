@@ -1,0 +1,100 @@
+/*
+ * Final visual layer
+ * One predictable surface system loaded after the legacy stylesheet.  It owns
+ * colour, transparency and contrast only; the original file still owns layout.
+ */
+
+:root {
+  --final-blue: #0a84ff;
+  --final-light-text: #1d1d1f;
+  --final-light-muted: #62656b;
+  --final-dark-text: #f5f5f7;
+  --final-dark-muted: #aeb4be;
+}
+
+html body.theme-light.has-ambient-video .sidebar,
+html body.theme-light .sidebar {
+  background: rgba(239, 242, 243, .88) !important;
+  border-color: rgba(255,255,255,.64) !important;
+  box-shadow: 0 10px 28px rgba(20,30,36,.12), inset 0 1px 0 rgba(255,255,255,.7) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(108%) !important;
+  backdrop-filter: blur(16px) saturate(108%) !important;
+}
+
+html body.theme-light.has-ambient-video .main :is(.hero-copy, .hero-live-panel, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .quick-panel, .section-block, .pan-search-results, .notice, .resource-card, .overview-card),
+html body.theme-light .main :is(.hero-copy, .hero-live-panel, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .quick-panel, .section-block, .pan-search-results, .notice, .resource-card, .overview-card) {
+  background: rgba(237, 241, 242, .82) !important;
+  border-color: rgba(255,255,255,.58) !important;
+  box-shadow: 0 14px 34px rgba(22,35,42,.13), inset 0 1px 0 rgba(255,255,255,.58) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(108%) !important;
+  backdrop-filter: blur(16px) saturate(108%) !important;
+  color: var(--final-light-text) !important;
+}
+
+/* The study room is deliberately neutral silver. No old blue gradient can win. */
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser,
+html body.theme-light .main .hero-art.study-room-teaser {
+  background: linear-gradient(145deg, rgba(244,246,246,.94), rgba(192,198,199,.91)) !important;
+  background-image: linear-gradient(145deg, rgba(244,246,246,.94), rgba(192,198,199,.91)) !important;
+  border-color: rgba(255,255,255,.76) !important;
+  box-shadow: 0 16px 38px rgba(30,39,42,.16), inset 0 1px 0 rgba(255,255,255,.76) !important;
+  color: var(--final-light-text) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(100%) !important;
+  backdrop-filter: blur(14px) saturate(100%) !important;
+}
+
+html body.theme-light .main :is(.study-room-teaser-head h2, .study-room-preview-seats b) { color: #1d1d1f !important; }
+html body.theme-light .main :is(.study-room-teaser-head span, .study-room-teaser-lead, .study-room-preview-seats small, .study-room-teaser-bottom > span) { color: #5f6368 !important; }
+html body.theme-light .main :is(.study-room-preview-seats > span, .study-room-teaser-head > b) {
+  background: rgba(255,255,255,.52) !important;
+  border-color: rgba(60,60,67,.14) !important;
+  box-shadow: none !important;
+}
+
+html body.theme-light .main .overview-samples {
+  background: rgba(255,255,255,.42) !important;
+  border-color: rgba(60,60,67,.09) !important;
+  box-shadow: none !important;
+}
+html body.theme-light .main .overview-samples span {
+  background: transparent !important;
+  color: #415061 !important;
+  border-bottom-color: rgba(60,60,67,.09) !important;
+  box-shadow: none !important;
+}
+
+/* macOS dark: cards and their nested rows use adjacent graphite elevations. */
+html body:not(.theme-light) .sidebar {
+  background: rgba(28,28,30,.94) !important;
+  border-color: rgba(255,255,255,.12) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.05) !important;
+}
+html body:not(.theme-light) .main :is(.hero-copy, .hero-live-panel, .hero-art.study-room-teaser, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .quick-panel, .section-block, .pan-search-results, .notice, .resource-card, .overview-card) {
+  background: linear-gradient(145deg, rgba(42,43,48,.95), rgba(28,29,33,.97)) !important;
+  border-color: rgba(255,255,255,.13) !important;
+  box-shadow: 0 16px 36px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.055) !important;
+  color: var(--final-dark-text) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(102%) !important;
+  backdrop-filter: blur(16px) saturate(102%) !important;
+}
+html body:not(.theme-light) .main .overview-samples {
+  background: #2c2c2e !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035) !important;
+}
+html body:not(.theme-light) .main .overview-samples span {
+  background: transparent !important;
+  color: #ebebf5 !important;
+  border-bottom-color: rgba(255,255,255,.08) !important;
+  box-shadow: none !important;
+}
+html body:not(.theme-light) .main .overview-samples span::after { color: #8e8e93 !important; }
+html body:not(.theme-light) .main .overview-samples span:hover { background: rgba(10,132,255,.16) !important; color: #fff !important; }
+html body:not(.theme-light) .main .overview-card .section-open-button {
+  background: rgba(10,132,255,.18) !important;
+  border: 1px solid rgba(10,132,255,.30) !important;
+  box-shadow: none !important;
+  color: #64b5ff !important;
+}
+html body:not(.theme-light) .main .overview-card .section-open-button:hover { background: rgba(10,132,255,.30) !important; color: #fff !important; }
+html body:not(.theme-light) :is(.nav-link, .nav-link span:last-child, .overview-card h3, .overview-card p, .featured-item h3, .featured-item p) { color: var(--final-dark-text) !important; text-shadow: none !important; }
