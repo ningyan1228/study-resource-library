@@ -8,7 +8,31 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preconnect" href="https://study-resource-api.gjsx.uno" crossorigin />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
-    <link rel="stylesheet" href="styles.css?v=20260911-dark-contrast-v7" />
+    <link rel="stylesheet" href="styles.css?v=20260911-study-room-final-v8" />
+    <style id="study-room-final-tone">
+      /* Final local override: legacy theme experiments must never recolor this
+         card blue.  Keep blue exclusively for its primary action. */
+      body.theme-light .main .hero-art.study-room-teaser {
+        background: linear-gradient(145deg, rgba(248,249,248,.94), rgba(194,201,202,.88)) !important;
+        background-image: linear-gradient(145deg, rgba(248,249,248,.94), rgba(194,201,202,.88)) !important;
+        border-color: rgba(255,255,255,.74) !important;
+        color: #1d1d1f !important;
+      }
+      body.theme-light .main .study-room-preview-seats > span,
+      body.theme-light .main .study-room-teaser-head > b {
+        background: rgba(255,255,255,.52) !important;
+        border-color: rgba(60,60,67,.16) !important;
+      }
+      body.theme-light .main .study-room-teaser-head h2,
+      body.theme-light .main .study-room-preview-seats b { color: #1d1d1f !important; }
+      body.theme-light .main :is(.study-room-teaser-head span, .study-room-teaser-lead,
+        .study-room-preview-seats small, .study-room-teaser-bottom > span) { color: #5f6368 !important; }
+      body:not(.theme-light) .main .hero-art.study-room-teaser {
+        background: linear-gradient(145deg, rgba(39,43,51,.96), rgba(22,25,31,.97)) !important;
+        background-image: linear-gradient(145deg, rgba(39,43,51,.96), rgba(22,25,31,.97)) !important;
+        color: #f5f5f7 !important;
+      }
+    </style>
   </head>
   <body class="theme-light">
     <video id="ambientBackgroundVideo" class="site-background-video" muted loop playsinline webkit-playsinline preload="metadata" aria-hidden="true" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" x-webkit-airplay="deny">
