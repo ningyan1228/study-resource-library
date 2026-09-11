@@ -8809,3 +8809,40 @@ body:not(.theme-light) .study-room-preview-seats small,
 body:not(.theme-light) .study-room-teaser-bottom > span { color: #52647d !important; }
 body:not(.theme-light) .study-room-teaser-bottom a { background: linear-gradient(135deg, #f0c567, #d89a39) !important; color: #263750 !important; }
 body:not(.theme-light) .study-room-teaser-shelf { border-top-color: rgba(104, 81, 60, .36) !important; background: linear-gradient(180deg, rgba(117, 98, 81, .32), rgba(95, 124, 158, .08)) !important; opacity: .45 !important; }
+
+/* A distinct sky-blue treatment for the complete study-room entry. */
+body.theme-light .main .hero-art.study-room-teaser,
+body:not(.theme-light) .main .hero-art.study-room-teaser {
+  background: radial-gradient(circle at 90% 5%, rgba(255,255,255,.74), transparent 23%), linear-gradient(135deg, #e8f8ff 0%, #cceeff 54%, #b6e1f8 100%) !important;
+  border-color: #61b6e3 !important;
+  box-shadow: 0 20px 42px rgba(43, 130, 181, .24), inset 0 1px 0 rgba(255,255,255,.9) !important;
+  color: #174e77 !important;
+}
+body.theme-light .main .study-room-teaser-head,
+body:not(.theme-light) .main .study-room-teaser-head { border-color: rgba(65, 151, 202, .58) !important; }
+body.theme-light .main .study-room-teaser-head span,
+body:not(.theme-light) .main .study-room-teaser-head span { color: #327fad !important; }
+body.theme-light .main .study-room-teaser-head h2,
+body:not(.theme-light) .main .study-room-teaser-head h2 { color: #174e77 !important; }
+body.theme-light .main .study-room-teaser-head > b,
+body:not(.theme-light) .main .study-room-teaser-head > b { border-color: rgba(45, 131, 183, .38) !important; background: rgba(255,255,255,.65) !important; color: #276791 !important; }
+body.theme-light .main .study-room-teaser-head > b i,
+body:not(.theme-light) .main .study-room-teaser-head > b i { background: #38a9e8 !important; box-shadow: 0 0 10px rgba(56, 169, 232, .58) !important; }
+body.theme-light .main .study-room-teaser-head > b strong,
+body:not(.theme-light) .main .study-room-teaser-head > b strong { color: #237fb5 !important; }
+body.theme-light .main .study-room-teaser-lead,
+body:not(.theme-light) .main .study-room-teaser-lead { color: #315f85 !important; text-shadow: none !important; }
+body.theme-light .main .study-room-preview-seats > span,
+body:not(.theme-light) .main .study-room-preview-seats > span { background: rgba(255,255,255,.58) !important; border-color: rgba(68, 150, 199, .35) !important; box-shadow: inset 0 1px 0 rgba(255,255,255,.84) !important; }
+body.theme-light .main .study-room-preview-seats i,
+body:not(.theme-light) .main .study-room-preview-seats i { border-color: #5a9dcc !important; color: #2876a9 !important; }
+body.theme-light .main .study-room-preview-seats b,
+body:not(.theme-light) .main .study-room-preview-seats b { color: #1d527d !important; }
+body.theme-light .main .study-room-preview-seats small,
+body.theme-light .main .study-room-teaser-bottom > span,
+body:not(.theme-light) .main .study-room-preview-seats small,
+body:not(.theme-light) .main .study-room-teaser-bottom > span { color: #4b7598 !important; }
+body.theme-light .main .study-room-teaser-bottom a,
+body:not(.theme-light) .main .study-room-teaser-bottom a { background: linear-gradient(135deg, #5cb9ed, #2f92d2) !important; color: #fff !important; box-shadow: 0 10px 22px rgba(46, 142, 201, .24) !important; }
+body.theme-light .main .study-room-teaser-shelf,
+body:not(.theme-light) .main .study-room-teaser-shelf { border-top-color: rgba(71, 132, 172, .32) !important; background: linear-gradient(180deg, rgba(89, 160, 203, .28), rgba(124, 191, 228, .08)) !important; opacity: .38 !important; }
