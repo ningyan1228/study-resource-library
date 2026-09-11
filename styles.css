@@ -9026,3 +9026,7 @@ body.theme-light .main :is(.overview-header .section-title, .featured-copy),
 body:not(.theme-light) .main :is(.overview-header .section-title, .featured-copy) { background: rgba(220,232,238,.48) !important; border-color: rgba(255,255,255,.4) !important; box-shadow: 0 12px 30px rgba(30,54,68,.1), inset 0 1px 0 rgba(255,255,255,.5) !important; }
 body.theme-light .main :is(.overview-samples, .resource-card .resource-links),
 body:not(.theme-light) .main :is(.overview-samples, .resource-card .resource-links) { background: rgba(232,241,245,.24) !important; }
+
+/* The study room uses neutral silver material, never a blue background. */
+body.theme-light .main .hero-art.study-room-teaser,
+body:not(.theme-light) .main .hero-art.study-room-teaser { background: linear-gradient(135deg, rgba(246,248,248,.58), rgba(194,201,202,.48)) !important; border-color: rgba(255,255,255,.56) !important; box-shadow: 0 18px 52px rgba(34,43,45,.16), inset 0 1px 0 rgba(255,255,255,.72) !important; }
