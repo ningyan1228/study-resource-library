@@ -98,3 +98,14 @@ html body:not(.theme-light) .main .overview-card .section-open-button {
 }
 html body:not(.theme-light) .main .overview-card .section-open-button:hover { background: rgba(10,132,255,.30) !important; color: #fff !important; }
 html body:not(.theme-light) :is(.nav-link, .nav-link span:last-child, .overview-card h3, .overview-card p, .featured-item h3, .featured-item p) { color: var(--final-dark-text) !important; text-shadow: none !important; }
+
+/* Light silver room: supporting copy must stay dark enough against the card. */
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser .study-room-teaser-lead,
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser .study-room-teaser-bottom > span,
+html body.theme-light .main .hero-art.study-room-teaser .study-room-teaser-lead,
+html body.theme-light .main .hero-art.study-room-teaser .study-room-teaser-bottom > span {
+  color: #44515f !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
