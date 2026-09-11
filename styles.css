@@ -8846,3 +8846,30 @@ body.theme-light .main .study-room-teaser-bottom a,
 body:not(.theme-light) .main .study-room-teaser-bottom a { background: linear-gradient(135deg, #5cb9ed, #2f92d2) !important; color: #fff !important; box-shadow: 0 10px 22px rgba(46, 142, 201, .24) !important; }
 body.theme-light .main .study-room-teaser-shelf,
 body:not(.theme-light) .main .study-room-teaser-shelf { border-top-color: rgba(71, 132, 172, .32) !important; background: linear-gradient(180deg, rgba(89, 160, 203, .28), rgba(124, 191, 228, .08)) !important; opacity: .38 !important; }
+
+/* The requested change is the card surface, not its typography. Keep the
+   original white-and-gold type treatment and give the complete card a clear
+   sky-blue surface that remains readable in either site theme. */
+body .main .hero-art.study-room-teaser,
+body .main .hero-live-panel.has-site-notice + .hero-art.study-room-teaser {
+  background: radial-gradient(circle at 88% 7%, rgba(235, 251, 255, .48), transparent 22%), linear-gradient(135deg, #075d9f 0%, #168dcc 57%, #62bdf0 100%) !important;
+  border-color: #92dbff !important;
+  box-shadow: 0 18px 38px rgba(4, 68, 119, .28) !important;
+  color: #f5fff8 !important;
+}
+body .main .hero-art.study-room-teaser::before,
+body .main .hero-art.study-room-teaser::after { display: none !important; background: transparent !important; }
+body .main .study-room-teaser-head { border-color: rgba(226, 246, 255, .72) !important; }
+body .main .study-room-teaser-head span { color: #e9bf69 !important; }
+body .main .study-room-teaser-head h2 { color: #fffdf3 !important; }
+body .main .study-room-teaser-head > b { border-color: rgba(219, 239, 216, .5) !important; background: transparent !important; color: #dff6e7 !important; }
+body .main .study-room-teaser-head > b i { background: #64dfad !important; box-shadow: 0 0 12px #64dfad !important; }
+body .main .study-room-teaser-head > b strong { color: #ffd873 !important; }
+body .main .study-room-teaser-lead { color: rgba(240, 255, 247, .92) !important; }
+body .main .study-room-preview-seats > span { background: rgba(246, 255, 250, .13) !important; border-color: rgba(230, 248, 255, .44) !important; box-shadow: none !important; }
+body .main .study-room-preview-seats i { border-color: rgba(232, 250, 239, .66) !important; color: #fff4cb !important; }
+body .main .study-room-preview-seats b { color: #fff !important; }
+body .main .study-room-preview-seats small,
+body .main .study-room-teaser-bottom > span { color: rgba(218, 248, 232, .86) !important; }
+body .main .study-room-teaser-bottom a { background: #f4c956 !important; color: #12443d !important; box-shadow: 0 9px 21px rgba(0, 0, 0, .14) !important; }
+body .main .study-room-teaser-shelf { border-top-color: rgba(121, 81, 46, .65) !important; background: linear-gradient(180deg, rgba(85, 56, 35, .62), rgba(35, 77, 65, .1)) !important; opacity: .78 !important; }
