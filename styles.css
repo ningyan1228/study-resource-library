@@ -8786,3 +8786,26 @@ body.theme-light .study-room-preview-seats small,
 body.theme-light .study-room-teaser-bottom > span { color: #52647d !important; }
 body.theme-light .study-room-teaser-bottom a { background: linear-gradient(135deg, #f0c567, #d89a39) !important; color: #263750 !important; }
 body.theme-light .study-room-teaser-shelf { border-top-color: rgba(104, 81, 60, .36) !important; background: linear-gradient(180deg, rgba(117, 98, 81, .32), rgba(95, 124, 158, .08)) !important; opacity: .45 !important; }
+
+/* The room entry itself is a light mist-blue surface in every display mode.
+   This deliberately replaces its former full green block, not only its copy. */
+body:not(.theme-light) .main .hero-art.study-room-teaser {
+  background: radial-gradient(circle at 92% 6%, rgba(233, 186, 95, .2), transparent 20%), linear-gradient(135deg, rgba(247, 246, 240, .98), rgba(221, 231, 242, .93)) !important;
+  border-color: rgba(184, 137, 57, .62) !important;
+  box-shadow: 0 18px 38px rgba(7, 13, 24, .28), inset 0 1px 0 rgba(255,255,255,.92) !important;
+  color: #263750 !important;
+}
+body:not(.theme-light) .study-room-teaser-head { border-color: rgba(174, 135, 64, .56) !important; }
+body:not(.theme-light) .study-room-teaser-head span { color: #a76d18 !important; }
+body:not(.theme-light) .study-room-teaser-head h2 { color: #213955 !important; }
+body:not(.theme-light) .study-room-teaser-head > b { border-color: rgba(64, 90, 125, .36) !important; background: rgba(255,255,255,.52) !important; color: #405a7d !important; }
+body:not(.theme-light) .study-room-teaser-head > b i { background: #e1a846 !important; box-shadow: 0 0 10px rgba(225, 168, 70, .54) !important; }
+body:not(.theme-light) .study-room-teaser-head > b strong { color: #a76d18 !important; }
+body:not(.theme-light) .study-room-teaser-lead { color: #3f5875 !important; }
+body:not(.theme-light) .study-room-preview-seats > span { background: rgba(255,255,255,.58) !important; border-color: rgba(74, 98, 130, .2) !important; box-shadow: inset 0 1px 0 rgba(255,255,255,.8) !important; }
+body:not(.theme-light) .study-room-preview-seats i { border-color: #647e9d !important; color: #405a7d !important; }
+body:not(.theme-light) .study-room-preview-seats b { color: #263750 !important; }
+body:not(.theme-light) .study-room-preview-seats small,
+body:not(.theme-light) .study-room-teaser-bottom > span { color: #52647d !important; }
+body:not(.theme-light) .study-room-teaser-bottom a { background: linear-gradient(135deg, #f0c567, #d89a39) !important; color: #263750 !important; }
+body:not(.theme-light) .study-room-teaser-shelf { border-top-color: rgba(104, 81, 60, .36) !important; background: linear-gradient(180deg, rgba(117, 98, 81, .32), rgba(95, 124, 158, .08)) !important; opacity: .45 !important; }
