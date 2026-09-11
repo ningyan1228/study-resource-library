@@ -7,9 +7,20 @@
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260713-icon1" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preconnect" href="https://study-resource-api.gjsx.uno" crossorigin />
+    <style>
+      /* Prevent a flash of the legacy stylesheet before the final visual layer arrives. */
+      html.visual-loading { background: #dfe7e7; }
+      html.visual-loading .app-shell { visibility: hidden; opacity: 0; }
+      .app-shell { transition: opacity 160ms ease; }
+      @media (prefers-reduced-motion: reduce) { .app-shell { transition: none; } }
+    </style>
+    <script>
+      document.documentElement.classList.add("visual-loading");
+      window.setTimeout(function () { document.documentElement.classList.remove("visual-loading"); }, 3500);
+    </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
     <link rel="stylesheet" href="styles.css?v=20260911-legacy-layout" />
-    <link rel="stylesheet" href="final-theme.css?v=20260911-room-copy-v2" />
+    <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260911-final-ui-v3" onload="document.documentElement.classList.remove('visual-loading')" />
   </head>
   <body class="theme-light">
     <video id="ambientBackgroundVideo" class="site-background-video" muted loop playsinline webkit-playsinline preload="metadata" aria-hidden="true" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" x-webkit-airplay="deny">
