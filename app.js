@@ -1527,15 +1527,23 @@ scheduleNonCriticalTask(loadServerPanLinks, 550);
   const formatter = new Intl.DateTimeFormat("zh-CN", {
     hour: "2-digit",
     minute: "2-digit",
-    second: "2-digit",
     hour12: false
   });
+  const hourHand = document.querySelector(".ios-clock-hour");
+  const minuteHand = document.querySelector(".ios-clock-minute");
   const renderClock = () => {
     const now = new Date();
     clocks.forEach((clock) => {
       clock.dateTime = now.toISOString();
       clock.textContent = formatter.format(now);
     });
+    if (hourHand && minuteHand) {
+      const hours = now.getHours() % 12;
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+      hourHand.style.transform = `rotate(${hours * 30 + minutes * 0.5}deg)`;
+      minuteHand.style.transform = `rotate(${minutes * 6 + seconds * 0.1}deg)`;
+    }
   };
   renderClock();
   window.setInterval(renderClock, 1000);

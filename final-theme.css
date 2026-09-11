@@ -189,6 +189,43 @@ html body:not(.theme-light) .main .study-room-preview-seats > span {
 html body:not(.theme-light).has-ambient-video .main .study-room-preview-seats b,
 html body:not(.theme-light) .main .study-room-preview-seats b { color: #f5f5f7 !important; }
 
+/* Compact iOS-style clock widget for the live panel. */
+.ios-clock-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 154px;
+  min-height: 58px;
+  padding: 8px 10px 8px 13px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 17px;
+  color: #f5f5f7;
+  background: linear-gradient(145deg, #2c2c2e, #171719);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 8px 18px rgba(0,0,0,.18);
+}
+.ios-clock-copy { display: grid; gap: 3px; min-width: 72px; }
+.ios-clock-copy time { color: #fff; font-size: 25px; font-weight: 750; letter-spacing: -.05em; line-height: 1; font-variant-numeric: tabular-nums; }
+.ios-clock-copy small { color: #c7c7cc; font-size: 11px; font-weight: 560; line-height: 1; white-space: nowrap; }
+.ios-clock-face {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 50%;
+  background: radial-gradient(circle, #252527 0 59%, transparent 60%), repeating-conic-gradient(from -2deg, rgba(255,255,255,.92) 0deg 2deg, transparent 2deg 30deg);
+  box-shadow: inset 0 0 0 3px #202022;
+}
+.ios-clock-face::before,
+.ios-clock-face::after { position: absolute; color: #fff; font-size: 7px; font-weight: 800; line-height: 1; }
+.ios-clock-face::before { content: "12"; top: 3px; left: 50%; transform: translateX(-50%); }
+.ios-clock-face::after { content: "6"; bottom: 3px; left: 50%; transform: translateX(-50%); }
+.ios-clock-face i { position: absolute; left: 50%; bottom: 50%; z-index: 1; width: 2px; border-radius: 2px; transform-origin: 50% 100%; transition: transform .35s linear; }
+.ios-clock-hour { height: 11px; background: #fff; }
+.ios-clock-minute { height: 15px; background: #b58cff; }
+.ios-clock-face b { position: absolute; z-index: 2; top: 50%; left: 50%; width: 5px; height: 5px; border-radius: 50%; background: #fff; transform: translate(-50%, -50%); }
+@media (max-width: 680px) { .ios-clock-card { min-width: 0; padding: 7px 9px; } .ios-clock-copy small { display: none; } }
+
 /* Light silver room: supporting copy must stay dark enough against the card. */
 html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser .study-room-teaser-lead,
 html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser .study-room-teaser-bottom > span,
