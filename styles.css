@@ -8873,3 +8873,92 @@ body .main .study-room-preview-seats small,
 body .main .study-room-teaser-bottom > span { color: rgba(218, 248, 232, .86) !important; }
 body .main .study-room-teaser-bottom a { background: #f4c956 !important; color: #12443d !important; box-shadow: 0 9px 21px rgba(0, 0, 0, .14) !important; }
 body .main .study-room-teaser-shelf { border-top-color: rgba(121, 81, 46, .65) !important; background: linear-gradient(180deg, rgba(85, 56, 35, .62), rgba(35, 77, 65, .1)) !important; opacity: .78 !important; }
+
+/* 2026-09-11: one restrained macOS glass language for the homepage.
+   It deliberately keeps the video and all functions while removing the
+   competing green, amber and saturated-card treatments. */
+body, body button, body input, body select, body textarea { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif !important; }
+body.has-ambient-video::before { background: rgba(12, 20, 22, .16) !important; backdrop-filter: blur(2px) !important; }
+body :is(.sidebar, .topbar, .hero-copy, .hero-live-panel, .hero-art.study-room-teaser, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .quick-panel, .section-block, .pan-search-results, .notice, .resource-card, .overview-card) { border: 1px solid rgba(255, 255, 255, .48) !important; border-radius: 26px !important; background: rgba(255, 255, 255, .68) !important; box-shadow: 0 20px 60px rgba(0, 0, 0, .14), inset 0 1px 0 rgba(255, 255, 255, .72) !important; -webkit-backdrop-filter: blur(28px) saturate(160%) !important; backdrop-filter: blur(28px) saturate(160%) !important; }
+body:not(.theme-light) :is(.sidebar, .topbar, .hero-copy, .hero-live-panel, .hero-art.study-room-teaser, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .quick-panel, .section-block, .pan-search-results, .notice, .resource-card, .overview-card) { background: rgba(246, 249, 252, .66) !important; border-color: rgba(255, 255, 255, .45) !important; color: #1d1d1f !important; }
+body .main .hero { min-height: 0 !important; margin: 0 !important; padding: 0 !important; border: 0 !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; gap: 20px !important; }
+body .main .hero-copy { max-width: none !important; padding: clamp(30px, 3.5vw, 48px) !important; color: #1d1d1f !important; }
+body .main .hero-copy::before, body .main .hero-copy::after { display: none !important; }
+body .main .hero-copy .eyebrow { margin: 0 !important; padding: 0 !important; border: 0 !important; background: transparent !important; box-shadow: none !important; color: #6e6e73 !important; font-size: 14px !important; font-weight: 600 !important; letter-spacing: .02em !important; }
+body .main .hero-copy .eyebrow::before { display: none !important; }
+body .main .hero-copy .eyebrow i { color: #aeaeb2 !important; }
+body .main .hero h1 { margin: 14px 0 0 !important; color: #1d1d1f !important; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif !important; font-size: clamp(46px, 4.5vw, 58px) !important; font-weight: 600 !important; letter-spacing: -.045em !important; line-height: 1.08 !important; }
+body .main .hero-copy > p:not(.eyebrow):not(.hero-blessing) { margin-top: 16px !important; color: #6e6e73 !important; font-size: 17px !important; font-weight: 400 !important; letter-spacing: 0 !important; line-height: 1.7 !important; }
+body .main .hero-copy .hero-blessing { margin-top: 18px !important; padding: 0 !important; border: 0 !important; background: transparent !important; color: #6e6e73 !important; text-shadow: none !important; font-family: inherit !important; font-size: 14px !important; font-weight: 400 !important; letter-spacing: 0 !important; }
+body .main .hero-copy .blessing-boat { display: none !important; }
+body .main .search-panel { margin-top: 24px !important; padding: 0 !important; background: transparent !important; box-shadow: none !important; border: 0 !important; }
+body .main .search-panel-head { display: none !important; }
+body .main .search-box { display: grid !important; min-height: 62px !important; grid-template-columns: 30px minmax(0, 1fr) auto auto !important; gap: 12px !important; padding: 0 9px 0 18px !important; border: 1px solid rgba(60, 60, 67, .16) !important; border-radius: 17px !important; background: rgba(255, 255, 255, .74) !important; box-shadow: inset 0 1px 0 rgba(255,255,255,.82) !important; transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease !important; }
+body .main .search-box:focus-within { border-color: rgba(10, 132, 255, .58) !important; box-shadow: 0 0 0 5px rgba(10, 132, 255, .13), inset 0 1px 0 #fff !important; }
+body .main .search-box .search-icon { color: #6e6e73 !important; }
+body .main .search-box input { color: #1d1d1f !important; font-size: 16px !important; font-weight: 400 !important; }
+body .main .search-box input::placeholder { color: #8e8e93 !important; }
+body .main .search-shortcut { display: inline-flex; padding: 4px 7px; border: 1px solid rgba(60,60,67,.18); border-radius: 6px; color: #6e6e73; background: rgba(118,118,128,.08); font: 600 12px/1 -apple-system, BlinkMacSystemFont, sans-serif; white-space: nowrap; }
+body .main .search-box button, body .main .primary-action, body .main .study-room-teaser-bottom a { background: #0a84ff !important; color: #fff !important; box-shadow: none !important; }
+body .main .search-box button { min-height: 44px !important; padding: 0 16px !important; border-radius: 12px !important; }
+body .main .hot-searches { gap: 3px !important; margin-top: 13px !important; }
+body .main .hot-searches span { margin-right: 5px; color: #6e6e73 !important; font-size: 12px !important; font-weight: 500 !important; }
+body .main .hot-searches button { min-height: 30px !important; padding: 0 9px !important; border: 0 !important; border-radius: 8px !important; background: transparent !important; color: #6e6e73 !important; font-size: 13px !important; font-weight: 500 !important; }
+body .main .hot-searches button:hover { background: rgba(118,118,128,.12) !important; color: #1d1d1f !important; }
+body .main .hero-actions { margin-top: 22px !important; }
+body .main .secondary-action { border-color: rgba(60,60,67,.18) !important; background: rgba(255,255,255,.48) !important; color: #1d1d1f !important; box-shadow: none !important; }
+body .main .hero-stats { gap: 0 !important; margin-top: 24px !important; padding-top: 14px; border-top: 1px solid rgba(60,60,67,.12); }
+body .main .hero-stats span { min-height: auto !important; padding: 0 14px 0 0 !important; border: 0 !important; border-radius: 0 !important; background: transparent !important; color: #6e6e73 !important; font-size: 13px !important; font-weight: 400 !important; }
+body .main .hero-stats span + span { padding-left: 14px !important; border-left: 1px solid rgba(60,60,67,.16) !important; }
+body .main .hero-stats strong { margin-right: 4px !important; color: #1d1d1f !important; font-size: 13px !important; font-weight: 600 !important; }
+body .main .hero-visual { gap: 20px !important; }
+body .main .hero-live-panel, body .main .hero-art.study-room-teaser { width: 100% !important; max-width: none !important; padding: 24px !important; color: #1d1d1f !important; }
+body .main .hero-live-panel::before, body .main .hero-live-panel::after, body .main .hero-art.study-room-teaser::before, body .main .hero-art.study-room-teaser::after { display: none !important; content: none !important; }
+body .main .hero-live-header, body .main .hero-live-panel p, body .main .hero-live-services { color: #1d1d1f !important; text-shadow: none !important; }
+body .main .hero-live-status { color: #1d1d1f !important; font-family: inherit !important; font-size: 15px !important; font-weight: 600 !important; letter-spacing: 0 !important; text-transform: none !important; }
+body .main .hero-live-status i { background: #30d158 !important; box-shadow: 0 0 0 4px rgba(48,209,88,.14) !important; }
+body .main .hero-live-status b { border-color: rgba(10,132,255,.26) !important; color: #0a84ff !important; background: rgba(10,132,255,.08) !important; font-family: inherit !important; }
+body .main .site-global-online, body .main #siteLiveClock { color: #6e6e73 !important; font-family: inherit !important; text-shadow: none !important; }
+body .main .hero-live-panel.has-site-notice > p { display: grid !important; margin: 18px 0 !important; color: #1d1d1f !important; }
+body .main .hero-live-panel.has-site-notice > p > span { color: #0a84ff !important; background: transparent !important; border: 0 !important; font-family: inherit !important; }
+body .main .hero-live-panel.has-site-notice > p > strong { color: #1d1d1f !important; font-size: 17px !important; text-shadow: none !important; }
+body .main .hero-live-panel.has-site-notice > p > small { color: #6e6e73 !important; font-size: 13px !important; text-shadow: none !important; }
+body .main .hero-live-services { border-top: 1px solid rgba(60,60,67,.12); padding-top: 14px; }
+body .main .hero-live-services span { background: transparent !important; border-color: transparent !important; color: #1d1d1f !important; font-family: inherit !important; }
+body .main .hero-live-services b { color: #1d1d1f !important; font-size: 14px !important; }
+body .main .hero-live-services small { color: #6e6e73 !important; font-size: 11px !important; }
+body .main .hero-live-services i { background: #0a84ff !important; box-shadow: none !important; }
+body .main .hero-art.study-room-teaser { min-height: 0 !important; background: rgba(255, 255, 255, .68) !important; border-color: rgba(255,255,255,.48) !important; box-shadow: 0 20px 60px rgba(0,0,0,.14), inset 0 1px 0 rgba(255,255,255,.72) !important; }
+body .main .study-room-teaser-head { padding-bottom: 14px !important; border-color: rgba(60,60,67,.12) !important; }
+body .main .study-room-teaser-head span { color: #6e6e73 !important; font-family: inherit !important; font-size: 11px !important; letter-spacing: .09em !important; }
+body .main .study-room-teaser-head h2 { color: #1d1d1f !important; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif !important; font-size: 27px !important; font-weight: 600 !important; }
+body .main .study-room-teaser-head > b { border-color: rgba(60,60,67,.16) !important; background: rgba(255,255,255,.44) !important; color: #6e6e73 !important; }
+body .main .study-room-teaser-head > b i { background: #30d158 !important; box-shadow: none !important; }
+body .main .study-room-teaser-head > b strong { color: #1d1d1f !important; font-family: inherit !important; }
+body .main .study-room-teaser-lead { margin: 15px 0 18px !important; color: #6e6e73 !important; font-size: 15px !important; }
+body .main .study-room-preview-seats { gap: 8px !important; }
+body .main .study-room-preview-seats > span { padding: 10px !important; border-color: rgba(60,60,67,.12) !important; border-radius: 13px !important; background: rgba(255,255,255,.42) !important; }
+body .main .study-room-preview-seats i { border-color: rgba(10,132,255,.28) !important; color: #0a84ff !important; }
+body .main .study-room-preview-seats b { color: #1d1d1f !important; font-size: 13px !important; }
+body .main .study-room-preview-seats small, body .main .study-room-teaser-bottom > span { color: #6e6e73 !important; }
+body .main .study-room-teaser-bottom { padding-top: 18px !important; }
+body .main .study-room-teaser-bottom a { border-radius: 12px !important; transition: transform 180ms ease, filter 180ms ease !important; }
+body .main .study-room-teaser-shelf { display: none !important; }
+body .main :is(.hero-copy, .hero-live-panel, .hero-art.study-room-teaser, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .quick-panel, .section-block, .resource-card, .overview-card) { transition: transform 180ms ease, box-shadow 180ms ease !important; }
+@media (hover: hover) { body .main :is(.hero-copy, .hero-live-panel, .hero-art.study-room-teaser, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .quick-panel, .section-block, .resource-card, .overview-card):hover { transform: translateY(-2px); box-shadow: 0 24px 70px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,255,255,.8) !important; } }
+body .main .mac-window-bar { position: relative !important; top: auto !important; right: auto !important; z-index: 1 !important; display: flex !important; width: 100% !important; height: 52px !important; margin: 0 0 18px !important; padding: 0 16px !important; border-radius: 18px !important; }
+body .main .mac-window-title { display: flex !important; align-items: center; gap: 12px; color: #1d1d1f; }
+body .main .mac-window-title strong { display: block !important; margin: 0 !important; color: #1d1d1f !important; font-size: 14px !important; font-weight: 600 !important; }
+body .main .mac-window-controls { display: inline-flex; gap: 7px; }
+body .main .mac-window-controls i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }
+body .main .mac-window-controls i:nth-child(2) { background: #febc2e; }
+body .main .mac-window-controls i:nth-child(3) { background: #28c840; }
+body .main .topbar-actions { display: flex !important; height: auto !important; gap: 10px !important; }
+body .main .topbar-actions > a { display: none !important; }
+body .main .mac-window-meta { display: inline-flex; align-items: center; gap: 12px; color: #6e6e73; font-size: 12px; }
+body .main .mac-window-meta > span { display: inline-flex; align-items: center; gap: 5px; color: #6e6e73; font-size: 12px; }
+body .main .mac-window-meta i { width: 7px; height: 7px; border-radius: 50%; background: #30d158; box-shadow: 0 0 0 3px rgba(48,209,88,.13); }
+body .main .theme-toggle { min-width: 44px !important; width: 44px !important; min-height: 34px !important; padding: 0 8px !important; border-color: rgba(60,60,67,.14) !important; background: rgba(255,255,255,.44) !important; color: #6e6e73 !important; }
+body .main .theme-toggle-text { display: none !important; }
+@media (max-width: 900px) { body .main .hero { grid-template-columns: 1fr !important; } body .main .hero-visual { grid-template-columns: 1fr !important; } body .main .hero-copy { padding: 28px !important; } }
+@media (max-width: 600px) { body .main .mac-window-meta { display: none !important; } body .main .hero-copy, body .main .hero-live-panel, body .main .hero-art.study-room-teaser { padding: 20px !important; } body .main .hero h1 { font-size: 42px !important; } body .main .search-box { grid-template-columns: 28px minmax(0, 1fr) auto !important; } body .main .search-shortcut { display: none !important; } body .main .study-room-preview-seats { grid-template-columns: 1fr !important; } }

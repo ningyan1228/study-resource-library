@@ -1522,8 +1522,8 @@ scheduleNonCriticalTask(loadLinkHealth, 350);
 scheduleNonCriticalTask(loadServerPanLinks, 550);
 // 2026-08-13: live hero clock.
 (() => {
-  const clock = document.querySelector("#siteLiveClock");
-  if (!clock) return;
+  const clocks = [...document.querySelectorAll("#siteLiveClock, #macTitleClock")];
+  if (!clocks.length) return;
   const formatter = new Intl.DateTimeFormat("zh-CN", {
     hour: "2-digit",
     minute: "2-digit",
@@ -1532,12 +1532,22 @@ scheduleNonCriticalTask(loadServerPanLinks, 550);
   });
   const renderClock = () => {
     const now = new Date();
-    clock.dateTime = now.toISOString();
-    clock.textContent = formatter.format(now);
+    clocks.forEach((clock) => {
+      clock.dateTime = now.toISOString();
+      clock.textContent = formatter.format(now);
+    });
   };
   renderClock();
   window.setInterval(renderClock, 1000);
 })();
+
+// Spotlight-style keyboard shortcut for the main resource search.
+document.addEventListener("keydown", (event) => {
+  if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+    event.preventDefault();
+    document.querySelector("#searchInput")?.focus();
+  }
+});
 
 // 2026-08-13: searchable library controls, genuine popularity and link-care status.
 const resourceSearchExperience = {

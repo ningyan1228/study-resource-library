@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preconnect" href="https://study-resource-api.gjsx.uno" crossorigin />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
-    <link rel="stylesheet" href="styles.css?v=20260911-study-room-sky-v2" />
+    <link rel="stylesheet" href="styles.css?v=20260911-macos-glass-v1" />
   </head>
   <body class="theme-light">
     <video id="ambientBackgroundVideo" class="site-background-video" muted loop playsinline webkit-playsinline preload="metadata" aria-hidden="true" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" x-webkit-airplay="deny">
@@ -33,14 +33,15 @@
       </aside>
 
       <main id="top" class="main">
-        <header class="topbar">
-          <div>
-            <span>Resource Navigator</span>
-            <strong>备考资料导航台</strong>
+        <header class="topbar mac-window-bar">
+          <div class="mac-window-title">
+            <span class="mac-window-controls" aria-hidden="true"><i></i><i></i><i></i></span>
+            <strong>学习资源库</strong>
           </div>
           <div class="topbar-actions">
             <a href="https://di0occkvoyb.feishu.cn/wiki/MNt9w7LfeiXi5Xkvj0gcOo8Cnfs" target="_blank" rel="noopener noreferrer">飞书总目录</a>
             <a href="#resourceSections">浏览资料</a>
+            <span class="mac-window-meta"><time id="macTitleClock" aria-live="off"></time><span><i aria-hidden="true"></i>在线</span></span>
             <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深色和浅色模式" aria-pressed="false">
               <span class="theme-toggle-knob"></span>
               <span class="theme-toggle-text">深色</span>
@@ -69,7 +70,8 @@
                       <path d="m16 16 4 4"></path>
                     </svg>
                   </span>
-                  <input id="searchInput" type="search" placeholder="名师名字/课程名称/关键词/资源名称" />
+                  <input id="searchInput" type="search" placeholder="搜索课程、老师、资料、关键词…" />
+                  <kbd class="search-shortcut" aria-hidden="true">⌘ K</kbd>
                   <button id="heroSearchButton" type="button">搜索</button>
                 </label>
                 <div id="hotSearches" class="hot-searches" aria-label="热门搜索"></div>
