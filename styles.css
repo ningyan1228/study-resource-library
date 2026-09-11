@@ -8975,3 +8975,10 @@ body.has-ambient-video .main .overview-header .section-title { display: block !i
 body.has-ambient-video .main .overview-header .section-icon { display: none !important; }
 body.has-ambient-video .main .overview-header { align-items: center !important; margin-bottom: 18px !important; }
 @media (max-width: 700px) { body.has-ambient-video .main .featured-copy, body.has-ambient-video .main .overview-header .section-title { padding: 17px 18px !important; } body.has-ambient-video .main .overview-header { align-items: stretch !important; } }
+
+/* The global navigation already carries the site name, so it also owns the
+   appearance control; removing the second window bar avoids duplicate labels
+   and clocks. */
+body .sidebar-utilities { display: flex; flex: 0 0 auto; align-items: center; margin-left: auto; }
+body .sidebar-utilities .theme-toggle { min-width: 76px !important; width: auto !important; min-height: 36px !important; padding: 0 10px !important; border-color: rgba(60,60,67,.14) !important; background: rgba(255,255,255,.46) !important; color: #6e6e73 !important; }
+@media (max-width: 700px) { body .sidebar-utilities .theme-toggle { min-width: 42px !important; width: 42px !important; padding: 0 8px !important; } body .sidebar-utilities .theme-toggle-text { display: none !important; } }

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preconnect" href="https://study-resource-api.gjsx.uno" crossorigin />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
-    <link rel="stylesheet" href="styles.css?v=20260911-macos-glass-v2" />
+    <link rel="stylesheet" href="styles.css?v=20260911-macos-glass-v3" />
   </head>
   <body class="theme-light">
     <video id="ambientBackgroundVideo" class="site-background-video" muted loop playsinline webkit-playsinline preload="metadata" aria-hidden="true" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" x-webkit-airplay="deny">
@@ -26,6 +26,12 @@
           </span>
         </a>
         <nav id="sectionNav" class="section-nav"></nav>
+        <div class="sidebar-utilities">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深色和浅色模式" aria-pressed="false">
+            <span class="theme-toggle-knob"></span>
+            <span class="theme-toggle-text">深色</span>
+          </button>
+        </div>
         <div class="sidebar-note">
           <strong>提示</strong>
           <p>网盘和飞书链接可能会失效，建议打开后及时转存。</p>
@@ -33,22 +39,6 @@
       </aside>
 
       <main id="top" class="main">
-        <header class="topbar mac-window-bar">
-          <div class="mac-window-title">
-            <span class="mac-window-controls" aria-hidden="true"><i></i><i></i><i></i></span>
-            <strong>学习资源库</strong>
-          </div>
-          <div class="topbar-actions">
-            <a href="https://di0occkvoyb.feishu.cn/wiki/MNt9w7LfeiXi5Xkvj0gcOo8Cnfs" target="_blank" rel="noopener noreferrer">飞书总目录</a>
-            <a href="#resourceSections">浏览资料</a>
-            <span class="mac-window-meta"><time id="macTitleClock" aria-live="off"></time><span><i aria-hidden="true"></i>在线</span></span>
-            <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深色和浅色模式" aria-pressed="false">
-              <span class="theme-toggle-knob"></span>
-              <span class="theme-toggle-text">深色</span>
-            </button>
-          </div>
-        </header>
-
         <section class="hero">
           <div class="hero-copy">
             <p class="eyebrow" aria-label="覆盖领域"><span>公务员</span><i aria-hidden="true">·</i><span>事业单位</span><i aria-hidden="true">·</i><span>教招</span><i aria-hidden="true">·</i><span>法考</span><i aria-hidden="true">·</i><span>考研</span></p>
