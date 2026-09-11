@@ -8962,3 +8962,16 @@ body .main .theme-toggle { min-width: 44px !important; width: 44px !important; m
 body .main .theme-toggle-text { display: none !important; }
 @media (max-width: 900px) { body .main .hero { grid-template-columns: 1fr !important; } body .main .hero-visual { grid-template-columns: 1fr !important; } body .main .hero-copy { padding: 28px !important; } }
 @media (max-width: 600px) { body .main .mac-window-meta { display: none !important; } body .main .hero-copy, body .main .hero-live-panel, body .main .hero-art.study-room-teaser { padding: 20px !important; } body .main .hero h1 { font-size: 42px !important; } body .main .search-box { grid-template-columns: 28px minmax(0, 1fr) auto !important; } body .main .search-shortcut { display: none !important; } body .main .study-room-preview-seats { grid-template-columns: 1fr !important; } }
+
+/* Replace the two remaining dark title slabs with the same quiet glass title treatment. */
+body.has-ambient-video .main .featured-copy,
+body.has-ambient-video .main .overview-header .section-title { max-width: min(100%, 760px) !important; margin: 0 0 18px !important; padding: 20px 22px !important; border: 1px solid rgba(255,255,255,.48) !important; border-radius: 22px !important; background: rgba(255,255,255,.68) !important; box-shadow: 0 18px 48px rgba(0,0,0,.12), inset 0 1px 0 rgba(255,255,255,.72) !important; -webkit-backdrop-filter: blur(28px) saturate(160%) !important; backdrop-filter: blur(28px) saturate(160%) !important; text-shadow: none !important; }
+body.has-ambient-video .main .featured-copy h2,
+body.has-ambient-video .main .overview-header .section-title h2 { margin: 7px 0 0 !important; color: #1d1d1f !important; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif !important; font-size: clamp(26px,2.7vw,36px) !important; font-weight: 600 !important; letter-spacing: -.03em !important; text-shadow: none !important; }
+body.has-ambient-video .main .featured-copy p,
+body.has-ambient-video .main .overview-header .section-title p { color: #6e6e73 !important; font-size: 14px !important; font-weight: 400 !important; line-height: 1.65 !important; text-shadow: none !important; }
+body.has-ambient-video .main .featured-copy .panel-label { min-height: 24px !important; margin: 0 !important; padding: 0 9px !important; border-color: rgba(10,132,255,.2) !important; border-radius: 999px !important; background: rgba(10,132,255,.08) !important; color: #0a84ff !important; font-family: inherit !important; font-size: 12px !important; font-weight: 600 !important; }
+body.has-ambient-video .main .overview-header .section-title { display: block !important; margin-bottom: 0 !important; }
+body.has-ambient-video .main .overview-header .section-icon { display: none !important; }
+body.has-ambient-video .main .overview-header { align-items: center !important; margin-bottom: 18px !important; }
+@media (max-width: 700px) { body.has-ambient-video .main .featured-copy, body.has-ambient-video .main .overview-header .section-title { padding: 17px 18px !important; } body.has-ambient-video .main .overview-header { align-items: stretch !important; } }
