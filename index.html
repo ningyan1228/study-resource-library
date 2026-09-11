@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preconnect" href="https://study-resource-api.gjsx.uno" crossorigin />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
-    <link rel="stylesheet" href="styles.css?v=20260911-study-room-final-v8" />
+    <link rel="stylesheet" href="styles.css?v=20260911-macos-dark-content-v9" />
     <style id="study-room-final-tone">
       /* Final local override: legacy theme experiments must never recolor this
          card blue.  Keep blue exclusively for its primary action. */
@@ -31,6 +31,39 @@
         background: linear-gradient(145deg, rgba(39,43,51,.96), rgba(22,25,31,.97)) !important;
         background-image: linear-gradient(145deg, rgba(39,43,51,.96), rgba(22,25,31,.97)) !important;
         color: #f5f5f7 !important;
+      }
+
+      /* macOS dark appearance: nested content is one calm graphite step
+         lighter than its card, never a white input field or neon button. */
+      html body:not(.theme-light) .main .overview-samples {
+        background: #2c2c2e !important;
+        border: 1px solid rgba(255,255,255,.10) !important;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.035) !important;
+      }
+      html body:not(.theme-light) .main .overview-samples span {
+        background: transparent !important;
+        color: #ebebf5 !important;
+        border-bottom-color: rgba(255,255,255,.08) !important;
+        box-shadow: none !important;
+      }
+      html body:not(.theme-light) .main .overview-samples span:hover {
+        background: rgba(10,132,255,.16) !important;
+        color: #ffffff !important;
+      }
+      html body:not(.theme-light) .main .overview-samples span::after { color: #8e8e93 !important; }
+      html body:not(.theme-light) .main .overview-card .section-open-button {
+        background: rgba(10,132,255,.18) !important;
+        border: 1px solid rgba(10,132,255,.30) !important;
+        color: #64b5ff !important;
+        box-shadow: none !important;
+      }
+      html body:not(.theme-light) .main .overview-card .section-open-button:hover {
+        background: rgba(10,132,255,.30) !important;
+        color: #ffffff !important;
+      }
+      html body:not(.theme-light) .sidebar {
+        background: rgba(28,28,30,.94) !important;
+        border-color: rgba(255,255,255,.12) !important;
       }
     </style>
   </head>
