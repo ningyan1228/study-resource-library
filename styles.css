@@ -9030,3 +9030,32 @@ body:not(.theme-light) .main :is(.overview-samples, .resource-card .resource-lin
 /* The study room uses neutral silver material, never a blue background. */
 body.theme-light .main .hero-art.study-room-teaser,
 body:not(.theme-light) .main .hero-art.study-room-teaser { background: linear-gradient(135deg, rgba(246,248,248,.58), rgba(194,201,202,.48)) !important; border-color: rgba(255,255,255,.56) !important; box-shadow: 0 18px 52px rgba(34,43,45,.16), inset 0 1px 0 rgba(255,255,255,.72) !important; }
+
+/* Deep mode is a deliberately dark graphite material, not a dimmed version
+   of the light glass. This restores readable copy, icons and actions. */
+body:not(.theme-light) {
+  --text: #f5f5f7;
+  --muted: #b8c0cc;
+  --line: rgba(255, 255, 255, .14);
+  --line-strong: rgba(255, 255, 255, .24);
+  --accent: #0a84ff;
+  --accent-soft: rgba(10, 132, 255, .24);
+}
+body:not(.theme-light) .main :is(.section-block, .featured-panel, .quick-panel, .pan-search-results, .overview-card, .resource-card, .featured-item, .overview-header .section-title, .featured-copy, .hero-art.study-room-teaser, .countdown-wall, .daily-learning-sign, .drift-bottle-board) {
+  background: linear-gradient(145deg, rgba(39,43,51,.92), rgba(22,25,31,.94)) !important;
+  border-color: rgba(255,255,255,.15) !important;
+  box-shadow: 0 18px 44px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.08) !important;
+  color: #f5f5f7 !important;
+  -webkit-backdrop-filter: blur(24px) saturate(115%) !important;
+  backdrop-filter: blur(24px) saturate(115%) !important;
+}
+body:not(.theme-light) :is(.sidebar, .site-header, .topbar) { background: rgba(28,30,36,.9) !important; border-color: rgba(255,255,255,.14) !important; }
+body:not(.theme-light) :is(.nav-link, .nav-link span:last-child, .brand-title, .companion-heading h2, .daily-learning-sign h2, .drift-bottle-board h2, .featured-copy h2, .quick-panel h2, .overview-card h3, .resource-card h3, .section-title h2, .section-title p, .featured-item h3, .featured-item p, .quick-panel p, .countdown-wall p, .daily-learning-sign p, .drift-bottle-board p) { color: #f5f5f7 !important; text-shadow: none !important; }
+body:not(.theme-light) :is(.section-kicker, .companion-kicker, .panel-label, .overview-card p, .resource-card p, .featured-item small, .countdown-list span, .countdown-list small, .quick-panel .panel-label, .daily-learning-sign span, .drift-bottle-board span) { color: #b8c0cc !important; text-shadow: none !important; }
+body:not(.theme-light) :is(.nav-link span:first-child, .section-icon) { background: rgba(255,255,255,.11) !important; color: #5eb4ff !important; box-shadow: none !important; }
+body:not(.theme-light) .nav-link.active, body:not(.theme-light) .nav-link:hover { background: rgba(10,132,255,.24) !important; color: #fff !important; }
+body:not(.theme-light) :is(.section-link, .quick-link, .overview-card .section-open-button, .resource-card .open-link, .featured-item a, .primary-action) { background: #0a84ff !important; border-color: transparent !important; color: #fff !important; box-shadow: 0 6px 18px rgba(10,132,255,.25) !important; text-shadow: none !important; }
+body:not(.theme-light) :is(.overview-samples, .resource-card .resource-links, .countdown-list article, .study-room-preview-seats > span) { background: rgba(255,255,255,.075) !important; border-color: rgba(255,255,255,.12) !important; color: #eef2f7 !important; }
+body:not(.theme-light) .main .study-room-teaser-head { border-color: rgba(255,255,255,.14) !important; }
+body:not(.theme-light) .main .study-room-teaser-head :is(h2,strong), body:not(.theme-light) .main .study-room-preview-seats b { color: #f5f5f7 !important; }
+body:not(.theme-light) .main :is(.study-room-teaser-head span, .study-room-teaser-lead, .study-room-preview-seats small, .study-room-teaser-bottom > span) { color: #b8c0cc !important; }
