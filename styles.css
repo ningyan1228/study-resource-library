@@ -8982,3 +8982,36 @@ body.has-ambient-video .main .overview-header { align-items: center !important; 
 body .sidebar-utilities { display: flex; flex: 0 0 auto; align-items: center; margin-left: auto; }
 body .sidebar-utilities .theme-toggle { min-width: 76px !important; width: auto !important; min-height: 36px !important; padding: 0 10px !important; border-color: rgba(60,60,67,.14) !important; background: rgba(255,255,255,.46) !important; color: #6e6e73 !important; }
 @media (max-width: 700px) { body .sidebar-utilities .theme-toggle { min-width: 42px !important; width: 42px !important; padding: 0 8px !important; } body .sidebar-utilities .theme-toggle-text { display: none !important; } }
+
+/* Study room: use the exact same macOS glass surface as the notice card.
+   The only solid accent is the Apple-blue primary action. */
+body.theme-light .main .hero-art.study-room-teaser,
+body:not(.theme-light) .main .hero-art.study-room-teaser { background: rgba(255,255,255,.68) !important; border-color: rgba(255,255,255,.48) !important; box-shadow: 0 20px 60px rgba(0,0,0,.14), inset 0 1px 0 rgba(255,255,255,.72) !important; -webkit-backdrop-filter: blur(28px) saturate(160%) !important; backdrop-filter: blur(28px) saturate(160%) !important; color: #1d1d1f !important; }
+body.theme-light .main .study-room-teaser-head,
+body:not(.theme-light) .main .study-room-teaser-head { border-color: rgba(60,60,67,.12) !important; }
+body.theme-light .main .study-room-teaser-head span,
+body:not(.theme-light) .main .study-room-teaser-head span { color: #6e6e73 !important; font-family: inherit !important; }
+body.theme-light .main .study-room-teaser-head h2,
+body:not(.theme-light) .main .study-room-teaser-head h2 { color: #1d1d1f !important; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif !important; font-weight: 600 !important; }
+body.theme-light .main .study-room-teaser-head > b,
+body:not(.theme-light) .main .study-room-teaser-head > b { border-color: rgba(60,60,67,.16) !important; background: rgba(255,255,255,.44) !important; color: #6e6e73 !important; }
+body.theme-light .main .study-room-teaser-head > b i,
+body:not(.theme-light) .main .study-room-teaser-head > b i { background: #30d158 !important; box-shadow: none !important; }
+body.theme-light .main .study-room-teaser-head > b strong,
+body:not(.theme-light) .main .study-room-teaser-head > b strong { color: #1d1d1f !important; font-family: inherit !important; }
+body.theme-light .main .study-room-teaser-lead,
+body:not(.theme-light) .main .study-room-teaser-lead { color: #6e6e73 !important; text-shadow: none !important; }
+body.theme-light .main .study-room-preview-seats > span,
+body:not(.theme-light) .main .study-room-preview-seats > span { border-color: rgba(60,60,67,.12) !important; background: rgba(255,255,255,.42) !important; box-shadow: none !important; }
+body.theme-light .main .study-room-preview-seats i,
+body:not(.theme-light) .main .study-room-preview-seats i { border-color: rgba(10,132,255,.28) !important; color: #0a84ff !important; }
+body.theme-light .main .study-room-preview-seats b,
+body:not(.theme-light) .main .study-room-preview-seats b { color: #1d1d1f !important; }
+body.theme-light .main .study-room-preview-seats small,
+body.theme-light .main .study-room-teaser-bottom > span,
+body:not(.theme-light) .main .study-room-preview-seats small,
+body:not(.theme-light) .main .study-room-teaser-bottom > span { color: #6e6e73 !important; }
+body.theme-light .main .study-room-teaser-bottom a,
+body:not(.theme-light) .main .study-room-teaser-bottom a { background: #0a84ff !important; color: #fff !important; box-shadow: none !important; }
+body.theme-light .main .study-room-teaser-shelf,
+body:not(.theme-light) .main .study-room-teaser-shelf { display: none !important; }
