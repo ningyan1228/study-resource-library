@@ -99,6 +99,96 @@ html body:not(.theme-light) .main .overview-card .section-open-button {
 html body:not(.theme-light) .main .overview-card .section-open-button:hover { background: rgba(10,132,255,.30) !important; color: #fff !important; }
 html body:not(.theme-light) :is(.nav-link, .nav-link span:last-child, .overview-card h3, .overview-card p, .featured-item h3, .featured-item p) { color: var(--final-dark-text) !important; text-shadow: none !important; }
 
+/* Homepage dark-mode completion: every foreground level gets a deliberate
+   graphite counterpart instead of inheriting a colour from the light theme. */
+html body:not(.theme-light).has-ambient-video .sidebar,
+html body:not(.theme-light) .sidebar {
+  background: rgba(28,28,30,.96) !important;
+  border-color: rgba(255,255,255,.12) !important;
+}
+html body:not(.theme-light).has-ambient-video .sidebar :is(.brand strong, .nav-link, .nav-link span:last-child),
+html body:not(.theme-light) .sidebar :is(.brand strong, .nav-link, .nav-link span:last-child) {
+  color: #f5f5f7 !important;
+  text-shadow: none !important;
+}
+html body:not(.theme-light).has-ambient-video .sidebar .nav-link.active,
+html body:not(.theme-light) .sidebar .nav-link.active {
+  background: rgba(10,132,255,.24) !important;
+  color: #fff !important;
+}
+
+html body:not(.theme-light).has-ambient-video .main .hero-copy,
+html body:not(.theme-light) .main .hero-copy {
+  background: linear-gradient(145deg, rgba(42,43,48,.97), rgba(28,29,33,.98)) !important;
+  color: #f5f5f7 !important;
+}
+html body:not(.theme-light).has-ambient-video .main .hero-copy h1,
+html body:not(.theme-light) .main .hero-copy h1 { color: #f5f5f7 !important; text-shadow: none !important; }
+html body:not(.theme-light).has-ambient-video .main .hero-copy > p:not(.hero-blessing),
+html body:not(.theme-light) .main .hero-copy > p:not(.hero-blessing) { color: #c7cbd1 !important; text-shadow: none !important; }
+html body:not(.theme-light).has-ambient-video .main .hero-copy .eyebrow span,
+html body:not(.theme-light) .main .hero-copy .eyebrow span { color: #d6d9df !important; }
+html body:not(.theme-light).has-ambient-video .main .hero-copy .hero-blessing,
+html body:not(.theme-light) .main .hero-copy .hero-blessing { color: #ffd60a !important; text-shadow: none !important; }
+
+html body:not(.theme-light).has-ambient-video .main .search-panel-head :is(span, strong),
+html body:not(.theme-light) .main .search-panel-head :is(span, strong) { color: #e7e9ed !important; }
+html body:not(.theme-light).has-ambient-video .main .search-box,
+html body:not(.theme-light) .main .search-box {
+  background: #2c2c2e !important;
+  border-color: rgba(255,255,255,.15) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04) !important;
+}
+html body:not(.theme-light).has-ambient-video .main .search-box input,
+html body:not(.theme-light) .main .search-box input { color: #f5f5f7 !important; }
+html body:not(.theme-light).has-ambient-video .main .search-box input::placeholder,
+html body:not(.theme-light) .main .search-box input::placeholder { color: #9a9ca2 !important; }
+html body:not(.theme-light).has-ambient-video .main .hot-searches button,
+html body:not(.theme-light) .main .hot-searches button {
+  background: #2c2c2e !important;
+  border-color: rgba(255,255,255,.10) !important;
+  color: #e7e9ed !important;
+  box-shadow: none !important;
+}
+html body:not(.theme-light).has-ambient-video .main .hero-stats span,
+html body:not(.theme-light) .main .hero-stats span {
+  background: #2c2c2e !important;
+  border-color: rgba(255,255,255,.10) !important;
+  color: #f5f5f7 !important;
+}
+html body:not(.theme-light).has-ambient-video .main .hero-stats :is(strong, small),
+html body:not(.theme-light) .main .hero-stats :is(strong, small) { color: #f5f5f7 !important; }
+
+html body:not(.theme-light).has-ambient-video .main .hero-live-panel,
+html body:not(.theme-light) .main .hero-live-panel {
+  background: linear-gradient(145deg, rgba(42,43,48,.97), rgba(28,29,33,.98)) !important;
+  color: #f5f5f7 !important;
+}
+html body:not(.theme-light).has-ambient-video .main .hero-live-panel :is(p, strong, b, small, time),
+html body:not(.theme-light) .main .hero-live-panel :is(p, strong, b, small, time) { color: #e8e9ed !important; text-shadow: none !important; }
+html body:not(.theme-light).has-ambient-video .main .hero-live-services > span,
+html body:not(.theme-light) .main .hero-live-services > span { border-color: rgba(255,255,255,.12) !important; }
+
+html body:not(.theme-light).has-ambient-video .main .hero-art.study-room-teaser,
+html body:not(.theme-light) .main .hero-art.study-room-teaser {
+  background: linear-gradient(145deg, rgba(42,43,48,.97), rgba(28,29,33,.98)) !important;
+  background-image: linear-gradient(145deg, rgba(42,43,48,.97), rgba(28,29,33,.98)) !important;
+  border-color: rgba(255,255,255,.13) !important;
+  color: #f5f5f7 !important;
+}
+html body:not(.theme-light).has-ambient-video .main .study-room-teaser-head :is(h2, strong),
+html body:not(.theme-light) .main .study-room-teaser-head :is(h2, strong) { color: #f5f5f7 !important; }
+html body:not(.theme-light).has-ambient-video .main :is(.study-room-teaser-head span, .study-room-teaser-lead, .study-room-preview-seats small, .study-room-teaser-bottom > span),
+html body:not(.theme-light) .main :is(.study-room-teaser-head span, .study-room-teaser-lead, .study-room-preview-seats small, .study-room-teaser-bottom > span) { color: #aeb4be !important; text-shadow: none !important; }
+html body:not(.theme-light).has-ambient-video .main .study-room-preview-seats > span,
+html body:not(.theme-light) .main .study-room-preview-seats > span {
+  background: #2c2c2e !important;
+  border-color: rgba(255,255,255,.10) !important;
+  box-shadow: none !important;
+}
+html body:not(.theme-light).has-ambient-video .main .study-room-preview-seats b,
+html body:not(.theme-light) .main .study-room-preview-seats b { color: #f5f5f7 !important; }
+
 /* Light silver room: supporting copy must stay dark enough against the card. */
 html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser .study-room-teaser-lead,
 html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser .study-room-teaser-bottom > span,
