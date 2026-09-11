@@ -9015,3 +9015,14 @@ body.theme-light .main .study-room-teaser-bottom a,
 body:not(.theme-light) .main .study-room-teaser-bottom a { background: #0a84ff !important; color: #fff !important; box-shadow: none !important; }
 body.theme-light .main .study-room-teaser-shelf,
 body:not(.theme-light) .main .study-room-teaser-shelf { display: none !important; }
+
+/* Use a cool, smoky material instead of paper-white cards. This lets the
+   wallpaper participate in the interface while keeping the content legible. */
+body.theme-light .main :is(.section-block, .featured-panel, .quick-panel, .pan-search-results),
+body:not(.theme-light) .main :is(.section-block, .featured-panel, .quick-panel, .pan-search-results) { background: rgba(196,213,222,.46) !important; border-color: rgba(255,255,255,.38) !important; box-shadow: 0 18px 50px rgba(30,54,68,.13), inset 0 1px 0 rgba(255,255,255,.48) !important; }
+body.theme-light .main :is(.overview-card, .resource-card, .featured-item),
+body:not(.theme-light) .main :is(.overview-card, .resource-card, .featured-item) { background: rgba(226,236,241,.44) !important; border-color: rgba(255,255,255,.42) !important; box-shadow: 0 12px 32px rgba(30,54,68,.11), inset 0 1px 0 rgba(255,255,255,.46) !important; }
+body.theme-light .main :is(.overview-header .section-title, .featured-copy),
+body:not(.theme-light) .main :is(.overview-header .section-title, .featured-copy) { background: rgba(220,232,238,.48) !important; border-color: rgba(255,255,255,.4) !important; box-shadow: 0 12px 30px rgba(30,54,68,.1), inset 0 1px 0 rgba(255,255,255,.5) !important; }
+body.theme-light .main :is(.overview-samples, .resource-card .resource-links),
+body:not(.theme-light) .main :is(.overview-samples, .resource-card .resource-links) { background: rgba(232,241,245,.24) !important; }
