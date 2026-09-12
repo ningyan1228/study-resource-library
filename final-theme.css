@@ -939,3 +939,87 @@ html body:not(.theme-light) .main .hero-art.study-room-teaser > .study-room-cloc
   html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-hour { height: 13px !important; }
   html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-minute { height: 18px !important; }
 }
+
+/* A real iOS-inspired clock tile: anchored in the open lower-left space, never beside the CTA. */
+html body .main .hero-art.study-room-teaser > .study-room-clock-widget {
+  position: absolute !important;
+  z-index: 4 !important;
+  left: clamp(28px, 2.1vw, 36px) !important;
+  bottom: clamp(88px, 8.4vw, 112px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 274px !important;
+  min-width: 274px !important;
+  height: 118px !important;
+  min-height: 118px !important;
+  margin: 0 !important;
+  padding: 16px 17px 16px 19px !important;
+  border: 1px solid rgba(255, 255, 255, .16) !important;
+  border-radius: 28px !important;
+  color: #f5f5f7 !important;
+  background: linear-gradient(145deg, rgba(48, 50, 56, .92), rgba(24, 26, 30, .88)) !important;
+  box-shadow: 0 16px 32px rgba(11, 18, 23, .28), inset 0 1px 0 rgba(255, 255, 255, .12) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(138%) !important;
+  backdrop-filter: blur(28px) saturate(138%) !important;
+}
+html body .main .hero-art.study-room-teaser > .study-room-clock-widget .study-room-clock-copy {
+  display: grid !important;
+  gap: 5px !important;
+  min-width: 116px !important;
+}
+html body .main .hero-art.study-room-teaser > .study-room-clock-widget .study-room-clock-copy > span {
+  color: #c7c7cc !important;
+  font-size: 13px !important;
+  font-weight: 620 !important;
+  letter-spacing: .01em !important;
+}
+html body .main .hero-art.study-room-teaser > .study-room-clock-widget .study-room-clock-copy > time {
+  color: #ffffff !important;
+  font-size: 37px !important;
+  font-weight: 780 !important;
+  letter-spacing: -.065em !important;
+  line-height: .92 !important;
+  text-shadow: none !important;
+}
+html body .main .hero-art.study-room-teaser > .study-room-clock-widget .study-room-clock-copy > small {
+  color: #aeb2bc !important;
+  font-size: 11px !important;
+  font-weight: 570 !important;
+}
+html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-face {
+  display: block !important;
+  width: 76px !important;
+  height: 76px !important;
+  flex: 0 0 76px !important;
+  border: 1px solid rgba(255, 255, 255, .32) !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, #23252a 0 61%, transparent 62%), repeating-conic-gradient(from -1deg, rgba(255, 255, 255, .94) 0deg 2deg, transparent 2deg 30deg) !important;
+  box-shadow: inset 0 0 0 4px #1b1d21, 0 3px 9px rgba(0, 0, 0, .24) !important;
+}
+html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-face::before,
+html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-face::after {
+  color: #f5f5f7 !important;
+  font-size: 9px !important;
+}
+html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-face::before { top: 6px !important; }
+html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-face::after { bottom: 6px !important; }
+html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-hour { height: 21px !important; width: 3px !important; background: #f5f5f7 !important; }
+html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-minute { height: 29px !important; width: 3px !important; background: #0a84ff !important; }
+html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-face b { width: 8px !important; height: 8px !important; background: #0a84ff !important; }
+@media (max-width: 700px), (orientation: portrait) {
+  html body .main .hero-art.study-room-teaser > .study-room-clock-widget {
+    left: 18px !important;
+    bottom: 76px !important;
+    width: 220px !important;
+    min-width: 220px !important;
+    height: 92px !important;
+    min-height: 92px !important;
+    padding: 12px 13px 12px 15px !important;
+    border-radius: 23px !important;
+  }
+  html body .main .hero-art.study-room-teaser > .study-room-clock-widget .study-room-clock-copy > time { font-size: 30px !important; }
+  html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-face { width: 60px !important; height: 60px !important; flex-basis: 60px !important; }
+  html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-hour { height: 17px !important; }
+  html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-minute { height: 23px !important; }
+}
