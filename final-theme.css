@@ -1502,3 +1502,28 @@ html body.theme-light .main .study-room-rebuilt .study-room-mini-clock { backgro
   html body .main .study-room-rebuilt .study-room-side-actions { grid-template-rows:repeat(2,86px) !important; }
   html body .main .study-room-rebuilt .study-room-mini-clock { display:none !important; }
 }
+
+/* v36 — preserve the original blue room composition, rendered as glass. */
+html body .main .hero-art.study-room-rebuilt,
+html body.theme-light .main .hero-art.study-room-rebuilt,
+html body.theme-dark .main .hero-art.study-room-rebuilt,
+html body:not(.theme-light) .main .hero-art.study-room-rebuilt {
+  color: #edf7ff !important;
+  background: linear-gradient(135deg, rgba(7,113,177,.68), rgba(31,163,213,.47)) !important;
+  border-color: rgba(218,244,255,.48) !important;
+  box-shadow: 0 16px 36px rgba(1,42,67,.25), inset 0 1px 0 rgba(255,255,255,.25) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(128%) !important;
+  backdrop-filter: blur(24px) saturate(128%) !important;
+}
+html body .main .study-room-rebuilt .study-room-teaser-head { border-bottom-color: rgba(227,246,255,.36) !important; }
+html body .main .study-room-rebuilt :is(.study-room-teaser-head h2, .study-room-timer-action > strong, .study-room-utility-action b) { color:#f4fbff !important; }
+html body .main .study-room-rebuilt :is(.study-room-teaser-head > div:first-child > span, .study-room-teaser-lead, .study-room-utility-action small, .study-room-teaser-bottom > span) { color:rgba(231,247,255,.82) !important; }
+html body .main .study-room-rebuilt :is(.study-room-timer-action, .study-room-utility-action) { background:rgba(5,49,76,.52) !important; border-color:rgba(222,244,255,.24) !important; box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 8px 20px rgba(0,40,68,.12) !important; -webkit-backdrop-filter:blur(18px) saturate(126%) !important; backdrop-filter:blur(18px) saturate(126%) !important; }
+html body .main .study-room-rebuilt .study-room-timer-action > time { color:#bcecf0 !important; }
+html body .main .study-room-rebuilt .study-room-timer-action > small { color:rgba(226,245,255,.77) !important; }
+html body .main .study-room-rebuilt .study-room-timer-action > em { color:#f2fbff !important; background:rgba(20,103,80,.86) !important; }
+html body .main .study-room-rebuilt .study-room-utility-action > i { color:#d3f8eb !important; background:rgba(22,127,113,.32) !important; }
+html body .main .study-room-rebuilt .study-room-utility-action em,
+html body .main .study-room-rebuilt .study-room-teaser-bottom > a { color:#d7f7ff !important; }
+html body .main .study-room-rebuilt .study-room-mini-clock,
+html body .main .study-room-rebuilt .study-room-head-meta > b { color:#eefaff !important; background:rgba(2,38,59,.48) !important; border-color:rgba(226,247,255,.18) !important; }

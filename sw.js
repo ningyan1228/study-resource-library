@@ -9,6 +9,11 @@ self.addEventListener("activate", function (event) {
 });
 
 self.addEventListener("fetch", function (event) {
-  if (event.request.mode !== "navigate") return;
-  event.respondWith(fetch(new Request(event.request, { cache: "no-store" })));
+  const url = new URL(event.request.url);
+  const isLocalThemeAsset = url.origin === self.location.origin &&
+    (url.pathname.endsWith("/styles.css") || url.pathname.endsWith("/final-theme.css") || url.pathname.endsWith("/app.js"));
+  if (event.request.mode !== "navigate" && !isLocalThemeAsset) return;
+  // Never fulfill page/theme requests from an older browser cache.  This is what
+  // keeps a newly deployed theme from mixing with a cached legacy stylesheet.
+  event.respondWith(fetch(new Request(event.request, { cache: "reload" })));
 });
