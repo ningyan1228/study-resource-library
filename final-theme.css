@@ -14,33 +14,33 @@
 
 html body.theme-light.has-ambient-video .sidebar,
 html body.theme-light .sidebar {
-  background: rgba(239, 242, 243, .88) !important;
-  border-color: rgba(255,255,255,.64) !important;
+  background: rgba(239, 244, 245, .72) !important;
+  border-color: rgba(255,255,255,.68) !important;
   box-shadow: 0 10px 28px rgba(20,30,36,.12), inset 0 1px 0 rgba(255,255,255,.7) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(108%) !important;
-  backdrop-filter: blur(16px) saturate(108%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(112%) !important;
+  backdrop-filter: blur(20px) saturate(112%) !important;
 }
 
 html body.theme-light.has-ambient-video .main :is(.hero-copy, .hero-live-panel, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .quick-panel, .section-block, .pan-search-results, .notice, .resource-card, .overview-card),
 html body.theme-light .main :is(.hero-copy, .hero-live-panel, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .quick-panel, .section-block, .pan-search-results, .notice, .resource-card, .overview-card) {
-  background: rgba(237, 241, 242, .82) !important;
-  border-color: rgba(255,255,255,.58) !important;
-  box-shadow: 0 14px 34px rgba(22,35,42,.13), inset 0 1px 0 rgba(255,255,255,.58) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(108%) !important;
-  backdrop-filter: blur(16px) saturate(108%) !important;
+  background: rgba(237, 243, 244, .58) !important;
+  border-color: rgba(255,255,255,.66) !important;
+  box-shadow: 0 14px 34px rgba(22,35,42,.14), inset 0 1px 0 rgba(255,255,255,.66) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(116%) !important;
+  backdrop-filter: blur(22px) saturate(116%) !important;
   color: var(--final-light-text) !important;
 }
 
 /* The study room is deliberately neutral silver. No old blue gradient can win. */
 html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser,
 html body.theme-light .main .hero-art.study-room-teaser {
-  background: linear-gradient(145deg, rgba(244,246,246,.94), rgba(192,198,199,.91)) !important;
-  background-image: linear-gradient(145deg, rgba(244,246,246,.94), rgba(192,198,199,.91)) !important;
-  border-color: rgba(255,255,255,.76) !important;
+  background: linear-gradient(145deg, rgba(243,248,249,.72), rgba(182,199,202,.64)) !important;
+  background-image: linear-gradient(145deg, rgba(243,248,249,.72), rgba(182,199,202,.64)) !important;
+  border-color: rgba(255,255,255,.72) !important;
   box-shadow: 0 16px 38px rgba(30,39,42,.16), inset 0 1px 0 rgba(255,255,255,.76) !important;
   color: var(--final-light-text) !important;
-  -webkit-backdrop-filter: blur(14px) saturate(100%) !important;
-  backdrop-filter: blur(14px) saturate(100%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(108%) !important;
+  backdrop-filter: blur(22px) saturate(108%) !important;
 }
 
 html body.theme-light .main :is(.study-room-teaser-head h2, .study-room-preview-seats b) { color: #1d1d1f !important; }
