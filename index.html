@@ -25,19 +25,28 @@
         var root = document.documentElement;
         root.classList.add("visual-loading");
         window.revealFinalTheme = function () {
-          requestAnimationFrame(function () {
+          var reveal = function () {
+            var shell = document.getElementById("appShell");
+            if (!shell) {
+              document.addEventListener("DOMContentLoaded", reveal, { once: true });
+              return;
+            }
             requestAnimationFrame(function () {
-              root.classList.remove("visual-loading");
-              root.classList.add("visual-ready");
+              requestAnimationFrame(function () {
+                shell.style.removeProperty("display");
+                root.classList.remove("visual-loading");
+                root.classList.add("visual-ready");
+              });
             });
-          });
+          };
+          reveal();
         };
       })();
     </script>
-    <link rel="preload" href="final-theme.css?v=20260912-no-fouc-gate-v26" as="style" />
+    <link rel="preload" href="final-theme.css?v=20260912-inline-app-lock-v27" as="style" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
     <link rel="stylesheet" href="styles.css?v=20260911-legacy-layout" />
-    <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-no-fouc-gate-v26" onload="window.revealFinalTheme()" />
+    <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-inline-app-lock-v27" onload="window.revealFinalTheme()" />
   </head>
   <body class="theme-light">
     <video id="ambientBackgroundVideo" class="site-background-video" muted loop playsinline webkit-playsinline preload="metadata" aria-hidden="true" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" x-webkit-airplay="deny">
@@ -45,7 +54,7 @@
     </video>
     <canvas id="ambientBackgroundCanvas" class="site-background-canvas" aria-hidden="true"></canvas>
     <div class="site-animated-background" aria-hidden="true"></div>
-    <div class="app-shell">
+    <div id="appShell" class="app-shell" style="display: none !important">
       <aside class="sidebar" aria-label="资料板块">
         <a class="brand" href="#top" aria-label="学习资源库首页">
           <span class="brand-mark">学</span>
