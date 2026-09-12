@@ -54,8 +54,10 @@
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
-          navigator.serviceWorker.register("/sw.js?v=20260912-firstpaint-gate-v2", { updateViaCache: "none" }).then(function (registration) {
-            registration.update().catch(function () {});
+          navigator.serviceWorker.register("/sw.js?v=20260912-blue-lock-repair-v3", { updateViaCache: "none" }).then(function (registration) {
+            registration.update().then(function () {
+              if (registration.waiting) registration.waiting.postMessage("skip-waiting");
+            }).catch(function () {});
           }).catch(function () {});
         });
       }
