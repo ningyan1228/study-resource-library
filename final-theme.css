@@ -589,3 +589,42 @@ html body:not(.theme-light) .main .hero-art.study-room-teaser > .study-room-teas
 @media (max-width: 700px), (orientation: portrait) {
   html body.theme-light .main .hero-art.study-room-teaser::before { inset: -10px !important; filter: blur(6px) saturate(.72) contrast(.92) !important; }
 }
+
+/* Refine the room image: clear glass first, a quiet lower-corner atmosphere second. */
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser,
+html body.theme-light .main .hero-art.study-room-teaser {
+  background: linear-gradient(145deg, rgba(244,249,250,.83), rgba(198,215,217,.73)) !important;
+}
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser::before,
+html body.theme-light .main .hero-art.study-room-teaser::before {
+  inset: auto -6% -12% auto !important;
+  width: 72% !important;
+  height: 58% !important;
+  background: linear-gradient(90deg, rgba(238,247,248,.92) 0%, rgba(238,247,248,.48) 42%, rgba(238,247,248,.10) 100%), url("assets/study-room-authorized-reference-clean.png") center / cover no-repeat !important;
+  filter: blur(2px) saturate(.62) contrast(.88) !important;
+  opacity: .34 !important;
+  transform: none !important;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.34) 29%, #000 67%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.34) 29%, #000 67%);
+}
+html body:not(.theme-light) .main .hero-art.study-room-teaser::before {
+  inset: auto -6% -12% auto !important;
+  width: 72% !important;
+  height: 58% !important;
+  background: linear-gradient(90deg, rgba(28,29,33,.92) 0%, rgba(28,29,33,.46) 46%, rgba(28,29,33,.12) 100%), url("assets/study-room-authorized-reference-clean.png") center / cover no-repeat !important;
+  filter: blur(2px) saturate(.42) brightness(.72) !important;
+  opacity: .24 !important;
+  transform: none !important;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.34) 29%, #000 67%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.34) 29%, #000 67%);
+}
+@media (max-width: 700px), (orientation: portrait) {
+  html body.theme-light .main .hero-art.study-room-teaser::before,
+  html body:not(.theme-light) .main .hero-art.study-room-teaser::before {
+    inset: auto -10% -8% auto !important;
+    width: 100% !important;
+    height: 44% !important;
+    opacity: .20 !important;
+    filter: blur(2px) saturate(.55) contrast(.88) !important;
+  }
+}
