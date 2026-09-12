@@ -24,7 +24,7 @@ async function freshNavigation(request) {
   if (!type.includes("text/html")) return response;
 
   const source = await response.text();
-  const entryTheme = '<link rel="stylesheet" href="/study-room-entry-20260912-v2.css">';
+  const entryTheme = '<link rel="stylesheet" href="/study-room-entry-20260912-v2.css?v=20260912-v3">';
   const html = source.includes("study-room-entry-20260912-v2.css")
     ? source
     : source.replace("</head>", entryTheme + "</head>");
