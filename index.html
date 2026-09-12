@@ -11,18 +11,33 @@
       /* The final theme is the first paint. Never reveal the legacy sheet while it downloads. */
       html.visual-loading,
       html.visual-loading body { background: #dfe8e8 !important; }
-      html.visual-loading .app-shell { visibility: hidden; opacity: 0; }
-      html.visual-loading body > :not(.app-shell) { visibility: hidden; }
+      html.visual-loading .app-shell {
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+      html.visual-loading body > :not(.app-shell) { visibility: hidden !important; }
       .app-shell { transition: opacity 160ms ease; }
       @media (prefers-reduced-motion: reduce) { .app-shell { transition: none; } }
     </style>
     <script>
-      document.documentElement.classList.add("visual-loading");
+      (function () {
+        var root = document.documentElement;
+        root.classList.add("visual-loading");
+        window.revealFinalTheme = function () {
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              root.classList.remove("visual-loading");
+              root.classList.add("visual-ready");
+            });
+          });
+        };
+      })();
     </script>
-    <link rel="preload" href="final-theme.css?v=20260912-study-room-layout-v25" as="style" />
+    <link rel="preload" href="final-theme.css?v=20260912-no-fouc-gate-v26" as="style" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
     <link rel="stylesheet" href="styles.css?v=20260911-legacy-layout" />
-    <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-study-room-layout-v25" onload="document.documentElement.classList.remove('visual-loading')" />
+    <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-no-fouc-gate-v26" onload="window.revealFinalTheme()" />
   </head>
   <body class="theme-light">
     <video id="ambientBackgroundVideo" class="site-background-video" muted loop playsinline webkit-playsinline preload="metadata" aria-hidden="true" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" x-webkit-airplay="deny">
