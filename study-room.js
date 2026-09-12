@@ -117,6 +117,16 @@
   $("#focusToggle")?.addEventListener("click", () => openPanel("focus"));
   $("#matchToggle")?.addEventListener("click", () => openPanel("match")); $("#toolsToggle")?.addEventListener("click", () => { document.body.classList.add("tools-open"); const veil = $("#roomModalVeil"); if (veil) veil.hidden = false; });
   $("#roomModalVeil")?.addEventListener("click", closePanel);
+  // Homepage entry cards lead to the real room controls.  Keep the requested tool
+  // visible on arrival instead of making visitors find it again in the room UI.
+  const requestedTool = new URLSearchParams(window.location.search).get("tool");
+  if (["timer", "focus", "partner"].includes(requestedTool || "")) {
+    const veil = $("#roomModalVeil");
+    document.body.classList.add("tools-open");
+    if (veil) veil.hidden = false;
+    const target = requestedTool === "partner" ? $(".partner-card") : $(".focus-card");
+    window.setTimeout(() => target?.scrollIntoView({ block: "start", behavior: "smooth" }), 80);
+  }
   $("#continuePortrait")?.addEventListener("click", () => document.body.classList.add("portrait-continue"));
   $("#inviteShare")?.addEventListener("click", async () => {
     const button = $("#inviteShare"), shareUrl = `${location.origin}${location.pathname}`;

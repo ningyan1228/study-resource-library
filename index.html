@@ -50,7 +50,7 @@
         });
       }
     </script>
-    <link rel="preload" href="final-theme.css?v=20260912-critical-room-fallback-v28" as="style" />
+    <link rel="preload" href="final-theme.css?v=20260912-contained-room-v29" as="style" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
     <link rel="stylesheet" href="styles.css?v=20260911-legacy-layout" />
     <style id="studyRoomCriticalTheme">
@@ -81,7 +81,7 @@
       html body.theme-light .main .hero-art.study-room-teaser::after,
       html body.theme-light .main .hero-art.study-room-teaser > .study-room-teaser-classroom { display: none !important; }
     </style>
-    <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-critical-room-fallback-v28" onload="window.revealFinalTheme()" />
+    <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-contained-room-v29" onload="window.revealFinalTheme()" />
   </head>
   <body class="theme-light">
     <video id="ambientBackgroundVideo" class="site-background-video" muted loop playsinline webkit-playsinline preload="metadata" aria-hidden="true" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" x-webkit-airplay="deny">
@@ -167,9 +167,9 @@
   <div class="study-room-teaser-head"><div><span>SHORE STUDY ROOM</span><h2 id="studyRoomTeaserTitle">上岸自习室</h2></div><b><i></i><strong id="studyRoomTeaserOnline">--</strong> 人在线</b></div>
   <p class="study-room-teaser-lead">找个位置，安静专注一会儿。</p>
   <div class="study-room-preview-seats" aria-label="自习室功能预览">
-    <span><i>◷</i><b>番茄钟</b><small>25 / 45 / 60 分钟</small></span>
-    <span><i>✎</i><b>今日专注席</b><small id="studyRoomTeaserFocus">正在读取在线座位</small></span>
-    <span><i>⌁</i><b>同频搭子</b><small>同考类 · 同省份 · 同阶段</small></span>
+    <a class="study-room-feature-card" href="study-room.html?tool=timer" aria-label="打开番茄钟"><i>◷</i><b>番茄钟</b><small>开始一轮 25 分钟专注</small></a>
+    <a class="study-room-feature-card" href="study-room.html?tool=focus" aria-label="打开今日专注席"><i>✎</i><b>今日专注席</b><small id="studyRoomTeaserFocus">正在读取在线座位</small></a>
+    <a class="study-room-feature-card" href="study-room.html?tool=partner" aria-label="打开同频搭子"><i>⌁</i><b>同频搭子</b><small>匿名匹配同考类 · 同阶段</small></a>
     <aside class="ios-clock-card study-room-clock-widget" aria-label="北京时间"><div class="study-room-clock-copy"><span>北京时间</span><time id="siteLiveClock" aria-live="off"></time><small>专注当下，静待上岸</small></div><div class="ios-clock-face" aria-hidden="true"><i class="ios-clock-hour"></i><i class="ios-clock-minute"></i><b></b></div><a href="study-room.html">进入自习室 <b>→</b></a></aside>
   </div>
   <div class="study-room-teaser-bottom"><span>匿名入座，不收集联系方式</span></div>
