@@ -323,16 +323,18 @@ html body.theme-light .main .hero-art.study-room-teaser .study-room-teaser-botto
 .catalogue-resource-art {
   position: absolute;
   z-index: 0;
-  right: 8px;
-  bottom: 38px;
-  width: 138px;
-  height: 94px;
-  opacity: .74;
-  background-image: url("assets/catalogue-study-comic-sprite-v1.png");
+  right: 0;
+  bottom: 0;
+  width: 74%;
+  height: 100%;
+  opacity: .68;
+  background-image: url("assets/catalogue-study-comic-characters-v2.png");
   background-repeat: no-repeat;
   background-size: 300% 300%;
   background-position: 0 0;
-  filter: saturate(.88) contrast(.98);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.25) 24%, #000 54%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.25) 24%, #000 54%);
+  filter: saturate(.93) contrast(.99);
   pointer-events: none;
 }
 .catalogue-illustration-2 .catalogue-resource-art { background-position: 50% 0; }
@@ -395,9 +397,9 @@ html body:not(.theme-light) .section-modal-grid .catalogue-resource-card {
 html body:not(.theme-light) .section-modal-grid .catalogue-resource-card h3 { color: #f5f5f7 !important; }
 html body:not(.theme-light) .section-modal-grid .catalogue-resource-card p { color: #b6bdc7 !important; }
 html body:not(.theme-light) .section-modal-grid .catalogue-resource-card .open-link { background: rgba(255,255,255,.07) !important; }
-html body:not(.theme-light) .catalogue-resource-art { opacity: .58; filter: saturate(.78) brightness(.92); }
+html body:not(.theme-light) .catalogue-resource-art { opacity: .48; filter: saturate(.70) brightness(.86); }
 @media (max-width: 680px) {
   .section-modal-grid .catalogue-resource-card { min-height: 196px !important; padding: 18px !important; }
-  .catalogue-resource-art { right: 2px; bottom: 42px; width: 120px; height: 82px; opacity: .56; }
+  .catalogue-resource-art { width: 76%; height: 100%; opacity: .52; }
   .catalogue-resource-index { font-size: 62px; }
 }
