@@ -8,14 +8,10 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="preconnect" href="https://study-resource-api.gjsx.uno" crossorigin />
     <style>
-      /* The final theme is the first paint. Never reveal the legacy sheet while it downloads. */
+      /* Keep the usable page visible while optional imagery and fonts arrive. */
       html.visual-loading,
       html.visual-loading body { background: #dfe8e8 !important; }
-      html.visual-loading .app-shell {
-        visibility: hidden !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-      }
+      html.visual-loading .app-shell { visibility: visible !important; opacity: 1 !important; }
       html.visual-loading body > :not(.app-shell) { visibility: hidden !important; }
       .app-shell { transition: opacity 160ms ease; }
       @media (prefers-reduced-motion: reduce) { .app-shell { transition: none; } }
@@ -46,15 +42,17 @@
           };
           reveal();
         };
-        window.addEventListener("load", function () {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", window.releaseAppShell, { once: true });
+        } else {
           window.releaseAppShell();
-        }, { once: true });
+        }
       })();
     </script>
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
-          navigator.serviceWorker.register("/sw.js?v=20260912-study-room-entry-v2", { updateViaCache: "none" }).then(function (registration) {
+          navigator.serviceWorker.register("/sw.js?v=20260912-performance-v3", { updateViaCache: "none" }).then(function (registration) {
             registration.update().then(function () {
               if (registration.waiting) registration.waiting.postMessage("skip-waiting");
             }).catch(function () {});
@@ -63,7 +61,8 @@
       }
     </script>
     <link rel="preload" href="study-room-entry-20260912-v2.css?v=20260912-v3" as="style" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" /></noscript>
     <link rel="stylesheet" href="styles.css?v=20260911-legacy-layout" />
     <style id="studyRoomCriticalTheme">
       /* Critical first-paint fallback: retain the dark-green room until the
@@ -127,7 +126,7 @@
     </video>
     <canvas id="ambientBackgroundCanvas" class="site-background-canvas" aria-hidden="true"></canvas>
     <div class="site-animated-background" aria-hidden="true"></div>
-    <div id="appShell" class="app-shell" style="display: none !important">
+    <div id="appShell" class="app-shell">
       <aside class="sidebar" aria-label="资料板块">
         <a class="brand" href="#top" aria-label="学习资源库首页">
           <span class="brand-mark">学</span>

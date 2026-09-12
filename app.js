@@ -1391,6 +1391,8 @@ function initAmbientBackgroundVideo() {
   const canvas = document.querySelector("#ambientBackgroundCanvas");
   if (!video || !canvas) return;
 
+  const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches
+    || navigator.maxTouchPoints > 0;
   const disableForPreference = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     || window.matchMedia("(prefers-reduced-data: reduce)").matches;
   if (disableForPreference) {
@@ -1399,12 +1401,26 @@ function initAmbientBackgroundVideo() {
     return;
   }
 
+  // Touch browsers should never initialise a native video or Canvas decoder.
+  // The compact animated WebP is loaded only by the background element's CSS.
+  if (isTouchDevice) {
+    video.remove();
+    canvas.remove();
+    document.body.classList.add("has-animated-background");
+    return;
+  }
+
   const source = video.querySelector("source[data-src]");
   const context = canvas.getContext("2d", { alpha: true });
   if (!source || !context) return;
 
-  const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches
-    || navigator.maxTouchPoints > 0;
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const constrainedNetwork = connection?.saveData || /(^|-)2g/.test(connection?.effectiveType || "");
+  if (constrainedNetwork) {
+    video.remove();
+    canvas.remove();
+    return;
+  }
   video.muted = true;
   video.defaultMuted = true;
   video.setAttribute("muted", "");
@@ -1429,7 +1445,7 @@ function initAmbientBackgroundVideo() {
   };
 
   const paintFrame = (now) => {
-    if (now - lastFrameAt >= 42 && video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA && video.videoWidth && video.videoHeight) {
+    if (now - lastFrameAt >= 83 && video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA && video.videoWidth && video.videoHeight) {
       const canvasRatio = canvas.width / canvas.height;
       const videoRatio = video.videoWidth / video.videoHeight;
       let sourceX = 0;
@@ -1468,18 +1484,10 @@ function initAmbientBackgroundVideo() {
     video.play()
       .then(() => {
         if (!frameId) frameId = window.requestAnimationFrame(paintFrame);
-        if (isTouchDevice) {
-          window.setTimeout(() => {
-            if (!hasPaintedFrame) {
-              document.body.classList.remove("has-ambient-video");
-              showStartButton();
-            }
-          }, 1800);
-        }
       })
       .catch(() => {
         document.body.classList.remove("has-ambient-video");
-        if (isTouchDevice) showStartButton();
+        showStartButton();
       });
   };
 
@@ -1500,21 +1508,18 @@ function initAmbientBackgroundVideo() {
       video.pause();
       return;
     }
-    if (!isTouchDevice) activateVideo();
+    activateVideo();
   });
   video.addEventListener("error", () => {
     window.cancelAnimationFrame(frameId);
     document.body.classList.remove("has-ambient-video");
   }, { once: true });
-  if (isTouchDevice) {
-    // Xiaomi and other Android browsers may hand a <video> element to their native player
-    // or block drawing video frames to canvas. Use the same clip as an animated WebP instead.
-    document.body.classList.add("has-ambient-video", "has-animated-background");
-    return;
-  }
   video.addEventListener("canplay", activateVideo, { once: true });
-  document.body.classList.add("has-animated-background");
-  scheduleNonCriticalTask(loadVideoSource, 1500);
+  // The 22 MB desktop clip is decorative. Do not compete with the first page
+  // render; begin it only after a visible, idle page has had time to settle.
+  scheduleNonCriticalTask(() => {
+    if (!document.hidden) loadVideoSource();
+  }, 4000);
 }
 initAmbientBackgroundVideo();
 renderFeaturedResources();

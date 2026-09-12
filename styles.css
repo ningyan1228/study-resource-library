@@ -6425,13 +6425,14 @@ body.theme-light.has-ambient-video .section-open-button {
   z-index: 0;
   pointer-events: none;
   opacity: 0;
-  background: #0d2028 url("assets/bus-girl-background.webp") center center / cover no-repeat;
+  background: #0d2028;
   transition: opacity 420ms ease;
 }
 
 body.has-animated-background .site-animated-background {
   display: block;
   opacity: 1;
+  background-image: url("assets/bus-girl-background-mobile-v2.webp");
 }
 
 body.has-animated-background .site-background-canvas {
@@ -6442,13 +6443,8 @@ body.has-animated-background .app-shell {
   position: relative !important;
   z-index: 1 !important;
 }
-/* Portrait phones use a dedicated 9:16 crop so the character is not lost to horizontal-video cropping. */
-@media (max-width: 767px) and (orientation: portrait) {
-  body.has-animated-background .site-animated-background {
-    background-image: url("assets/bus-girl-background-mobile.webp");
-    background-position: center center;
-    background-size: cover;
-  }
+@media (prefers-reduced-motion: reduce), (prefers-reduced-data: reduce) {
+  .site-animated-background { display: none !important; }
 }
 
 /* 2026-08-09: compact desktop brand lockup. */
