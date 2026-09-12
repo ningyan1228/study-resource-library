@@ -628,3 +628,36 @@ html body:not(.theme-light) .main .hero-art.study-room-teaser::before {
     filter: blur(2px) saturate(.55) contrast(.88) !important;
   }
 }
+
+/* Restore the room card's bottom anchor after the shared comic layer, and let the scene carry the lower half. */
+html body .main .hero-art.study-room-teaser > .study-room-teaser-bottom {
+  position: absolute !important;
+  z-index: 3 !important;
+  left: clamp(22px, 2vw, 31px) !important;
+  right: clamp(22px, 2vw, 31px) !important;
+  bottom: clamp(20px, 1.8vw, 28px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser::before,
+html body.theme-light .main .hero-art.study-room-teaser::before {
+  right: -5% !important;
+  bottom: -8% !important;
+  width: 78% !important;
+  height: 64% !important;
+  opacity: .43 !important;
+  filter: blur(1.5px) saturate(.66) contrast(.90) !important;
+}
+html body:not(.theme-light) .main .hero-art.study-room-teaser::before {
+  right: -5% !important;
+  bottom: -8% !important;
+  width: 78% !important;
+  height: 64% !important;
+  opacity: .28 !important;
+  filter: blur(1.5px) saturate(.46) brightness(.72) !important;
+}
+@media (max-width: 700px), (orientation: portrait) {
+  html body .main .hero-art.study-room-teaser > .study-room-teaser-bottom { left: 18px !important; right: 18px !important; bottom: 18px !important; }
+  html body.theme-light .main .hero-art.study-room-teaser::before,
+  html body:not(.theme-light) .main .hero-art.study-room-teaser::before { width: 110% !important; height: 54% !important; opacity: .30 !important; }
+}
