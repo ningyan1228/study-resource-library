@@ -474,3 +474,68 @@ html body:not(.theme-light) .overview-comic-art { opacity: .19; filter: saturate
 @media (max-width: 680px) {
   .overview-comic-art { right: -4%; width: 58%; height: 86%; opacity: .28; }
 }
+
+/* Shared comic glass: large surfaces receive a restrained scene, controls stay plain. */
+html body.theme-light .main :is(.hero-copy, .hero-live-panel, .hero-art.study-room-teaser, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .featured-item, .quick-panel, .section-block:not(.overview-block), .pan-search-results, .notice, .resource-card) {
+  position: relative !important;
+  isolation: isolate;
+  overflow: hidden;
+}
+html body.theme-light .main :is(.hero-copy, .hero-live-panel, .hero-art.study-room-teaser, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .featured-item, .quick-panel, .section-block:not(.overview-block), .pan-search-results, .notice, .resource-card)::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  right: -6%;
+  bottom: -10%;
+  width: 62%;
+  height: 86%;
+  opacity: .22;
+  background-image: url("assets/catalogue-study-comic-characters-v2.png");
+  background-repeat: no-repeat;
+  background-size: 300% 300%;
+  background-position: 0 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.20) 26%, #000 67%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.20) 26%, #000 67%);
+  filter: saturate(.72) contrast(.98);
+  pointer-events: none;
+}
+html body.theme-light .main :is(.hero-copy, .hero-live-panel, .hero-art.study-room-teaser, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .featured-item, .quick-panel, .section-block:not(.overview-block), .pan-search-results, .notice, .resource-card) > * { position: relative; z-index: 1; }
+html body.theme-light .main .hero-copy::after { background-position: 0 0; opacity: .18; width: 54%; }
+html body.theme-light .main .hero-live-panel::after { background-position: 50% 0; opacity: .16; width: 48%; }
+html body.theme-light .main .hero-art.study-room-teaser::after { background-position: 100% 0; opacity: .18; width: 46%; }
+html body.theme-light .main .countdown-wall::after { background-position: 0 50%; opacity: .16; width: 48%; }
+html body.theme-light .main .daily-learning-sign::after { background-position: 50% 50%; opacity: .18; }
+html body.theme-light .main .drift-bottle-board::after { background-position: 100% 50%; opacity: .17; }
+html body.theme-light .main .featured-panel::after { background-position: 0 100%; opacity: .14; width: 34%; }
+html body.theme-light .main .featured-item:nth-child(4n + 1)::after { background-position: 0 100%; }
+html body.theme-light .main .featured-item:nth-child(4n + 2)::after { background-position: 50% 100%; }
+html body.theme-light .main .featured-item:nth-child(4n + 3)::after { background-position: 100% 100%; }
+html body.theme-light .main .featured-item:nth-child(4n)::after { background-position: 0 0; }
+html body.theme-light .main .quick-panel::after { background-position: 50% 100%; opacity: .13; width: 36%; }
+html body.theme-light .main .section-block:not(.overview-block)::after { background-position: 100% 100%; opacity: .13; width: 36%; }
+html body.theme-light .main .resource-card:nth-child(3n + 1)::after { background-position: 0 50%; }
+html body.theme-light .main .resource-card:nth-child(3n + 2)::after { background-position: 50% 50%; }
+html body.theme-light .main .resource-card:nth-child(3n)::after { background-position: 100% 50%; }
+html body:not(.theme-light) .main :is(.hero-copy, .hero-live-panel, .hero-art.study-room-teaser, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .featured-item, .quick-panel, .section-block:not(.overview-block), .pan-search-results, .notice, .resource-card)::after { opacity: .10; filter: saturate(.55) brightness(.78); }
+@media (max-width: 680px) {
+  html body.theme-light .main :is(.hero-copy, .hero-live-panel, .hero-art.study-room-teaser, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .featured-item, .quick-panel, .section-block:not(.overview-block), .pan-search-results, .notice, .resource-card)::after { width: 72%; height: 78%; opacity: .14; }
+}
+
+/* The overview directory stays on one glass plane: no opaque inner list tiles. */
+html body.theme-light.has-ambient-video .main .overview-block .overview-card .overview-samples,
+html body.theme-light .main .overview-block .overview-card .overview-samples {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-card .overview-samples span,
+html body.theme-light .main .overview-block .overview-card .overview-samples span {
+  background: transparent !important;
+  border-bottom-color: rgba(68,95,108,.18) !important;
+  color: #40586a !important;
+  box-shadow: none !important;
+}
+html body:not(.theme-light) .main .overview-block .overview-card .overview-samples { background: transparent !important; border: 0 !important; box-shadow: none !important; }
