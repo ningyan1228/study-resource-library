@@ -54,7 +54,7 @@
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
-          navigator.serviceWorker.register("/sw.js?v=20260912-blue-lock-repair-v3", { updateViaCache: "none" }).then(function (registration) {
+          navigator.serviceWorker.register("/sw.js?v=20260912-study-room-entry-v2", { updateViaCache: "none" }).then(function (registration) {
             registration.update().then(function () {
               if (registration.waiting) registration.waiting.postMessage("skip-waiting");
             }).catch(function () {});
@@ -62,15 +62,16 @@
         });
       }
     </script>
-    <link rel="preload" href="final-theme.css?v=20260912-original-blue-final-v37" as="style" />
+    <link rel="preload" href="study-room-entry-20260912-v2.css" as="style" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
     <link rel="stylesheet" href="styles.css?v=20260911-legacy-layout" />
     <style id="studyRoomCriticalTheme">
-      /* Critical first-paint fallback: the legacy blue room must never become visible. */
+      /* Critical first-paint fallback: retain the dark-green room until the
+         full entry stylesheet loads. */
       html body.theme-light .main .hero-art.study-room-teaser {
-        background: linear-gradient(90deg, rgba(248, 252, 249, .73), rgba(246, 251, 248, .36)), url("assets/study-room-sunlit-v2.png") center / cover no-repeat !important;
-        border-color: rgba(255, 255, 255, .74) !important;
-        box-shadow: 0 22px 46px rgba(30, 48, 50, .17), inset 0 1px 0 rgba(255, 255, 255, .72) !important;
+        background: linear-gradient(135deg, #102826, #0c423b 58%, #123831) !important;
+        border-color: rgba(222, 239, 229, .19) !important;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .07) !important;
         overflow: hidden !important;
       }
       html body.theme-light .main .hero-art.study-room-teaser::before {
@@ -88,27 +89,27 @@
         -webkit-mask-image: none !important;
         mask-image: none !important;
         filter: none !important;
-        background: linear-gradient(90deg, rgba(248, 252, 249, .73), rgba(246, 251, 248, .36)) !important;
+        background: transparent !important;
       }
       html body.theme-light .main .hero-art.study-room-teaser::after,
       html body.theme-light .main .hero-art.study-room-teaser > .study-room-teaser-classroom { display: none !important; }
 
-      /* First-paint geometry for the rebuilt room: never reveal the legacy blue panel. */
+      /* First-paint geometry for the rebuilt room. */
       html body .main .hero-art.study-room-rebuilt {
         display: grid !important;
         grid-template-columns: minmax(0, 1fr) !important;
         grid-template-rows: auto auto minmax(0, 1fr) auto !important;
         gap: 12px !important;
         box-sizing: border-box !important;
-        height: 465px !important;
-        min-height: 465px !important;
-        max-height: 465px !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        max-height: none !important;
         margin: 0 !important;
         padding: 24px !important;
         overflow: hidden !important;
-        color: #edf7ff !important;
-        background: linear-gradient(135deg, #0a6fae 0%, #177eb6 58%, #298fbd 100%) !important;
-        border-color: #83c8ed !important;
+        color: #edf4ef !important;
+        background: linear-gradient(135deg, #102826, #0c423b 58%, #123831) !important;
+        border-color: rgba(222, 239, 229, .19) !important;
       }
       html body .main .hero-art.study-room-rebuilt::before,
       html body .main .hero-art.study-room-rebuilt::after { display: none !important; content: none !important; }
@@ -117,8 +118,8 @@
       html body .main .study-room-rebuilt :is(.study-room-timer-action,.study-room-utility-action) { background:#123f59 !important; border:1px solid #0c3148 !important; border-radius:18px !important; color:inherit !important; text-decoration:none !important; }
       html body .main .study-room-rebuilt .study-room-teaser-bottom { position:static !important; inset:auto !important; transform:none !important; display:flex !important; align-items:center !important; justify-content:space-between !important; margin:0 !important; padding:0 !important; }
     </style>
-    <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-original-blue-final-v37" onload="window.revealFinalTheme()" />
-    <link rel="stylesheet" href="room-blue-lock-20260912-v1.css" />
+      <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-original-blue-final-v37" />
+      <link rel="stylesheet" href="study-room-entry-20260912-v2.css" onload="window.revealFinalTheme()" />
   </head>
   <body class="theme-light">
     <video id="ambientBackgroundVideo" class="site-background-video" muted loop playsinline webkit-playsinline preload="metadata" aria-hidden="true" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" x-webkit-airplay="deny">

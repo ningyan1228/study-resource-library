@@ -24,10 +24,10 @@ async function freshNavigation(request) {
   if (!type.includes("text/html")) return response;
 
   const source = await response.text();
-  const blueLock = '<link rel="stylesheet" href="/room-blue-lock-20260912-v1.css">';
-  const html = source.includes("room-blue-lock-20260912-v1.css")
+  const entryTheme = '<link rel="stylesheet" href="/study-room-entry-20260912-v2.css">';
+  const html = source.includes("study-room-entry-20260912-v2.css")
     ? source
-    : source.replace("</head>", blueLock + "</head>");
+    : source.replace("</head>", entryTheme + "</head>");
   const headers = new Headers(response.headers);
   headers.delete("content-length");
   headers.set("cache-control", "no-store");
@@ -37,7 +37,7 @@ async function freshNavigation(request) {
 self.addEventListener("fetch", function (event) {
   const url = new URL(event.request.url);
   const isLocalThemeAsset = url.origin === self.location.origin &&
-    (url.pathname.endsWith("/styles.css") || url.pathname.endsWith("/final-theme.css") || url.pathname.endsWith("/room-blue-lock-20260912-v1.css") || url.pathname.endsWith("/app.js"));
+    (url.pathname.endsWith("/styles.css") || url.pathname.endsWith("/final-theme.css") || url.pathname.endsWith("/study-room-entry-20260912-v2.css") || url.pathname.endsWith("/app.js"));
   if (event.request.mode !== "navigate" && !isLocalThemeAsset) return;
   // Never fulfill page/theme requests from an older browser cache.  This is what
   // keeps a newly deployed theme from mixing with a cached legacy stylesheet.
