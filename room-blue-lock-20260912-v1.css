@@ -1,0 +1,160 @@
+/*
+ * The home-page study-room surface is intentionally a blue composition.
+ * This lives at a new URL so an older cached final-theme.css can never turn it
+ * back into the previous dark-green redesign after first paint.
+ */
+html body .main .hero-art.study-room-rebuilt,
+html body.theme-light .main .hero-art.study-room-rebuilt,
+html body.theme-dark .main .hero-art.study-room-rebuilt,
+html body:not(.theme-light) .main .hero-art.study-room-rebuilt {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: auto auto minmax(0, 1fr) auto !important;
+  gap: 12px !important;
+  box-sizing: border-box !important;
+  height: 465px !important;
+  min-height: 465px !important;
+  max-height: 465px !important;
+  margin: 0 !important;
+  padding: 24px !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  color: #edf7ff !important;
+  background: linear-gradient(135deg, #0a6fae 0%, #177eb6 58%, #298fbd 100%) !important;
+  border: 1px solid #83c8ed !important;
+  border-radius: 28px !important;
+  box-shadow: 0 15px 32px rgba(0, 54, 93, .24), inset 0 1px 0 rgba(255, 255, 255, .28) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+html body .main .hero-art.study-room-rebuilt::before,
+html body .main .hero-art.study-room-rebuilt::after {
+  display: none !important;
+  content: none !important;
+}
+
+html body .main .study-room-rebuilt > * {
+  position: relative !important;
+  z-index: 1 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+
+html body .main .study-room-rebuilt .study-room-teaser-head {
+  grid-row: 1 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  margin: 0 !important;
+  padding: 0 0 10px !important;
+  border-bottom: 1px solid rgba(228, 247, 255, .36) !important;
+}
+
+html body .main .study-room-rebuilt .study-room-teaser-head > div:first-child > span {
+  color: rgba(229, 247, 255, .8) !important;
+  font-size: 10px !important;
+  font-weight: 650 !important;
+  letter-spacing: .16em !important;
+}
+
+html body .main .study-room-rebuilt .study-room-teaser-head h2 {
+  margin: 4px 0 0 !important;
+  color: #f2fbff !important;
+  font-size: 32px !important;
+  font-weight: 680 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -.04em !important;
+}
+
+html body .main .study-room-rebuilt .study-room-teaser-lead {
+  grid-row: 2 !important;
+  margin: 0 !important;
+  color: rgba(229, 247, 255, .8) !important;
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+}
+
+html body .main .study-room-rebuilt .study-room-action-grid {
+  grid-row: 3 !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) minmax(240px, .95fr) !important;
+  gap: 12px !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+html body .main .study-room-rebuilt .study-room-side-actions {
+  display: grid !important;
+  grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+html body .main .study-room-rebuilt :is(.study-room-timer-action, .study-room-utility-action) {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  border: 1px solid #0c3148 !important;
+  border-radius: 18px !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  background: #123f59 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+html body .main .study-room-rebuilt .study-room-timer-action {
+  display: grid !important;
+  align-content: center !important;
+  justify-items: start !important;
+  gap: 4px !important;
+  padding: 20px !important;
+}
+
+html body .main .study-room-rebuilt .study-room-side-actions .study-room-utility-action {
+  display: grid !important;
+  grid-template-columns: 38px minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  column-gap: 10px !important;
+  padding: 13px !important;
+}
+
+html body .main .study-room-rebuilt .study-room-teaser-bottom {
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+  grid-row: 4 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  min-height: 22px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+html body .main .study-room-rebuilt :is(.study-room-teaser-head h2, .study-room-timer-action > strong, .study-room-utility-action b) {
+  color: #f2fbff !important;
+}
+
+html body .main .study-room-rebuilt :is(.study-room-teaser-head > div:first-child > span, .study-room-utility-action small, .study-room-teaser-bottom > span, .study-room-timer-action > small) {
+  color: rgba(229, 247, 255, .8) !important;
+}
+
+html body .main .study-room-rebuilt .study-room-timer-action > time { color: #b8edf0 !important; }
+html body .main .study-room-rebuilt .study-room-timer-action > em { color: #f2fbff !important; background: rgba(20, 103, 80, .86) !important; }
+html body .main .study-room-rebuilt .study-room-utility-action > i { color: #d3f8eb !important; background: rgba(22, 127, 113, .32) !important; }
+html body .main .study-room-rebuilt :is(.study-room-utility-action em, .study-room-teaser-bottom > a) { color: #d7f7ff !important; }
+html body .main .study-room-rebuilt :is(.study-room-mini-clock, .study-room-head-meta > b) { color: #eefaff !important; background: rgba(2, 38, 59, .48) !important; border-color: rgba(226, 247, 255, .18) !important; }
+
+@media (max-width: 760px) {
+  html body .main .hero-art.study-room-rebuilt { height: auto !important; min-height: 0 !important; max-height: none !important; padding: 20px !important; }
+  html body .main .study-room-rebuilt .study-room-action-grid { grid-template-columns: 1fr !important; grid-template-rows: 230px auto !important; overflow: visible !important; }
+  html body .main .study-room-rebuilt .study-room-side-actions { grid-template-rows: repeat(2, 86px) !important; overflow: visible !important; }
+  html body .main .study-room-rebuilt .study-room-mini-clock { display: none !important; }
+}
