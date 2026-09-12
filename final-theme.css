@@ -539,3 +539,53 @@ html body.theme-light .main .overview-block .overview-card .overview-samples spa
   box-shadow: none !important;
 }
 html body:not(.theme-light) .main .overview-block .overview-card .overview-samples { background: transparent !important; border: 0 !important; box-shadow: none !important; }
+
+/* Study room: turn the classroom scene into the card's soft atmosphere, not a crowded inline banner. */
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser,
+html body.theme-light .main .hero-art.study-room-teaser {
+  background: linear-gradient(145deg, rgba(241,248,249,.73), rgba(183,204,207,.61)) !important;
+  overflow: hidden !important;
+}
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser::before,
+html body.theme-light .main .hero-art.study-room-teaser::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: 0 !important;
+  inset: -16px !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: transparent !important;
+  background: linear-gradient(90deg, rgba(243,249,250,.66) 0%, rgba(237,246,247,.44) 43%, rgba(223,237,239,.22) 100%), url("assets/study-room-authorized-reference-clean.png") center / cover no-repeat !important;
+  box-shadow: none !important;
+  filter: blur(8px) saturate(.72) contrast(.92) !important;
+  opacity: .63 !important;
+  transform: scale(1.03) !important;
+  pointer-events: none !important;
+}
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser::after,
+html body.theme-light .main .hero-art.study-room-teaser::after { display: none !important; content: none !important; }
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser > .study-room-teaser-classroom,
+html body.theme-light .main .hero-art.study-room-teaser > .study-room-teaser-classroom { display: none !important; }
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser > :not(.study-room-teaser-classroom),
+html body.theme-light .main .hero-art.study-room-teaser > :not(.study-room-teaser-classroom) { position: relative !important; z-index: 2 !important; }
+html body:not(.theme-light) .main .hero-art.study-room-teaser::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  z-index: 0 !important;
+  inset: -16px !important;
+  background: linear-gradient(90deg, rgba(28,29,33,.86), rgba(28,29,33,.60)), url("assets/study-room-authorized-reference-clean.png") center / cover no-repeat !important;
+  filter: blur(8px) saturate(.50) brightness(.64) !important;
+  opacity: .56 !important;
+  transform: scale(1.03) !important;
+  pointer-events: none !important;
+}
+html body:not(.theme-light) .main .hero-art.study-room-teaser::after,
+html body:not(.theme-light) .main .hero-art.study-room-teaser > .study-room-teaser-classroom { display: none !important; }
+@media (max-width: 700px), (orientation: portrait) {
+  html body.theme-light .main .hero-art.study-room-teaser::before { inset: -10px !important; filter: blur(6px) saturate(.72) contrast(.92) !important; }
+}
