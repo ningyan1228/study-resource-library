@@ -19,10 +19,10 @@
     <script>
       document.documentElement.classList.add("visual-loading");
     </script>
-    <link rel="preload" href="final-theme.css?v=20260912-luminous-glass-v22" as="style" />
+    <link rel="preload" href="final-theme.css?v=20260912-study-room-clock-v23" as="style" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
     <link rel="stylesheet" href="styles.css?v=20260911-legacy-layout" />
-    <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-luminous-glass-v22" onload="document.documentElement.classList.remove('visual-loading')" />
+    <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-study-room-clock-v23" onload="document.documentElement.classList.remove('visual-loading')" />
   </head>
   <body class="theme-light">
     <video id="ambientBackgroundVideo" class="site-background-video" muted loop playsinline webkit-playsinline preload="metadata" aria-hidden="true" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" x-webkit-airplay="deny">
@@ -96,7 +96,6 @@
             <section class="hero-live-panel" aria-label="资料库在线状态">
               <div class="hero-live-header">
                 <span class="hero-live-status"><i aria-hidden="true"></i>资料库在线 <b>LIVE</b><span id="siteGlobalOnline" class="site-global-online" aria-live="polite">-- 人在线</span></span>
-                <div class="ios-clock-card" aria-label="北京时间"><span>北京时间</span><time id="siteLiveClock" aria-live="off"></time><div class="ios-clock-face" aria-hidden="true"><i class="ios-clock-hour"></i><i class="ios-clock-minute"></i><b></b></div></div>
               </div>
               <p><span>RESOURCE HUB</span>资源正在持续整理与更新</p>
               <div class="hero-live-services" aria-label="当前可用服务">
@@ -113,6 +112,7 @@
     <span><i>✎</i><b>今日专注席</b><small id="studyRoomTeaserFocus">正在读取在线座位</small></span>
     <span><i>⌁</i><b>同频搭子</b><small>同考类 · 同省份 · 同阶段</small></span>
   </div>
+  <aside class="ios-clock-card study-room-clock-widget" aria-label="北京时间"><span>北京时间</span><time id="siteLiveClock" aria-live="off"></time><div class="ios-clock-face" aria-hidden="true"><i class="ios-clock-hour"></i><i class="ios-clock-minute"></i><b></b></div></aside>
   <div class="study-room-teaser-bottom"><span>匿名入座 · 不收集联系方式</span><a href="study-room.html">进入自习室 <b>→</b></a></div>
   <div class="study-room-teaser-classroom" aria-hidden="true"><span>座位视图</span></div>
 </section>
