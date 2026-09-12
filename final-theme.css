@@ -597,9 +597,9 @@ html body:not(.theme-light) .main .hero-art.study-room-teaser > .study-room-teas
   html body.theme-dark .main .hero-art.study-room-teaser,
   html body:not(.theme-light) .main .hero-art.study-room-teaser {
     box-sizing: border-box !important;
-    height: 570px !important;
-    min-height: 570px !important;
-    max-height: 570px !important;
+    height: 530px !important;
+    min-height: 530px !important;
+    max-height: 530px !important;
     grid-template-rows: auto auto minmax(0, 1fr) auto !important;
   }
   html body.theme-light .main .hero-art.study-room-teaser > .study-room-preview-seats,
@@ -1389,16 +1389,16 @@ html body.theme-light .main .hero-art.study-room-teaser > .study-room-teaser-bot
   html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > .study-room-clock-widget { grid-row: 4 !important; }
 }
 
-/* v31 — final cascade guard: the legacy file has several conflicting room
+/* v32 — final cascade guard: the legacy file has several conflicting room
    revisions, so these rules intentionally live last and share its specificity. */
 @media (min-width: 701px) and (orientation: landscape) {
   html body.theme-light .main .hero-art.study-room-teaser,
   html body.theme-dark .main .hero-art.study-room-teaser,
   html body:not(.theme-light) .main .hero-art.study-room-teaser {
     box-sizing: border-box !important;
-    height: 570px !important;
-    min-height: 570px !important;
-    max-height: 570px !important;
+    height: 530px !important;
+    min-height: 530px !important;
+    max-height: 530px !important;
     grid-template-rows: auto auto minmax(0, 1fr) auto !important;
   }
   html body.theme-light .main .hero-art.study-room-teaser > .study-room-preview-seats,
