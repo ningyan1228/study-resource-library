@@ -590,6 +590,33 @@ html body:not(.theme-light) .main .hero-art.study-room-teaser > .study-room-teas
   html body.theme-light .main .hero-art.study-room-teaser::before { inset: -10px !important; filter: blur(6px) saturate(.72) contrast(.92) !important; }
 }
 
+/* v30 — override the legacy theme selectors themselves: desktop room must end
+   on the same baseline as the main hero, with a deliberately quieter title. */
+@media (min-width: 701px) and (orientation: landscape) {
+  html body.theme-light .main .hero-art.study-room-teaser,
+  html body.theme-dark .main .hero-art.study-room-teaser,
+  html body:not(.theme-light) .main .hero-art.study-room-teaser {
+    box-sizing: border-box !important;
+    height: 570px !important;
+    min-height: 570px !important;
+    max-height: 570px !important;
+    grid-template-rows: auto auto minmax(0, 1fr) auto !important;
+  }
+  html body.theme-light .main .hero-art.study-room-teaser > .study-room-preview-seats,
+  html body.theme-dark .main .hero-art.study-room-teaser > .study-room-preview-seats,
+  html body:not(.theme-light) .main .hero-art.study-room-teaser > .study-room-preview-seats {
+    min-height: 0 !important;
+    height: 100% !important;
+  }
+  html body.theme-light .main .hero-art.study-room-teaser .study-room-teaser-head h2,
+  html body.theme-dark .main .hero-art.study-room-teaser .study-room-teaser-head h2,
+  html body:not(.theme-light) .main .hero-art.study-room-teaser .study-room-teaser-head h2 {
+    font-size: clamp(27px, 1.85vw, 34px) !important;
+    line-height: 1.04 !important;
+    letter-spacing: -.04em !important;
+  }
+}
+
 /* v29 — contained, usable study-room entry in both appearance modes.
    These are real links into the timer, seat desk and anonymous matching controls. */
 html body .main .hero-art.study-room-teaser {
@@ -1360,4 +1387,31 @@ html body.theme-light .main .hero-art.study-room-teaser > .study-room-teaser-bot
   html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(2) { grid-row: 2 !important; }
   html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(3) { grid-row: 3 !important; }
   html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > .study-room-clock-widget { grid-row: 4 !important; }
+}
+
+/* v31 — final cascade guard: the legacy file has several conflicting room
+   revisions, so these rules intentionally live last and share its specificity. */
+@media (min-width: 701px) and (orientation: landscape) {
+  html body.theme-light .main .hero-art.study-room-teaser,
+  html body.theme-dark .main .hero-art.study-room-teaser,
+  html body:not(.theme-light) .main .hero-art.study-room-teaser {
+    box-sizing: border-box !important;
+    height: 570px !important;
+    min-height: 570px !important;
+    max-height: 570px !important;
+    grid-template-rows: auto auto minmax(0, 1fr) auto !important;
+  }
+  html body.theme-light .main .hero-art.study-room-teaser > .study-room-preview-seats,
+  html body.theme-dark .main .hero-art.study-room-teaser > .study-room-preview-seats,
+  html body:not(.theme-light) .main .hero-art.study-room-teaser > .study-room-preview-seats {
+    min-height: 0 !important;
+    height: 100% !important;
+  }
+  html body.theme-light .main .hero-art.study-room-teaser .study-room-teaser-head h2,
+  html body.theme-dark .main .hero-art.study-room-teaser .study-room-teaser-head h2,
+  html body:not(.theme-light) .main .hero-art.study-room-teaser .study-room-teaser-head h2 {
+    font-size: 32px !important;
+    line-height: 1.04 !important;
+    letter-spacing: -.04em !important;
+  }
 }
