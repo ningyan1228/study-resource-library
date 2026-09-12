@@ -662,11 +662,15 @@ function closeSectionModal() {
   document.body.classList.remove("modal-open");
 }
 
-function renderSectionModalItem(item) {
+function renderSectionModalItem(item, index) {
   const className = item.sourceClass ? ` ${item.sourceClass}` : "";
+  const illustration = (index % 9) + 1;
+  const order = String(index + 1).padStart(2, "0");
 
   return `
-    <article class="modal-resource-card">
+    <article class="modal-resource-card catalogue-resource-card catalogue-illustration-${illustration}">
+      <span class="catalogue-resource-index" aria-hidden="true">${order}</span>
+      <span class="catalogue-resource-art" aria-hidden="true"></span>
       <div class="modal-resource-copy">
         <h3>${item.title}</h3>
         <p>${item.description}</p>

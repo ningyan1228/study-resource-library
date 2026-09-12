@@ -282,3 +282,122 @@ html body.theme-light .main .hero-art.study-room-teaser .study-room-teaser-botto
   text-shadow: none !important;
   opacity: 1 !important;
 }
+
+/* Catalogue cards: a quiet illustrated index instead of nine repeated blank panels. */
+.section-modal-grid .catalogue-resource-card {
+  --catalogue-accent: #0a84ff;
+  --catalogue-accent-rgb: 10,132,255;
+  position: relative !important;
+  isolation: isolate;
+  min-height: 212px !important;
+  padding: 22px !important;
+  overflow: hidden !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.96), rgba(244,248,250,.90)) !important;
+  border: 1px solid rgba(48,68,89,.14) !important;
+  box-shadow: 0 12px 25px rgba(34,52,66,.10), inset 0 1px 0 rgba(255,255,255,.82) !important;
+}
+.section-modal-grid .catalogue-resource-card::before {
+  position: absolute !important;
+  inset: 0 auto auto 0 !important;
+  width: 100% !important;
+  height: 4px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background: linear-gradient(90deg, var(--catalogue-accent), rgba(var(--catalogue-accent-rgb),.25)) !important;
+}
+.section-modal-grid .catalogue-resource-card:nth-child(4n + 2) { --catalogue-accent: #34a56f; --catalogue-accent-rgb: 52,165,111; }
+.section-modal-grid .catalogue-resource-card:nth-child(4n + 3) { --catalogue-accent: #d88a21; --catalogue-accent-rgb: 216,138,33; }
+.section-modal-grid .catalogue-resource-card:nth-child(4n) { --catalogue-accent: #8b5cc7; --catalogue-accent-rgb: 139,92,199; }
+.catalogue-resource-index {
+  position: absolute;
+  z-index: 0;
+  top: 11px;
+  right: 16px;
+  color: rgba(var(--catalogue-accent-rgb),.12);
+  font-size: 72px;
+  font-weight: 760;
+  letter-spacing: -.09em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.catalogue-resource-art {
+  position: absolute;
+  z-index: 0;
+  right: 8px;
+  bottom: 38px;
+  width: 138px;
+  height: 94px;
+  opacity: .74;
+  background-image: url("assets/catalogue-study-comic-sprite-v1.png");
+  background-repeat: no-repeat;
+  background-size: 300% 300%;
+  background-position: 0 0;
+  filter: saturate(.88) contrast(.98);
+  pointer-events: none;
+}
+.catalogue-illustration-2 .catalogue-resource-art { background-position: 50% 0; }
+.catalogue-illustration-3 .catalogue-resource-art { background-position: 100% 0; }
+.catalogue-illustration-4 .catalogue-resource-art { background-position: 0 50%; }
+.catalogue-illustration-5 .catalogue-resource-art { background-position: 50% 50%; }
+.catalogue-illustration-6 .catalogue-resource-art { background-position: 100% 50%; }
+.catalogue-illustration-7 .catalogue-resource-art { background-position: 0 100%; }
+.catalogue-illustration-8 .catalogue-resource-art { background-position: 50% 100%; }
+.catalogue-illustration-9 .catalogue-resource-art { background-position: 100% 100%; }
+.section-modal-grid .catalogue-resource-card .modal-resource-copy {
+  position: relative;
+  z-index: 1;
+  max-width: calc(100% - 90px);
+}
+.section-modal-grid .catalogue-resource-card h3 {
+  color: #202a35 !important;
+  font-size: 19px !important;
+  font-weight: 730 !important;
+  letter-spacing: -.02em;
+}
+.section-modal-grid .catalogue-resource-card p {
+  color: #697787 !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+.section-modal-grid .catalogue-resource-card .modal-resource-actions {
+  position: relative;
+  z-index: 2;
+  margin-top: auto !important;
+}
+.section-modal-grid .catalogue-resource-card .tag {
+  min-height: 30px !important;
+  padding: 0 11px !important;
+  border: 1px solid rgba(var(--catalogue-accent-rgb),.28) !important;
+  border-radius: 999px !important;
+  color: color-mix(in srgb, var(--catalogue-accent) 82%, #27384a) !important;
+  background: rgba(var(--catalogue-accent-rgb),.12) !important;
+  box-shadow: none !important;
+}
+.section-modal-grid .catalogue-resource-card .open-link {
+  min-height: 38px !important;
+  padding: 0 13px !important;
+  border: 1px solid rgba(var(--catalogue-accent-rgb),.24) !important;
+  border-radius: 11px !important;
+  color: var(--catalogue-accent) !important;
+  background: rgba(255,255,255,.64) !important;
+  box-shadow: none !important;
+}
+.section-modal-grid .catalogue-resource-card .open-link:hover {
+  color: #fff !important;
+  background: var(--catalogue-accent) !important;
+  box-shadow: 0 7px 15px rgba(var(--catalogue-accent-rgb),.24) !important;
+}
+html body:not(.theme-light) .section-modal-grid .catalogue-resource-card {
+  background: linear-gradient(145deg, rgba(47,49,55,.98), rgba(33,34,39,.98)) !important;
+  border-color: rgba(255,255,255,.13) !important;
+  box-shadow: 0 14px 28px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.05) !important;
+}
+html body:not(.theme-light) .section-modal-grid .catalogue-resource-card h3 { color: #f5f5f7 !important; }
+html body:not(.theme-light) .section-modal-grid .catalogue-resource-card p { color: #b6bdc7 !important; }
+html body:not(.theme-light) .section-modal-grid .catalogue-resource-card .open-link { background: rgba(255,255,255,.07) !important; }
+html body:not(.theme-light) .catalogue-resource-art { opacity: .58; filter: saturate(.78) brightness(.92); }
+@media (max-width: 680px) {
+  .section-modal-grid .catalogue-resource-card { min-height: 196px !important; padding: 18px !important; }
+  .catalogue-resource-art { right: 2px; bottom: 42px; width: 120px; height: 82px; opacity: .56; }
+  .catalogue-resource-index { font-size: 62px; }
+}
