@@ -52,7 +52,7 @@
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
-          navigator.serviceWorker.register("/sw.js?v=20260912-layout-v5", { updateViaCache: "none" }).then(function (registration) {
+          navigator.serviceWorker.register("/sw.js?v=20260912-layout-v6", { updateViaCache: "none" }).then(function (registration) {
             registration.update().then(function () {
               if (registration.waiting) registration.waiting.postMessage("skip-waiting");
             }).catch(function () {});
@@ -60,7 +60,7 @@
         });
       }
     </script>
-    <link rel="preload" href="study-room-entry-20260912-v2.css?v=20260912-v5" as="style" />
+    <link rel="preload" href="study-room-entry-20260912-v2.css?v=20260912-v6" as="style" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" /></noscript>
     <link rel="stylesheet" href="styles.css?v=20260911-legacy-layout" />
@@ -118,7 +118,93 @@
       html body .main .study-room-rebuilt .study-room-teaser-bottom { position:static !important; inset:auto !important; transform:none !important; display:flex !important; align-items:center !important; justify-content:space-between !important; margin:0 !important; padding:0 !important; }
     </style>
       <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-original-blue-final-v37" />
-      <link rel="stylesheet" href="study-room-entry-20260912-v2.css?v=20260912-v5" onload="window.revealFinalTheme()" />
+      <link rel="stylesheet" href="study-room-entry-20260912-v2.css?v=20260912-v6" onload="window.revealFinalTheme()" />
+      <style id="studyRoomStableLayout">
+        /* Final homepage layer: legacy room themes contained several absolute
+           anchors.  Keep every visible part in normal flex flow instead. */
+        html body .main .hero-art.study-room-rebuilt {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 0 !important;
+          box-sizing: border-box !important;
+          min-height: 0 !important;
+          aspect-ratio: auto !important;
+          line-height: normal !important;
+        }
+        html body .main .hero-art.study-room-rebuilt > .study-room-teaser-head {
+          position: static !important;
+          inset: auto !important;
+          display: flex !important;
+          flex: 0 0 auto !important;
+          min-height: 72px !important;
+          box-sizing: border-box !important;
+          align-items: flex-start !important;
+          justify-content: space-between !important;
+          gap: 12px !important;
+          margin: 0 !important;
+          padding: 0 0 10px !important;
+        }
+        html body .main .study-room-rebuilt .study-room-teaser-head > div:first-child,
+        html body .main .study-room-rebuilt .study-room-teaser-head h2,
+        html body .main .study-room-rebuilt .study-room-head-meta,
+        html body .main .study-room-rebuilt .study-room-mini-clock {
+          position: static !important;
+          inset: auto !important;
+          transform: none !important;
+        }
+        html body .main .study-room-rebuilt .study-room-teaser-head > div:first-child {
+          display: block !important;
+          min-width: 0 !important;
+        }
+        html body .main .study-room-rebuilt .study-room-teaser-head h2 {
+          display: block !important;
+          margin: 4px 0 0 !important;
+          white-space: nowrap !important;
+        }
+        html body .main .study-room-rebuilt .study-room-head-meta {
+          display: flex !important;
+          flex: 0 0 auto !important;
+          min-width: 0 !important;
+          height: 44px !important;
+          align-items: center !important;
+        }
+        html body .main .study-room-rebuilt .study-room-teaser-lead {
+          position: static !important;
+          inset: auto !important;
+          display: block !important;
+          flex: 0 0 auto !important;
+          margin: 10px 0 14px !important;
+          line-height: 1.4 !important;
+          transform: none !important;
+        }
+        html body .main .study-room-rebuilt .study-room-action-grid {
+          position: static !important;
+          inset: auto !important;
+          flex: 1 1 auto !important;
+          align-self: stretch !important;
+          height: auto !important;
+          max-height: none !important;
+          min-height: 0 !important;
+          margin: 0 !important;
+          transform: none !important;
+        }
+        html body .main .study-room-rebuilt .study-room-side-actions,
+        html body .main .study-room-rebuilt :is(.study-room-timer-action, .study-room-utility-action) {
+          min-height: 0 !important;
+        }
+        html body .main .hero-art.study-room-rebuilt > .study-room-teaser-bottom {
+          position: static !important;
+          inset: auto !important;
+          display: flex !important;
+          flex: 0 0 auto !important;
+          min-height: 40px !important;
+          box-sizing: border-box !important;
+          align-self: stretch !important;
+          margin: 10px 0 0 !important;
+          padding: 0 !important;
+          transform: none !important;
+        }
+      </style>
   </head>
   <body class="theme-light">
     <video id="ambientBackgroundVideo" class="site-background-video" muted loop playsinline webkit-playsinline preload="metadata" aria-hidden="true" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" x-webkit-airplay="deny">
