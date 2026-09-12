@@ -661,3 +661,41 @@ html body:not(.theme-light) .main .hero-art.study-room-teaser::before {
   html body.theme-light .main .hero-art.study-room-teaser::before,
   html body:not(.theme-light) .main .hero-art.study-room-teaser::before { width: 110% !important; height: 54% !important; opacity: .30 !important; }
 }
+
+/* Study room rhythm: content is deliberately separated from its bottom action. */
+html body .main .hero-art.study-room-teaser {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: auto auto auto minmax(72px, 1fr) auto !important;
+  align-content: stretch !important;
+  row-gap: 17px !important;
+}
+html body .main .hero-art.study-room-teaser > .study-room-teaser-head {
+  grid-row: 1 !important;
+  padding-bottom: 17px !important;
+}
+html body .main .hero-art.study-room-teaser > .study-room-teaser-lead {
+  grid-row: 2 !important;
+  margin: 0 !important;
+  line-height: 1.65 !important;
+}
+html body .main .hero-art.study-room-teaser > .study-room-preview-seats {
+  grid-row: 3 !important;
+  gap: 12px !important;
+}
+html body .main .hero-art.study-room-teaser .study-room-preview-seats > span {
+  min-height: 68px !important;
+  padding: 12px !important;
+}
+html body .main .hero-art.study-room-teaser > .study-room-teaser-bottom {
+  position: static !important;
+  grid-row: 5 !important;
+  align-self: end !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+@media (max-width: 700px), (orientation: portrait) {
+  html body .main .hero-art.study-room-teaser { grid-template-rows: auto auto auto minmax(38px, 1fr) auto !important; row-gap: 14px !important; }
+  html body .main .hero-art.study-room-teaser > .study-room-preview-seats { gap: 9px !important; }
+  html body .main .hero-art.study-room-teaser .study-room-preview-seats > span { min-height: 0 !important; padding: 10px !important; }
+}
