@@ -105,6 +105,9 @@ html body .main .study-room-rebuilt .study-room-action-grid {
   display: grid !important;
   grid-template-columns: minmax(0, 1.05fr) minmax(220px, .95fr) !important;
   gap: 12px !important;
+  align-self: start !important;
+  height: min(100%, 310px) !important;
+  max-height: 310px !important;
   min-height: 0 !important;
   overflow: hidden !important;
 }
@@ -113,12 +116,14 @@ html body .main .study-room-rebuilt .study-room-side-actions {
   display: grid !important;
   grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
   gap: 12px !important;
+  height: 100% !important;
   min-height: 0 !important;
   overflow: hidden !important;
 }
 
 html body .main .study-room-rebuilt :is(.study-room-timer-action, .study-room-utility-action) {
   min-width: 0 !important;
+  height: 100% !important;
   min-height: 0 !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
@@ -243,7 +248,7 @@ html body .main .study-room-rebuilt .study-room-teaser-bottom > a {
 @media (max-width: 760px), (orientation: portrait) {
   html body .main .hero-visual:has(.study-room-rebuilt) { grid-template-rows: auto auto !important; }
   html body .main .hero-art.study-room-rebuilt { height: auto !important; min-height: 0 !important; max-height: none !important; padding: 20px !important; }
-  html body .main .study-room-rebuilt .study-room-action-grid { grid-template-columns: 1fr !important; grid-template-rows: 220px auto !important; overflow: visible !important; }
+  html body .main .study-room-rebuilt .study-room-action-grid { align-self: stretch !important; height: auto !important; max-height: none !important; grid-template-columns: 1fr !important; grid-template-rows: 220px auto !important; overflow: visible !important; }
   html body .main .study-room-rebuilt .study-room-side-actions { grid-template-rows: repeat(2, 82px) !important; overflow: visible !important; }
   html body .main .study-room-rebuilt .study-room-mini-clock { display: none !important; }
 }
