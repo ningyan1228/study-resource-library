@@ -17,12 +17,11 @@ html body:not(.theme-light) .main .hero-art.study-room-rebuilt {
   gap: clamp(10px, .9vw, 14px) !important;
   box-sizing: border-box !important;
   width: 100% !important;
-  /* The visual column is one grid cell of the hero.  Leaving a small, responsive
-     bottom allowance prevents this card from enlarging that cell and covering
-     the companion cards in the next row. */
-  height: calc(100% - clamp(28px, 2.5vw, 46px)) !important;
+  /* The card fills its assigned grid track.  It must never create a taller
+     track than the left-hand hero column. */
+  height: auto !important;
   min-height: 0 !important;
-  max-height: calc(100% - clamp(28px, 2.5vw, 46px)) !important;
+  max-height: 100% !important;
   margin: 0 !important;
   padding: clamp(18px, 1.55vw, 26px) !important;
   overflow: hidden !important;
@@ -243,6 +242,64 @@ html body .main .study-room-rebuilt .study-room-teaser-bottom > a {
   border-radius: 10px !important;
   color: #e9f7ef !important;
   background: #0d6a57 !important;
+}
+
+/* Desktop: the two sides of the hero are one fixed-height row.  The study-room
+   card is stretched into the lower visual track and its action area yields
+   space before the card can extend into the companion-card row below. */
+@media (min-width: 901px) and (orientation: landscape) {
+  html body .main .hero {
+    grid-template-rows: minmax(0, 1fr) !important;
+    align-items: stretch !important;
+  }
+
+  html body .main .hero-copy,
+  html body .main .hero-visual:has(.study-room-rebuilt) {
+    align-self: stretch !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+  }
+
+  html body .main .hero-visual:has(.study-room-rebuilt) {
+    grid-template-rows: minmax(0, .39fr) minmax(0, .61fr) !important;
+    overflow: hidden !important;
+  }
+
+  html body .main .hero-visual:has(.study-room-rebuilt) > :is(.hero-live-panel, .hero-art.study-room-rebuilt) {
+    align-self: stretch !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+  }
+
+  html body .main .hero-art.study-room-rebuilt {
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  html body .main .study-room-rebuilt .study-room-teaser-head,
+  html body .main .study-room-rebuilt .study-room-teaser-lead,
+  html body .main .study-room-rebuilt .study-room-teaser-bottom {
+    flex: 0 0 auto !important;
+  }
+
+  html body .main .study-room-rebuilt .study-room-action-grid {
+    grid-row: auto !important;
+    flex: 0 1 290px !important;
+    align-self: stretch !important;
+    height: 290px !important;
+    max-height: 290px !important;
+    min-height: 0 !important;
+    margin-top: 12px !important;
+  }
+
+  html body .main .study-room-rebuilt .study-room-teaser-bottom {
+    grid-row: auto !important;
+    margin-top: auto !important;
+    padding-top: 10px !important;
+  }
 }
 
 @media (max-width: 760px), (orientation: portrait) {
