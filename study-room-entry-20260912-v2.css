@@ -17,9 +17,12 @@ html body:not(.theme-light) .main .hero-art.study-room-rebuilt {
   gap: clamp(10px, .9vw, 14px) !important;
   box-sizing: border-box !important;
   width: 100% !important;
-  height: 100% !important;
+  /* The visual column is one grid cell of the hero.  Leaving a small, responsive
+     bottom allowance prevents this card from enlarging that cell and covering
+     the companion cards in the next row. */
+  height: calc(100% - clamp(28px, 2.5vw, 46px)) !important;
   min-height: 0 !important;
-  max-height: none !important;
+  max-height: calc(100% - clamp(28px, 2.5vw, 46px)) !important;
   margin: 0 !important;
   padding: clamp(18px, 1.55vw, 26px) !important;
   overflow: hidden !important;
