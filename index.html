@@ -43,6 +43,13 @@
         };
       })();
     </script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/sw.js?v=20260912-navigation-fresh-v1", { updateViaCache: "none" }).catch(function () {});
+        });
+      }
+    </script>
     <link rel="preload" href="final-theme.css?v=20260912-critical-room-fallback-v28" as="style" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
     <link rel="stylesheet" href="styles.css?v=20260911-legacy-layout" />
