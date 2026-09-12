@@ -403,3 +403,36 @@ html body:not(.theme-light) .catalogue-resource-art { opacity: .48; filter: satu
   .catalogue-resource-art { width: 76%; height: 100%; opacity: .52; }
   .catalogue-resource-index { font-size: 62px; }
 }
+
+/* Overview: a clearer, more transparent single glass surface. */
+html body.theme-light.has-ambient-video .main .overview-block,
+html body.theme-light .main .overview-block {
+  background: rgba(202, 220, 224, .43) !important;
+  border-color: rgba(255,255,255,.68) !important;
+  box-shadow: 0 18px 42px rgba(20,39,48,.16), inset 0 1px 0 rgba(255,255,255,.72) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(122%) !important;
+  backdrop-filter: blur(24px) saturate(122%) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-header,
+html body.theme-light .main .overview-block .overview-header { background: transparent !important; }
+html body.theme-light.has-ambient-video .main .overview-block .overview-card,
+html body.theme-light .main .overview-block .overview-card {
+  background: rgba(248, 252, 253, .52) !important;
+  border-color: rgba(255,255,255,.67) !important;
+  box-shadow: 0 10px 24px rgba(27,51,61,.10), inset 0 1px 0 rgba(255,255,255,.70) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(116%) !important;
+  backdrop-filter: blur(18px) saturate(116%) !important;
+}
+html body.theme-light .main .overview-block .overview-samples {
+  background: rgba(235, 247, 249, .35) !important;
+  border-color: rgba(85,110,121,.10) !important;
+}
+html body.theme-light .main .overview-block .overview-samples span {
+  border-bottom-color: rgba(85,110,121,.12) !important;
+}
+html body:not(.theme-light) .main .overview-block {
+  background: rgba(28,29,34,.70) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(106%) !important;
+  backdrop-filter: blur(24px) saturate(106%) !important;
+}
+html body:not(.theme-light) .main .overview-block .overview-card { background: rgba(42,43,48,.70) !important; }
