@@ -1527,3 +1527,21 @@ html body .main .study-room-rebuilt .study-room-utility-action em,
 html body .main .study-room-rebuilt .study-room-teaser-bottom > a { color:#d7f7ff !important; }
 html body .main .study-room-rebuilt .study-room-mini-clock,
 html body .main .study-room-rebuilt .study-room-head-meta > b { color:#eefaff !important; background:rgba(2,38,59,.48) !important; border-color:rgba(226,247,255,.18) !important; }
+
+/* v37 — the chosen original blue page; identical before and after full CSS load. */
+html body .main .hero-art.study-room-rebuilt,
+html body.theme-light .main .hero-art.study-room-rebuilt,
+html body.theme-dark .main .hero-art.study-room-rebuilt,
+html body:not(.theme-light) .main .hero-art.study-room-rebuilt {
+  color: #edf7ff !important;
+  background: linear-gradient(135deg, #0a6fae 0%, #177eb6 58%, #298fbd 100%) !important;
+  border-color: #83c8ed !important;
+  box-shadow: 0 15px 32px rgba(0,54,93,.24), inset 0 1px 0 rgba(255,255,255,.28) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+html body .main .study-room-rebuilt .study-room-teaser-head { border-bottom-color: rgba(228,247,255,.36) !important; }
+html body .main .study-room-rebuilt :is(.study-room-timer-action, .study-room-utility-action) { background:#123f59 !important; border-color:#0c3148 !important; box-shadow:inset 0 1px 0 rgba(255,255,255,.05) !important; -webkit-backdrop-filter:none !important; backdrop-filter:none !important; }
+html body .main .study-room-rebuilt :is(.study-room-teaser-head h2, .study-room-timer-action > strong, .study-room-utility-action b) { color:#f2fbff !important; }
+html body .main .study-room-rebuilt :is(.study-room-teaser-head > div:first-child > span, .study-room-teaser-lead, .study-room-utility-action small, .study-room-teaser-bottom > span, .study-room-timer-action > small) { color:rgba(229,247,255,.80) !important; }
+html body .main .study-room-rebuilt .study-room-timer-action > time { color:#b8edf0 !important; }
