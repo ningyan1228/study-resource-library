@@ -61,6 +61,10 @@ html body .main .study-room-rebuilt .study-room-teaser-head {
   border-bottom: 1px solid rgba(224, 240, 232, .16) !important;
 }
 
+html body .main .study-room-rebuilt .study-room-teaser-head > div:first-child {
+  min-width: 0 !important;
+}
+
 html body .main .study-room-rebuilt .study-room-teaser-head > div:first-child > span,
 html body .main .study-room-rebuilt .room-action-kicker {
   color: #87cbb2 !important;
@@ -76,6 +80,9 @@ html body .main .study-room-rebuilt .study-room-teaser-head h2 {
   font-weight: 680 !important;
   line-height: 1.05 !important;
   letter-spacing: -.04em !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
 }
 
 html body .main .study-room-rebuilt .study-room-head-meta {
@@ -247,7 +254,7 @@ html body .main .study-room-rebuilt .study-room-teaser-bottom > a {
 /* Desktop: the two sides of the hero are one fixed-height row.  The study-room
    card is stretched into the lower visual track and its action area yields
    space before the card can extend into the companion-card row below. */
-@media (min-width: 901px) and (orientation: landscape) {
+@media (min-width: 701px) and (orientation: landscape) {
   html body .main .hero {
     grid-template-rows: minmax(0, 1fr) !important;
     align-items: stretch !important;

@@ -52,7 +52,7 @@
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
-          navigator.serviceWorker.register("/sw.js?v=20260912-layout-v4", { updateViaCache: "none" }).then(function (registration) {
+          navigator.serviceWorker.register("/sw.js?v=20260912-layout-v5", { updateViaCache: "none" }).then(function (registration) {
             registration.update().then(function () {
               if (registration.waiting) registration.waiting.postMessage("skip-waiting");
             }).catch(function () {});
@@ -60,7 +60,7 @@
         });
       }
     </script>
-    <link rel="preload" href="study-room-entry-20260912-v2.css?v=20260912-v4" as="style" />
+    <link rel="preload" href="study-room-entry-20260912-v2.css?v=20260912-v5" as="style" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" /></noscript>
     <link rel="stylesheet" href="styles.css?v=20260911-legacy-layout" />
@@ -118,7 +118,7 @@
       html body .main .study-room-rebuilt .study-room-teaser-bottom { position:static !important; inset:auto !important; transform:none !important; display:flex !important; align-items:center !important; justify-content:space-between !important; margin:0 !important; padding:0 !important; }
     </style>
       <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-original-blue-final-v37" />
-      <link rel="stylesheet" href="study-room-entry-20260912-v2.css?v=20260912-v4" onload="window.revealFinalTheme()" />
+      <link rel="stylesheet" href="study-room-entry-20260912-v2.css?v=20260912-v5" onload="window.revealFinalTheme()" />
   </head>
   <body class="theme-light">
     <video id="ambientBackgroundVideo" class="site-background-video" muted loop playsinline webkit-playsinline preload="metadata" aria-hidden="true" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" x-webkit-airplay="deny">
