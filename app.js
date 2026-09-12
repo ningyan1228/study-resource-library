@@ -1528,7 +1528,7 @@ scheduleNonCriticalTask(loadLinkHealth, 350);
 scheduleNonCriticalTask(loadServerPanLinks, 550);
 // 2026-08-13: live hero clock.
 (() => {
-  const clocks = [...document.querySelectorAll("#siteLiveClock, #macTitleClock")];
+  const clocks = [...document.querySelectorAll("#siteLiveClock, #studyRoomLiveClock, #macTitleClock")];
   if (!clocks.length) return;
   const formatter = new Intl.DateTimeFormat("zh-CN", {
     hour: "2-digit",

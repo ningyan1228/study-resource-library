@@ -1415,3 +1415,90 @@ html body.theme-light .main .hero-art.study-room-teaser > .study-room-teaser-bot
     letter-spacing: -.04em !important;
   }
 }
+
+/* v33 — rebuilt study-room surface.  A contained layout replaces every former
+   teaser/card variation; all three actions lead to the working room controls. */
+html body .main .hero-art.study-room-rebuilt,
+html body.theme-light .main .hero-art.study-room-rebuilt,
+html body.theme-dark .main .hero-art.study-room-rebuilt,
+html body:not(.theme-light) .main .hero-art.study-room-rebuilt {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: auto auto minmax(0, 1fr) auto !important;
+  gap: 12px !important;
+  box-sizing: border-box !important;
+  height: 500px !important;
+  min-height: 500px !important;
+  max-height: 500px !important;
+  margin: 0 !important;
+  padding: 24px !important;
+  overflow: hidden !important;
+  color: #edf4ef !important;
+  background: linear-gradient(135deg, rgba(15,29,29,.96), rgba(14,49,43,.92)) !important;
+  border: 1px solid rgba(222,239,229,.18) !important;
+  border-radius: 28px !important;
+  box-shadow: 0 16px 36px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.07) !important;
+  isolation: isolate !important;
+}
+html body .main .hero-art.study-room-rebuilt::before,
+html body .main .hero-art.study-room-rebuilt::after { display: none !important; content: none !important; }
+html body .main .study-room-rebuilt > * { position: relative !important; z-index: 1 !important; min-width: 0 !important; }
+html body .main .study-room-rebuilt .study-room-teaser-head {
+  grid-row: 1 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  margin: 0 !important;
+  padding: 0 0 10px !important;
+  border-bottom: 1px solid rgba(224,240,232,.16) !important;
+}
+html body .main .study-room-rebuilt .study-room-teaser-head > div:first-child > span { color: #aabcb3 !important; font-size: 10px !important; font-weight: 650 !important; letter-spacing: .16em !important; }
+html body .main .study-room-rebuilt .study-room-teaser-head h2 { margin: 4px 0 0 !important; color: #f3f8f4 !important; font-size: 32px !important; font-weight: 680 !important; line-height: 1.05 !important; letter-spacing: -.04em !important; }
+html body .main .study-room-rebuilt .study-room-head-meta { display: flex !important; align-items: center !important; gap: 10px !important; }
+html body .main .study-room-rebuilt .study-room-head-meta > b { display: inline-flex !important; align-items: center !important; gap: 6px !important; margin: 0 !important; padding: 8px 10px !important; border: 1px solid rgba(226,244,235,.14) !important; border-radius: 999px !important; color: #d8e5de !important; background: rgba(5,19,18,.45) !important; font-size: 12px !important; font-weight: 550 !important; white-space: nowrap !important; }
+html body .main .study-room-rebuilt .study-room-head-meta > b i { width: 8px !important; height: 8px !important; margin: 0 !important; border-radius: 50% !important; background: #32d583 !important; box-shadow: 0 0 9px rgba(50,213,131,.52) !important; }
+html body .main .study-room-rebuilt .study-room-head-meta > b strong { color: #f4faf6 !important; font-size: inherit !important; }
+html body .main .study-room-rebuilt .study-room-mini-clock { display: inline-flex !important; align-items: center !important; gap: 7px !important; padding: 5px 7px 5px 10px !important; border: 1px solid rgba(226,244,235,.14) !important; border-radius: 999px !important; background: rgba(5,19,18,.36) !important; }
+html body .main .study-room-rebuilt .study-room-mini-clock time { color: #dce9e2 !important; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important; font-size: 13px !important; font-variant-numeric: tabular-nums !important; }
+html body .main .study-room-rebuilt .ios-clock-face { position: relative !important; display: block !important; width: 28px !important; height: 28px !important; border: 1px solid rgba(231,245,237,.58) !important; border-radius: 50% !important; background: radial-gradient(circle, #173a35 0 63%, transparent 64%), repeating-conic-gradient(from 0deg, rgba(231,245,237,.85) 0deg 1deg, transparent 1deg 30deg) !important; box-shadow: none !important; overflow: hidden !important; }
+html body .main .study-room-rebuilt .ios-clock-face::before,
+html body .main .study-room-rebuilt .ios-clock-face::after { display: none !important; }
+html body .main .study-room-rebuilt .ios-clock-face i { position: absolute !important; left: calc(50% - 1px) !important; bottom: 50% !important; display: block !important; margin: 0 !important; border: 0 !important; border-radius: 999px !important; transform-origin: 50% 100% !important; }
+html body .main .study-room-rebuilt .ios-clock-hour { width: 2px !important; height: 8px !important; background: #f0f6f2 !important; }
+html body .main .study-room-rebuilt .ios-clock-minute { width: 2px !important; height: 11px !important; background: #61d4ad !important; }
+html body .main .study-room-rebuilt .ios-clock-face b { position: absolute !important; left: 50% !important; top: 50% !important; width: 4px !important; height: 4px !important; transform: translate(-50%,-50%) !important; border-radius: 50% !important; background: #61d4ad !important; }
+html body .main .study-room-rebuilt .study-room-teaser-lead { grid-row: 2 !important; margin: 0 !important; color: #c3d2ca !important; font-size: 15px !important; line-height: 1.4 !important; }
+html body .main .study-room-rebuilt .study-room-action-grid { grid-row: 3 !important; display: grid !important; grid-template-columns: minmax(0, 1.05fr) minmax(240px, .95fr) !important; gap: 12px !important; min-height: 0 !important; overflow: hidden !important; }
+html body .main .study-room-rebuilt :is(.study-room-timer-action, .study-room-utility-action) { min-width: 0 !important; border: 1px solid rgba(230,245,236,.13) !important; border-radius: 18px !important; color: inherit !important; text-decoration: none !important; background: rgba(6,23,21,.55) !important; box-shadow: inset 0 1px 0 rgba(255,255,255,.055) !important; transition: transform 160ms ease, background 160ms ease !important; }
+html body .main .study-room-rebuilt :is(.study-room-timer-action, .study-room-utility-action):hover { transform: translateY(-2px) !important; background: rgba(17,59,50,.72) !important; }
+html body .main .study-room-rebuilt .study-room-timer-action { display: grid !important; align-content: center !important; justify-items: start !important; gap: 4px !important; padding: 20px !important; }
+html body .main .study-room-rebuilt .study-room-timer-action .room-action-kicker { color: #87cbb2 !important; font-size: 10px !important; font-weight: 700 !important; letter-spacing: .14em !important; }
+html body .main .study-room-rebuilt .study-room-timer-action > strong { color: #f4f8f5 !important; font-size: 20px !important; }
+html body .main .study-room-rebuilt .study-room-timer-action > time { color: #e9f7ef !important; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important; font-size: clamp(36px, 3.1vw, 48px) !important; font-weight: 700 !important; letter-spacing: -.08em !important; line-height: 1 !important; font-variant-numeric: tabular-nums !important; }
+html body .main .study-room-rebuilt .study-room-timer-action > small { color: #abc0b5 !important; font-size: 12px !important; line-height: 1.4 !important; }
+html body .main .study-room-rebuilt .study-room-timer-action > em { display: inline-flex !important; align-items: center !important; gap: 8px !important; margin-top: 8px !important; padding: 8px 12px !important; border-radius: 10px !important; color: #0c2a24 !important; background: #cde7da !important; font-size: 13px !important; font-style: normal !important; font-weight: 750 !important; }
+html body .main .study-room-rebuilt .study-room-side-actions { display: grid !important; grid-template-rows: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; min-height: 0 !important; }
+html body .main .study-room-rebuilt .study-room-utility-action { display: grid !important; grid-template-columns: 38px minmax(0,1fr) auto !important; align-items: center !important; column-gap: 10px !important; padding: 13px !important; }
+html body .main .study-room-rebuilt .study-room-utility-action > i { display: grid !important; place-items: center !important; width: 38px !important; height: 38px !important; border-radius: 50% !important; color: #bdebd7 !important; background: rgba(43,132,103,.22) !important; font-size: 18px !important; font-style: normal !important; }
+html body .main .study-room-rebuilt .study-room-utility-action span { display: grid !important; gap: 3px !important; min-width: 0 !important; }
+html body .main .study-room-rebuilt .study-room-utility-action b { color: #f0f7f2 !important; font-size: 15px !important; }
+html body .main .study-room-rebuilt .study-room-utility-action small { overflow: hidden !important; color: #adc1b7 !important; font-size: 11px !important; line-height: 1.25 !important; text-overflow: ellipsis !important; white-space: nowrap !important; }
+html body .main .study-room-rebuilt .study-room-utility-action em { color: #87d6b7 !important; font-size: 11px !important; font-style: normal !important; white-space: nowrap !important; }
+html body .main .study-room-rebuilt .study-room-teaser-bottom { grid-row: 4 !important; display: flex !important; align-items: center !important; justify-content: space-between !important; min-height: 22px !important; margin: 0 !important; padding: 0 !important; }
+html body .main .study-room-rebuilt .study-room-teaser-bottom > span { color: #9bb1a6 !important; font-size: 11px !important; }
+html body .main .study-room-rebuilt .study-room-teaser-bottom > a { display: inline-flex !important; align-items: center !important; gap: 7px !important; color: #bce9d5 !important; font-size: 12px !important; font-weight: 650 !important; text-decoration: none !important; }
+html body.theme-light .main .hero-art.study-room-rebuilt { color: #193d38 !important; background: linear-gradient(135deg, rgba(244,250,247,.94), rgba(207,229,220,.88)) !important; border-color: rgba(255,255,255,.78) !important; box-shadow: 0 16px 34px rgba(29,59,50,.13), inset 0 1px 0 rgba(255,255,255,.8) !important; }
+html body.theme-light .main .study-room-rebuilt .study-room-teaser-head { border-bottom-color: rgba(30,69,60,.15) !important; }
+html body.theme-light .main .study-room-rebuilt :is(.study-room-teaser-head h2, .study-room-timer-action > strong, .study-room-utility-action b) { color:#173d37 !important; }
+html body.theme-light .main .study-room-rebuilt :is(.study-room-teaser-head > div:first-child > span, .study-room-teaser-lead, .study-room-utility-action small, .study-room-teaser-bottom > span) { color:#627c72 !important; }
+html body.theme-light .main .study-room-rebuilt :is(.study-room-timer-action, .study-room-utility-action) { border-color:rgba(255,255,255,.74) !important; background:rgba(255,255,255,.64) !important; box-shadow:inset 0 1px 0 rgba(255,255,255,.86),0 8px 18px rgba(42,78,65,.08) !important; }
+html body.theme-light .main .study-room-rebuilt .study-room-timer-action > time { color:#24564d !important; }
+html body.theme-light .main .study-room-rebuilt .study-room-timer-action > small { color:#6d847b !important; }
+html body.theme-light .main .study-room-rebuilt .study-room-mini-clock { background:rgba(255,255,255,.5) !important; border-color:rgba(48,90,78,.14) !important; }
+@media (max-width: 700px), (orientation: portrait) {
+  html body .main .hero-art.study-room-rebuilt { height:auto !important; min-height:0 !important; max-height:none !important; padding:20px !important; }
+  html body .main .study-room-rebuilt .study-room-action-grid { grid-template-columns:1fr !important; grid-template-rows:230px auto !important; }
+  html body .main .study-room-rebuilt .study-room-side-actions { grid-template-rows:repeat(2,86px) !important; }
+  html body .main .study-room-rebuilt .study-room-mini-clock { display:none !important; }
+}
