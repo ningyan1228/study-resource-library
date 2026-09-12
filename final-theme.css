@@ -834,3 +834,43 @@ html body.theme-light .main .hero-art.study-room-teaser {
   -webkit-backdrop-filter: blur(30px) saturate(122%) !important;
   backdrop-filter: blur(30px) saturate(122%) !important;
 }
+
+/* Luminous macOS directory material: raise lightness without returning to an opaque white card. */
+html body.theme-light.has-ambient-video .main .overview-block,
+html body.theme-light .main .overview-block {
+  background: linear-gradient(145deg, rgba(247, 250, 250, .46) 0%, rgba(220, 235, 236, .35) 54%, rgba(188, 211, 214, .27) 100%) !important;
+  border-color: rgba(255, 255, 255, .70) !important;
+  box-shadow: 0 20px 44px rgba(19, 35, 40, .12), inset 0 1px 0 rgba(255, 255, 255, .67) !important;
+  -webkit-backdrop-filter: blur(34px) saturate(122%) brightness(1.08) !important;
+  backdrop-filter: blur(34px) saturate(122%) brightness(1.08) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-card,
+html body.theme-light .main .overview-block .overview-card {
+  background: linear-gradient(145deg, rgba(251, 253, 253, .49) 0%, rgba(224, 237, 238, .36) 62%, rgba(202, 222, 224, .29) 100%) !important;
+  border-color: rgba(255, 255, 255, .70) !important;
+  box-shadow: 0 12px 25px rgba(20, 36, 41, .10), inset 0 1px 0 rgba(255, 255, 255, .66) !important;
+  -webkit-backdrop-filter: blur(27px) saturate(119%) brightness(1.06) !important;
+  backdrop-filter: blur(27px) saturate(119%) brightness(1.06) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-card .section-icon,
+html body.theme-light .main .overview-block .overview-card .section-icon {
+  background: rgba(255, 255, 255, .36) !important;
+  border-color: rgba(255, 255, 255, .55) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .58) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-card .overview-samples span,
+html body.theme-light .main .overview-block .overview-card .overview-samples span {
+  color: #344a55 !important;
+  border-bottom-color: rgba(38, 64, 74, .14) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-card .section-open-button,
+html body.theme-light .main .overview-block .overview-card .section-open-button {
+  background: rgba(10, 132, 255, .20) !important;
+  border-color: rgba(255, 255, 255, .55) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .52), 0 5px 12px rgba(35, 104, 152, .10) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-comic-art,
+html body.theme-light .main .overview-block .overview-comic-art {
+  opacity: .22 !important;
+  filter: saturate(.76) contrast(.98) !important;
+}
