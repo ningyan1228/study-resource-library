@@ -699,3 +699,73 @@ html body .main .hero-art.study-room-teaser > .study-room-teaser-bottom {
   html body .main .hero-art.study-room-teaser > .study-room-preview-seats { gap: 9px !important; }
   html body .main .hero-art.study-room-teaser .study-room-preview-seats > span { min-height: 0 !important; padding: 10px !important; }
 }
+
+/* Native macOS vibrancy: a neutral, low-opacity material that borrows its colour from the scene.
+   It replaces the former white veil while keeping text and controls comfortably legible. */
+html body.theme-light.has-ambient-video .sidebar,
+html body.theme-light .sidebar {
+  background: linear-gradient(145deg, rgba(192, 204, 207, .40), rgba(131, 151, 157, .32)) !important;
+  border-color: rgba(255, 255, 255, .48) !important;
+  box-shadow: 0 16px 38px rgba(20, 37, 43, .16), inset 0 1px 0 rgba(255, 255, 255, .46) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(132%) !important;
+  backdrop-filter: blur(30px) saturate(132%) !important;
+}
+html body.theme-light.has-ambient-video .main :is(.hero-copy, .hero-live-panel, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .quick-panel, .section-block:not(.overview-block), .pan-search-results, .notice, .resource-card),
+html body.theme-light .main :is(.hero-copy, .hero-live-panel, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .quick-panel, .section-block:not(.overview-block), .pan-search-results, .notice, .resource-card) {
+  background: linear-gradient(145deg, rgba(197, 210, 213, .38), rgba(132, 153, 159, .28)) !important;
+  border-color: rgba(255, 255, 255, .46) !important;
+  box-shadow: 0 16px 36px rgba(20, 37, 43, .15), inset 0 1px 0 rgba(255, 255, 255, .43) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(132%) !important;
+  backdrop-filter: blur(30px) saturate(132%) !important;
+}
+
+/* The category directory is a single darker material plane, rather than nine white cards. */
+html body.theme-light.has-ambient-video .main .overview-block,
+html body.theme-light .main .overview-block {
+  background: linear-gradient(145deg, rgba(150, 171, 176, .40), rgba(97, 122, 130, .29)) !important;
+  border-color: rgba(255, 255, 255, .45) !important;
+  box-shadow: 0 20px 44px rgba(15, 31, 37, .18), inset 0 1px 0 rgba(255, 255, 255, .40) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(138%) !important;
+  backdrop-filter: blur(32px) saturate(138%) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-card,
+html body.theme-light .main .overview-block .overview-card {
+  background: linear-gradient(145deg, rgba(195, 210, 213, .34), rgba(124, 149, 155, .28)) !important;
+  border-color: rgba(255, 255, 255, .42) !important;
+  box-shadow: 0 12px 26px rgba(18, 35, 42, .14), inset 0 1px 0 rgba(255, 255, 255, .38) !important;
+  -webkit-backdrop-filter: blur(26px) saturate(132%) !important;
+  backdrop-filter: blur(26px) saturate(132%) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-card .section-icon,
+html body.theme-light .main .overview-block .overview-card .section-icon {
+  background: rgba(236, 244, 245, .22) !important;
+  border-color: rgba(255, 255, 255, .31) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .30) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-card .overview-samples span,
+html body.theme-light .main .overview-block .overview-card .overview-samples span {
+  background: transparent !important;
+  border-bottom-color: rgba(32, 56, 65, .16) !important;
+  color: #314652 !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-card .section-open-button,
+html body.theme-light .main .overview-block .overview-card .section-open-button {
+  background: rgba(10, 132, 255, .18) !important;
+  border-color: rgba(255, 255, 255, .32) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .34) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-comic-art,
+html body.theme-light .main .overview-block .overview-comic-art {
+  opacity: .30 !important;
+  filter: saturate(.72) contrast(.96) !important;
+}
+
+/* Keep the study-room material in the same quiet, neutral family. */
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser,
+html body.theme-light .main .hero-art.study-room-teaser {
+  background: linear-gradient(145deg, rgba(197, 211, 214, .43), rgba(127, 151, 157, .32)) !important;
+  border-color: rgba(255, 255, 255, .48) !important;
+  box-shadow: 0 16px 36px rgba(20, 37, 43, .16), inset 0 1px 0 rgba(255, 255, 255, .44) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(132%) !important;
+  backdrop-filter: blur(30px) saturate(132%) !important;
+}
