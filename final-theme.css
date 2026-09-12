@@ -1427,9 +1427,9 @@ html body:not(.theme-light) .main .hero-art.study-room-rebuilt {
   grid-template-rows: auto auto minmax(0, 1fr) auto !important;
   gap: 12px !important;
   box-sizing: border-box !important;
-  height: 500px !important;
-  min-height: 500px !important;
-  max-height: 500px !important;
+  height: 465px !important;
+  min-height: 465px !important;
+  max-height: 465px !important;
   margin: 0 !important;
   padding: 24px !important;
   overflow: hidden !important;
@@ -1485,7 +1485,7 @@ html body .main .study-room-rebuilt .study-room-utility-action span { display: g
 html body .main .study-room-rebuilt .study-room-utility-action b { color: #f0f7f2 !important; font-size: 15px !important; }
 html body .main .study-room-rebuilt .study-room-utility-action small { overflow: hidden !important; color: #adc1b7 !important; font-size: 11px !important; line-height: 1.25 !important; text-overflow: ellipsis !important; white-space: nowrap !important; }
 html body .main .study-room-rebuilt .study-room-utility-action em { color: #87d6b7 !important; font-size: 11px !important; font-style: normal !important; white-space: nowrap !important; }
-html body .main .study-room-rebuilt .study-room-teaser-bottom { grid-row: 4 !important; display: flex !important; align-items: center !important; justify-content: space-between !important; min-height: 22px !important; margin: 0 !important; padding: 0 !important; }
+html body .main .study-room-rebuilt .study-room-teaser-bottom { position: static !important; inset: auto !important; transform: none !important; grid-row: 4 !important; display: flex !important; align-items: center !important; justify-content: space-between !important; min-height: 22px !important; margin: 0 !important; padding: 0 !important; }
 html body .main .study-room-rebuilt .study-room-teaser-bottom > span { color: #9bb1a6 !important; font-size: 11px !important; }
 html body .main .study-room-rebuilt .study-room-teaser-bottom > a { display: inline-flex !important; align-items: center !important; gap: 7px !important; color: #bce9d5 !important; font-size: 12px !important; font-weight: 650 !important; text-decoration: none !important; }
 html body.theme-light .main .hero-art.study-room-rebuilt { color: #193d38 !important; background: linear-gradient(135deg, rgba(244,250,247,.94), rgba(207,229,220,.88)) !important; border-color: rgba(255,255,255,.78) !important; box-shadow: 0 16px 34px rgba(29,59,50,.13), inset 0 1px 0 rgba(255,255,255,.8) !important; }

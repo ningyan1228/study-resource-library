@@ -50,7 +50,7 @@
         });
       }
     </script>
-    <link rel="preload" href="final-theme.css?v=20260912-room-rebuild-v33" as="style" />
+    <link rel="preload" href="final-theme.css?v=20260912-room-stable-firstpaint-v34" as="style" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" />
     <link rel="stylesheet" href="styles.css?v=20260911-legacy-layout" />
     <style id="studyRoomCriticalTheme">
@@ -80,8 +80,32 @@
       }
       html body.theme-light .main .hero-art.study-room-teaser::after,
       html body.theme-light .main .hero-art.study-room-teaser > .study-room-teaser-classroom { display: none !important; }
+
+      /* First-paint geometry for the rebuilt room: never reveal the legacy blue panel. */
+      html body .main .hero-art.study-room-rebuilt {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        grid-template-rows: auto auto minmax(0, 1fr) auto !important;
+        gap: 12px !important;
+        box-sizing: border-box !important;
+        height: 465px !important;
+        min-height: 465px !important;
+        max-height: 465px !important;
+        margin: 0 !important;
+        padding: 24px !important;
+        overflow: hidden !important;
+        color: #edf4ef !important;
+        background: linear-gradient(135deg, #0f1d1d, #0e312b) !important;
+        border-color: rgba(222,239,229,.18) !important;
+      }
+      html body .main .hero-art.study-room-rebuilt::before,
+      html body .main .hero-art.study-room-rebuilt::after { display: none !important; content: none !important; }
+      html body .main .study-room-rebuilt .study-room-action-grid { display:grid !important; grid-template-columns:minmax(0,1.05fr) minmax(240px,.95fr) !important; gap:12px !important; min-height:0 !important; }
+      html body .main .study-room-rebuilt .study-room-side-actions { display:grid !important; grid-template-rows:repeat(2,minmax(0,1fr)) !important; gap:12px !important; min-height:0 !important; }
+      html body .main .study-room-rebuilt :is(.study-room-timer-action,.study-room-utility-action) { background:rgba(6,23,21,.55) !important; border:1px solid rgba(230,245,236,.13) !important; border-radius:18px !important; color:inherit !important; text-decoration:none !important; }
+      html body .main .study-room-rebuilt .study-room-teaser-bottom { position:static !important; inset:auto !important; transform:none !important; display:flex !important; align-items:center !important; justify-content:space-between !important; margin:0 !important; padding:0 !important; }
     </style>
-    <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-room-rebuild-v33" onload="window.revealFinalTheme()" />
+    <link id="finalThemeStylesheet" rel="stylesheet" href="final-theme.css?v=20260912-room-stable-firstpaint-v34" onload="window.revealFinalTheme()" />
   </head>
   <body class="theme-light">
     <video id="ambientBackgroundVideo" class="site-background-video" muted loop playsinline webkit-playsinline preload="metadata" aria-hidden="true" disablePictureInPicture controlslist="nodownload nofullscreen noremoteplayback" x-webkit-airplay="deny">
