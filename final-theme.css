@@ -436,3 +436,41 @@ html body:not(.theme-light) .main .overview-block {
   backdrop-filter: blur(24px) saturate(106%) !important;
 }
 html body:not(.theme-light) .main .overview-block .overview-card { background: rgba(42,43,48,.70) !important; }
+
+/* Overview cards: nine quiet comic scenes add a visual cue without hiding the directory. */
+.overview-card.overview-comic-card {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate;
+}
+.overview-comic-art {
+  position: absolute;
+  z-index: 0;
+  right: -7%;
+  bottom: -9%;
+  width: 61%;
+  height: 83%;
+  opacity: .35;
+  background-image: url("assets/catalogue-study-comic-characters-v2.png");
+  background-repeat: no-repeat;
+  background-size: 300% 300%;
+  background-position: 0 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.30) 30%, #000 65%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.30) 30%, #000 65%);
+  filter: saturate(.82) contrast(.98);
+  pointer-events: none;
+}
+.overview-comic-2 .overview-comic-art { background-position: 50% 0; }
+.overview-comic-3 .overview-comic-art { background-position: 100% 0; }
+.overview-comic-4 .overview-comic-art { background-position: 0 50%; }
+.overview-comic-5 .overview-comic-art { background-position: 50% 50%; }
+.overview-comic-6 .overview-comic-art { background-position: 100% 50%; }
+.overview-comic-7 .overview-comic-art { background-position: 0 100%; }
+.overview-comic-8 .overview-comic-art { background-position: 50% 100%; }
+.overview-comic-9 .overview-comic-art { background-position: 100% 100%; }
+.overview-card.overview-comic-card > :not(.overview-comic-art) { position: relative; z-index: 1; }
+html body.theme-light .overview-card.overview-comic-card .overview-samples { background: rgba(241,249,250,.29) !important; }
+html body:not(.theme-light) .overview-comic-art { opacity: .19; filter: saturate(.63) brightness(.83); }
+@media (max-width: 680px) {
+  .overview-comic-art { right: -4%; width: 58%; height: 86%; opacity: .28; }
+}

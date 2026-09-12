@@ -595,10 +595,12 @@ function renderResourceOverview() {
       </header>
       <div class="overview-grid">
         ${resources
-          .map((section) => {
+          .map((section, index) => {
             const sampleItems = section.items.slice(0, 4).map((item) => `<span>${item.title}</span>`).join("");
+            const illustration = (index % 9) + 1;
             return `
-              <article class="overview-card">
+              <article class="overview-card overview-comic-card overview-comic-${illustration}">
+                <span class="overview-comic-art" aria-hidden="true"></span>
                 <div class="overview-card-head">
                   <span class="section-icon">${section.icon}</span>
                   <div>
