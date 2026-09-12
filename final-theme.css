@@ -769,3 +769,68 @@ html body.theme-light .main .hero-art.study-room-teaser {
   -webkit-backdrop-filter: blur(30px) saturate(132%) !important;
   backdrop-filter: blur(30px) saturate(132%) !important;
 }
+
+/* Bright macOS material correction: no charcoal tint, no chalk-white mask.
+   The scene supplies the colour; this is only a thin luminous vibrancy layer. */
+html body.theme-light.has-ambient-video .sidebar,
+html body.theme-light .sidebar {
+  background: linear-gradient(145deg, rgba(244, 248, 248, .34), rgba(205, 222, 224, .24)) !important;
+  border-color: rgba(255, 255, 255, .64) !important;
+  box-shadow: 0 16px 38px rgba(20, 37, 43, .13), inset 0 1px 0 rgba(255, 255, 255, .60) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(122%) !important;
+  backdrop-filter: blur(30px) saturate(122%) !important;
+}
+html body.theme-light.has-ambient-video .main :is(.hero-copy, .hero-live-panel, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .quick-panel, .section-block:not(.overview-block), .pan-search-results, .notice, .resource-card),
+html body.theme-light .main :is(.hero-copy, .hero-live-panel, .countdown-wall, .daily-learning-sign, .drift-bottle-board, .featured-panel, .quick-panel, .section-block:not(.overview-block), .pan-search-results, .notice, .resource-card) {
+  background: linear-gradient(145deg, rgba(245, 249, 249, .31), rgba(204, 223, 225, .22)) !important;
+  border-color: rgba(255, 255, 255, .61) !important;
+  box-shadow: 0 16px 36px rgba(20, 37, 43, .12), inset 0 1px 0 rgba(255, 255, 255, .57) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(122%) !important;
+  backdrop-filter: blur(30px) saturate(122%) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block,
+html body.theme-light .main .overview-block {
+  background: linear-gradient(145deg, rgba(236, 244, 245, .26), rgba(185, 207, 210, .18)) !important;
+  border-color: rgba(255, 255, 255, .59) !important;
+  box-shadow: 0 20px 44px rgba(15, 31, 37, .14), inset 0 1px 0 rgba(255, 255, 255, .55) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(126%) !important;
+  backdrop-filter: blur(32px) saturate(126%) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-card,
+html body.theme-light .main .overview-block .overview-card {
+  background: linear-gradient(145deg, rgba(246, 250, 250, .31), rgba(205, 223, 225, .23)) !important;
+  border-color: rgba(255, 255, 255, .58) !important;
+  box-shadow: 0 12px 26px rgba(18, 35, 42, .11), inset 0 1px 0 rgba(255, 255, 255, .54) !important;
+  -webkit-backdrop-filter: blur(26px) saturate(122%) !important;
+  backdrop-filter: blur(26px) saturate(122%) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-card .section-icon,
+html body.theme-light .main .overview-block .overview-card .section-icon {
+  background: rgba(255, 255, 255, .26) !important;
+  border-color: rgba(255, 255, 255, .43) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-card .overview-samples span,
+html body.theme-light .main .overview-block .overview-card .overview-samples span {
+  border-bottom-color: rgba(42, 69, 78, .14) !important;
+  color: #38505c !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-card .section-open-button,
+html body.theme-light .main .overview-block .overview-card .section-open-button {
+  background: rgba(10, 132, 255, .16) !important;
+  border-color: rgba(255, 255, 255, .46) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .42) !important;
+}
+html body.theme-light.has-ambient-video .main .overview-block .overview-comic-art,
+html body.theme-light .main .overview-block .overview-comic-art {
+  opacity: .24 !important;
+  filter: saturate(.70) contrast(.98) !important;
+}
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser,
+html body.theme-light .main .hero-art.study-room-teaser {
+  background: linear-gradient(145deg, rgba(245, 249, 249, .35), rgba(203, 221, 223, .24)) !important;
+  border-color: rgba(255, 255, 255, .64) !important;
+  box-shadow: 0 16px 36px rgba(20, 37, 43, .13), inset 0 1px 0 rgba(255, 255, 255, .60) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(122%) !important;
+  backdrop-filter: blur(30px) saturate(122%) !important;
+}
