@@ -1023,3 +1023,177 @@ html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-cloc
   html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-hour { height: 17px !important; }
   html body .main .hero-art.study-room-teaser > .study-room-clock-widget .ios-clock-minute { height: 23px !important; }
 }
+
+/* Sunlit study-room redesign — a calm focus space, not a generic information card. */
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser,
+html body.theme-light .main .hero-art.study-room-teaser {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: auto auto minmax(282px, 1fr) auto !important;
+  row-gap: 18px !important;
+  min-height: 560px !important;
+  padding: clamp(28px, 2.4vw, 38px) !important;
+  background: url("assets/study-room-sunlit-v2.png") center / cover no-repeat !important;
+  border-color: rgba(255, 255, 255, .74) !important;
+  box-shadow: 0 22px 46px rgba(30, 48, 50, .17), inset 0 1px 0 rgba(255, 255, 255, .72) !important;
+  overflow: hidden !important;
+}
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser::before,
+html body.theme-light .main .hero-art.study-room-teaser::before {
+  display: block !important;
+  inset: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: inherit !important;
+  opacity: 1 !important;
+  transform: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  filter: none !important;
+  background: linear-gradient(90deg, rgba(248, 252, 249, .73) 0%, rgba(246, 251, 248, .51) 47%, rgba(245, 250, 247, .20) 100%) !important;
+}
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser > :not(.study-room-teaser-classroom),
+html body.theme-light .main .hero-art.study-room-teaser > :not(.study-room-teaser-classroom) { position: relative !important; z-index: 2 !important; }
+html body.theme-light.has-ambient-video .main .hero-art.study-room-teaser > .study-room-teaser-head,
+html body.theme-light .main .hero-art.study-room-teaser > .study-room-teaser-head {
+  grid-row: 1 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  padding: 0 0 14px !important;
+  border-bottom-color: rgba(29, 55, 55, .18) !important;
+}
+html body.theme-light .main .hero-art.study-room-teaser .study-room-teaser-head span { color: #66737b !important; font-size: 12px !important; letter-spacing: .16em !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-teaser-head h2 { color: #102b2d !important; font-size: clamp(34px, 3vw, 52px) !important; line-height: 1 !important; letter-spacing: -.055em !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-teaser-head > b { background: rgba(255, 255, 255, .70) !important; border-color: rgba(255, 255, 255, .68) !important; color: #304b4d !important; box-shadow: 0 5px 13px rgba(34, 52, 53, .08) !important; }
+html body.theme-light .main .hero-art.study-room-teaser > .study-room-teaser-lead {
+  grid-row: 2 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  color: #677983 !important;
+  font-size: clamp(17px, 1.35vw, 22px) !important;
+  line-height: 1.45 !important;
+}
+html body.theme-light .main .hero-art.study-room-teaser > .study-room-preview-seats {
+  grid-row: 3 !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.12fr) minmax(250px, .88fr) !important;
+  grid-template-rows: minmax(76px, .75fr) minmax(76px, .75fr) minmax(120px, 1.3fr) !important;
+  grid-auto-flow: row !important;
+  gap: 14px !important;
+  min-height: 282px !important;
+  margin: 0 !important;
+}
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span {
+  min-height: 0 !important;
+  border: 1px solid rgba(255, 255, 255, .72) !important;
+  border-radius: 20px !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .77), rgba(247, 251, 248, .57)) !important;
+  box-shadow: 0 12px 25px rgba(37, 55, 54, .09), inset 0 1px 0 rgba(255, 255, 255, .72) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(122%) !important;
+  backdrop-filter: blur(18px) saturate(122%) !important;
+}
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(1) {
+  grid-column: 1 !important;
+  grid-row: 1 / 4 !important;
+  display: grid !important;
+  grid-template-columns: 72px minmax(0, 1fr) !important;
+  align-content: center !important;
+  column-gap: 16px !important;
+  padding: 28px !important;
+}
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(1) i {
+  grid-row: 1 / 3 !important;
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50% !important;
+  color: #174345 !important;
+  background: rgba(218, 235, 229, .78) !important;
+  font-size: 30px !important;
+}
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(1) b { color: #15393b !important; font-size: clamp(24px, 2.1vw, 34px) !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(1) small { color: #75818a !important; font-size: clamp(14px, 1.1vw, 17px) !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(2),
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(3) {
+  grid-column: 2 !important;
+  display: grid !important;
+  grid-template-columns: 48px minmax(0, 1fr) 18px !important;
+  align-items: center !important;
+  column-gap: 12px !important;
+  padding: 15px 18px !important;
+}
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(2) { grid-row: 1 !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(3) { grid-row: 2 !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(2)::after,
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(3)::after { content: "›"; color: #5d6b73; font-size: 32px; font-weight: 350; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(2) i,
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(3) i { width: 46px !important; height: 46px !important; border-radius: 50% !important; color: #174345 !important; background: rgba(218, 235, 229, .78) !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(2) b,
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(3) b { color: #183b3d !important; font-size: clamp(16px, 1.25vw, 20px) !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(2) small,
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(3) small { color: #79848c !important; font-size: 13px !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > .study-room-clock-widget {
+  position: static !important;
+  grid-column: 2 !important;
+  grid-row: 3 !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 82px !important;
+  grid-template-rows: minmax(0, 1fr) 48px !important;
+  gap: 6px 12px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 120px !important;
+  margin: 0 !important;
+  padding: 16px 17px !important;
+  border: 1px solid rgba(255, 255, 255, .72) !important;
+  border-radius: 20px !important;
+  color: #173d3f !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .82), rgba(242, 249, 246, .64)) !important;
+  box-shadow: 0 12px 25px rgba(37, 55, 54, .10), inset 0 1px 0 rgba(255, 255, 255, .76) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(122%) !important;
+  backdrop-filter: blur(18px) saturate(122%) !important;
+}
+html body.theme-light .main .hero-art.study-room-teaser .study-room-clock-copy { display: grid !important; align-content: center !important; gap: 3px !important; min-width: 0 !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-clock-copy > span { color: #738088 !important; font-size: 12px !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-clock-copy > time { color: #15393b !important; font-size: clamp(32px, 3vw, 44px) !important; font-weight: 760 !important; letter-spacing: -.065em !important; line-height: .95 !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-clock-copy > small { color: #78838b !important; font-size: 11px !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > .study-room-clock-widget .ios-clock-face { width: 78px !important; height: 78px !important; flex-basis: 78px !important; align-self: center !important; background: radial-gradient(circle, rgba(255, 255, 255, .96) 0 61%, transparent 62%), repeating-conic-gradient(from -1deg, #5d7271 0deg 2deg, transparent 2deg 30deg) !important; box-shadow: inset 0 0 0 3px rgba(235, 243, 241, .94), 0 3px 8px rgba(35, 58, 55, .10) !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > .study-room-clock-widget .ios-clock-face::before,
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > .study-room-clock-widget .ios-clock-face::after { color: #4d6463 !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > .study-room-clock-widget .ios-clock-hour { background: #1d4645 !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > .study-room-clock-widget .ios-clock-minute,
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > .study-room-clock-widget .ios-clock-face b { background: #285f5a !important; }
+html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > .study-room-clock-widget > a {
+  grid-column: 1 / -1 !important;
+  grid-row: 2 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  border-radius: 13px !important;
+  color: #fff !important;
+  background: linear-gradient(135deg, #214f4d, #173d3c) !important;
+  box-shadow: 0 7px 14px rgba(21, 61, 60, .16) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+html body.theme-light .main .hero-art.study-room-teaser > .study-room-teaser-bottom { position: static !important; grid-row: 4 !important; align-self: end !important; justify-content: center !important; padding: 0 !important; }
+html body.theme-light .main .hero-art.study-room-teaser > .study-room-teaser-bottom > span { color: #68767d !important; font-size: 13px !important; }
+@media (max-width: 700px), (orientation: portrait) {
+  html body.theme-light .main .hero-art.study-room-teaser { grid-template-rows: auto auto auto auto !important; min-height: 0 !important; padding: 22px !important; }
+  html body.theme-light .main .hero-art.study-room-teaser > .study-room-preview-seats { grid-template-columns: 1fr !important; grid-template-rows: 180px auto auto 150px !important; min-height: 0 !important; }
+  html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(1),
+  html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(2),
+  html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(3),
+  html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > .study-room-clock-widget { grid-column: 1 !important; }
+  html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(1) { grid-row: 1 !important; }
+  html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(2) { grid-row: 2 !important; }
+  html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > span:nth-child(3) { grid-row: 3 !important; }
+  html body.theme-light .main .hero-art.study-room-teaser .study-room-preview-seats > .study-room-clock-widget { grid-row: 4 !important; }
+}
