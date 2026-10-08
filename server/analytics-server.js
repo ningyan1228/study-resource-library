@@ -325,8 +325,16 @@ function addAutomaticBrokenReport(stats, item, checkedAt) {
   stats.brokenLinks = stats.brokenLinks.slice(0, 500);
 }
 
+const LINK_HEALTH_CHECK_MIN_INTERVAL_MS = 15000;
+let linkHealthCheckLastRunAt = 0;
+
 async function runLinkHealthCheck(options = {}) {
   if (linkHealthCheckRunning) throw new Error("链接检测正在进行，请稍后刷新后台查看结果");
+  const now = Date.now();
+  if (now - linkHealthCheckLastRunAt < LINK_HEALTH_CHECK_MIN_INTERVAL_MS) {
+    throw new Error("链接检测请求过于频繁，请稍后再试");
+  }
+  linkHealthCheckLastRunAt = now;
   linkHealthCheckRunning = true;
   try {
     const inventory = await getLinkHealthInventory();
