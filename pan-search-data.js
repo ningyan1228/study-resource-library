@@ -1,5 +1,5 @@
 window.PAN_SEARCH_DATA = {
-  "generatedAt": "2026-10-31T09:29:44.788Z",
+  "generatedAt": "2026-10-31T09:30:19.089Z",
   "sourceDir": "F:/DeskTop/网盘链接.txt; C:/Users/zhiwu/.codex/attachments/5fe01c05-d295-45d7-93b9-e083ff9e2f7e/pasted-text.txt; F:/DeskTop/国省考电子资料/百度网盘链接.txt",
   "missingSources": [],
   "totals": {
@@ -7026,10 +7026,10 @@ window.PAN_SEARCH_DATA = {
       "id": "r410",
       "title": "红领巾合集",
       "platform": "quark",
-      "url": "https://pan.quark.cn/s/1860e6eb2c23",
+      "url": "https://pan.quark.cn/s/cf3e3190dcd8",
       "code": "",
       "section": "其他类别考试",
-      "context": "红领巾合集 链接：https://pan.quark.cn/s/1860e6eb2c23",
+      "context": "红领巾合集 链接：https://pan.quark.cn/s/cf3e3190dcd8",
       "sources": [
         {
           "file": "网盘链接.txt",
@@ -7037,7 +7037,7 @@ window.PAN_SEARCH_DATA = {
           "section": "其他类别考试"
         }
       ],
-      "searchText": "红领巾合集 其他类别考试 红领巾合集 链接：https://pan.quark.cn/s/1860e6eb2c23 quark https://pan.quark.cn/s/1860e6eb2c23"
+      "searchText": "红领巾合集 其他类别考试 红领巾合集 链接：https://pan.quark.cn/s/cf3e3190dcd8 夸克 网盘 网盘链接.txt"
     },
     {
       "id": "r411",
@@ -20150,7 +20150,7 @@ window.PAN_SEARCH_DATA = {
       "id": "r1183",
       "title": "小p公考（P神）2027",
       "platform": "quark",
-      "url": "https://pan.quark.cn/s/9813ead8aeb6",
+      "url": "https://pan.quark.cn/s/11448fbb95a2",
       "code": "",
       "section": "后台新增",
       "context": "小p公考（P神）2027",
@@ -20161,7 +20161,7 @@ window.PAN_SEARCH_DATA = {
           "section": "后台新增"
         }
       ],
-      "searchText": "小p公考（P神）2027 后台新增 小p公考（P神）2027 server/data/extra-links.json"
+      "searchText": "小p公考（P神）2027 后台新增 小p公考（P神）2027 quark https://pan.quark.cn/s/11448fbb95a2"
     },
     {
       "id": "r1184",
