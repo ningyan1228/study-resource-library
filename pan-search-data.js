@@ -1,5 +1,5 @@
 window.PAN_SEARCH_DATA = {
-  "generatedAt": "2026-10-30T07:15:13.737Z",
+  "generatedAt": "2026-10-31T09:29:44.788Z",
   "sourceDir": "F:/DeskTop/网盘链接.txt; C:/Users/zhiwu/.codex/attachments/5fe01c05-d295-45d7-93b9-e083ff9e2f7e/pasted-text.txt; F:/DeskTop/国省考电子资料/百度网盘链接.txt",
   "missingSources": [],
   "totals": {
@@ -7026,10 +7026,10 @@ window.PAN_SEARCH_DATA = {
       "id": "r410",
       "title": "红领巾合集",
       "platform": "quark",
-      "url": "https://pan.quark.cn/s/cf3e3190dcd8",
+      "url": "https://pan.quark.cn/s/1860e6eb2c23",
       "code": "",
       "section": "其他类别考试",
-      "context": "红领巾合集 链接：https://pan.quark.cn/s/cf3e3190dcd8",
+      "context": "红领巾合集 链接：https://pan.quark.cn/s/1860e6eb2c23",
       "sources": [
         {
           "file": "网盘链接.txt",
@@ -7037,7 +7037,7 @@ window.PAN_SEARCH_DATA = {
           "section": "其他类别考试"
         }
       ],
-      "searchText": "红领巾合集 其他类别考试 红领巾合集 链接：https://pan.quark.cn/s/cf3e3190dcd8 夸克 网盘 网盘链接.txt"
+      "searchText": "红领巾合集 其他类别考试 红领巾合集 链接：https://pan.quark.cn/s/1860e6eb2c23 quark https://pan.quark.cn/s/1860e6eb2c23"
     },
     {
       "id": "r411",
