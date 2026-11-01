@@ -1,9 +1,9 @@
 /* Homepage visual layer. Loaded last to resolve the older theme overrides.
    Keep these tokens local so resource dialogs and the study room are unaffected. */
 body.home-clarity {
-  --home-surface: rgba(255, 255, 255, .94);
-  --home-nav: rgba(250, 250, 250, .97);
-  --home-inset: #f0f1f3;
+  --home-surface: rgba(255, 255, 255, .68);
+  --home-nav: rgba(250, 250, 250, .76);
+  --home-inset: rgba(248, 249, 252, .38);
   --home-input: #ffffff;
   --home-title: #24262b;
   --home-text: #363940;
@@ -17,9 +17,9 @@ body.home-clarity {
 }
 
 body.home-clarity:not(.theme-light) {
-  --home-surface: rgba(30, 31, 35, .94);
-  --home-nav: rgba(27, 28, 32, .97);
-  --home-inset: #2d3036;
+  --home-surface: rgba(30, 31, 35, .64);
+  --home-nav: rgba(27, 28, 32, .76);
+  --home-inset: rgba(48, 50, 57, .38);
   --home-input: #202226;
   --home-title: #f5f5f7;
   --home-text: #e4e5e9;
@@ -259,7 +259,11 @@ html body.home-clarity #appShell .sidebar :is(button, a):focus-visible {
 }
 
 /* Neutral glass throughout the homepage, including below the fold. */
-html body.home-clarity #top :is(.featured-panel,.quick-panel,.section-block,.overview-block,.notice,.pan-search-results,.study-checkins-bar) {background:var(--home-surface)!important;color:var(--home-text)!important;border-color:var(--home-border)!important;backdrop-filter:blur(20px) saturate(0%)!important;}
+html body.home-clarity #top :is(.featured-panel,.quick-panel,.section-block,.overview-block,.notice,.pan-search-results,.study-checkins-bar) {background:var(--home-surface)!important;color:var(--home-text)!important;border-color:var(--home-border)!important;backdrop-filter:blur(24px) saturate(45%)!important;}
 html body.home-clarity #top :is(.overview-card,.resource-card,.overview-samples,.overview-samples span,.featured-item) {background:var(--home-inset)!important;color:var(--home-text)!important;border-color:var(--home-border)!important;}
 html body.home-clarity #top :is(.overview-card,.resource-card,.overview-header,.featured-panel,.quick-panel,.notice) :is(h2,h3,h4,p,span,small,a) {color:var(--home-text)!important;}
-html body.home-clarity #top .hero :is(.hero-copy,.hero-live-panel,#focusCompanion),html body.home-clarity #top .hero #studyCompanion :is(.countdown-wall,.daily-learning-sign,.drift-bottle-board),html body.home-clarity #appShell .sidebar {backdrop-filter:blur(20px) saturate(0%)!important;-webkit-backdrop-filter:blur(20px) saturate(0%)!important;}
+html body.home-clarity #top .hero :is(.hero-copy,.hero-live-panel,#focusCompanion),html body.home-clarity #top .hero #studyCompanion :is(.countdown-wall,.daily-learning-sign,.drift-bottle-board),html body.home-clarity #appShell .sidebar {backdrop-filter:blur(24px) saturate(45%)!important;-webkit-backdrop-filter:blur(24px) saturate(45%)!important;}
+
+/* Keep nested cards translucent; let the outer panel blur the scene once. */
+html body.home-clarity #top .overview-samples, html body.home-clarity #top .overview-samples span {background:transparent!important;}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {body.home-clarity {--home-surface:rgba(255,255,255,.96);--home-nav:rgba(250,250,250,.96);}body.home-clarity:not(.theme-light) {--home-surface:rgba(30,31,35,.96);--home-nav:rgba(27,28,32,.96);}}
