@@ -1254,12 +1254,13 @@ function applyTheme(theme) {
 }
 
 function bindThemeToggle() {
-  const savedTheme = localStorage.getItem("studyResourceTheme") || "light";
+  let savedTheme = "light";
+  try { savedTheme = localStorage.getItem("studyResourceTheme") || "light"; } catch (_) {}
   applyTheme(savedTheme);
 
   document.querySelector("#themeToggle")?.addEventListener("click", () => {
     const nextTheme = document.body.classList.contains("theme-light") ? "dark" : "light";
-    localStorage.setItem("studyResourceTheme", nextTheme);
+    try { localStorage.setItem("studyResourceTheme", nextTheme); } catch (_) {}
     applyTheme(nextTheme);
   });
 }

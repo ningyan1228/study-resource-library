@@ -34,7 +34,7 @@
       const timeout = setTimeout(() => resolve(null), 2500);
       picture.onload = () => { clearTimeout(timeout); resolve(picture); };
       picture.onerror = () => { clearTimeout(timeout); resolve(null); };
-      picture.src = 'assets/archive-squirrel-actions-v1.png?v=20260913-clean';
+      picture.src = 'assets/archive-squirrel-actions-v1-optimized.webp?v=20261101';
     });
   }
   window.exportSquirrelStudyCard = async summary => {
