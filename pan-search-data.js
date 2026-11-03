@@ -1,5 +1,5 @@
 window.PAN_SEARCH_DATA = {
-  "generatedAt": "2026-10-31T09:30:19.089Z",
+  "generatedAt": "2026-11-03T09:42:37.578Z",
   "sourceDir": "F:/DeskTop/网盘链接.txt; C:/Users/zhiwu/.codex/attachments/5fe01c05-d295-45d7-93b9-e083ff9e2f7e/pasted-text.txt; F:/DeskTop/国省考电子资料/百度网盘链接.txt",
   "missingSources": [],
   "totals": {
@@ -23278,7 +23278,7 @@ window.PAN_SEARCH_DATA = {
       "id": "r1367",
       "title": "刘义恒丨27图推理论课复盘笔记",
       "platform": "quark",
-      "url": "https://pan.quark.cn/s/ed3ee6e1ba4f",
+      "url": "https://pan.quark.cn/s/53aaa3669f21",
       "code": "",
       "section": "夸克批量新增",
       "context": "夸克网盘批量导入：刘义恒丨27图推理论课复盘笔记",
@@ -23289,7 +23289,7 @@ window.PAN_SEARCH_DATA = {
           "section": "夸克批量新增"
         }
       ],
-      "searchText": "刘义恒丨27图推理论课复盘笔记 夸克批量新增 夸克网盘批量导入：刘义恒丨27图推理论课复盘笔记 quark https://pan.quark.cn/s/ed3ee6e1ba4f"
+      "searchText": "刘义恒丨27图推理论课复盘笔记 夸克批量新增 夸克网盘批量导入：刘义恒丨27图推理论课复盘笔记 quark https://pan.quark.cn/s/53aaa3669f21"
     },
     {
       "id": "r1368",
