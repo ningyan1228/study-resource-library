@@ -1,8 +1,8 @@
 /* Homepage visual layer. Loaded last to resolve the older theme overrides.
    Keep these tokens local so resource dialogs and the study room are unaffected. */
 body.home-clarity {
-  --home-surface: rgba(255, 255, 255, .68);
-  --home-nav: rgba(250, 250, 250, .76);
+  --home-surface: linear-gradient(145deg, rgba(255,255,255,.72), rgba(248,252,250,.48));
+  --home-nav: rgba(250,253,251,.58);
   --home-inset: rgba(248, 249, 252, .38);
   --home-input: #ffffff;
   --home-title: #24262b;
@@ -12,13 +12,13 @@ body.home-clarity {
   --home-active: #dfede1;
   --home-button: #2b6b53;
   --home-button-hover: #235b46;
-  --home-border: #d3d6dc;
+  --home-border: rgba(255,255,255,.64);
   --home-ring: #438668;
 }
 
 body.home-clarity:not(.theme-light) {
-  --home-surface: rgba(30, 31, 35, .64);
-  --home-nav: rgba(27, 28, 32, .76);
+  --home-surface: linear-gradient(145deg, rgba(24,36,32,.76), rgba(20,29,27,.62));
+  --home-nav: rgba(20,30,27,.68);
   --home-inset: rgba(48, 50, 57, .38);
   --home-input: #202226;
   --home-title: #f5f5f7;
@@ -28,7 +28,7 @@ body.home-clarity:not(.theme-light) {
   --home-active: #294b38;
   --home-button: #36755b;
   --home-button-hover: #408068;
-  --home-border: #535760;
+  --home-border: rgba(230,255,242,.20);
   --home-ring: #9fd4b1;
 }
 
@@ -39,9 +39,9 @@ html body.home-clarity #top .hero #studyCompanion :is(.countdown-wall, .daily-le
   background: var(--home-surface) !important;
   border-color: var(--home-border) !important;
   color: var(--home-text) !important;
-  box-shadow: 0 14px 32px rgba(9, 26, 18, .16), inset 0 1px 0 rgba(255, 255, 255, .05) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(105%) !important;
-  backdrop-filter: blur(20px) saturate(105%) !important;
+  box-shadow: 0 14px 32px rgba(9, 26, 18, .16), inset 0 1px 0 rgba(255, 255, 255, .25) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(150%) !important;
+  backdrop-filter: blur(30px) saturate(150%) !important;
 }
 html body.home-clarity #top .hero #studyCompanion :is(.countdown-wall, .daily-learning-sign, .drift-bottle-board)::after {
   opacity: .06 !important;
@@ -259,10 +259,10 @@ html body.home-clarity #appShell .sidebar :is(button, a):focus-visible {
 }
 
 /* Neutral glass throughout the homepage, including below the fold. */
-html body.home-clarity #top :is(.featured-panel,.quick-panel,.section-block,.overview-block,.notice,.pan-search-results,.study-checkins-bar) {background:var(--home-surface)!important;color:var(--home-text)!important;border-color:var(--home-border)!important;backdrop-filter:blur(24px) saturate(45%)!important;}
+html body.home-clarity #top :is(.featured-panel,.quick-panel,.section-block,.overview-block,.notice,.pan-search-results,.study-checkins-bar) {background:var(--home-surface)!important;color:var(--home-text)!important;border-color:var(--home-border)!important;backdrop-filter:blur(30px) saturate(150%)!important;}
 html body.home-clarity #top :is(.overview-card,.resource-card,.overview-samples,.overview-samples span,.featured-item) {background:var(--home-inset)!important;color:var(--home-text)!important;border-color:var(--home-border)!important;}
 html body.home-clarity #top :is(.overview-card,.resource-card,.overview-header,.featured-panel,.quick-panel,.notice) :is(h2,h3,h4,p,span,small,a) {color:var(--home-text)!important;}
-html body.home-clarity #top .hero :is(.hero-copy,.hero-live-panel,#focusCompanion),html body.home-clarity #top .hero #studyCompanion :is(.countdown-wall,.daily-learning-sign,.drift-bottle-board),html body.home-clarity #appShell .sidebar {backdrop-filter:blur(24px) saturate(45%)!important;-webkit-backdrop-filter:blur(24px) saturate(45%)!important;}
+html body.home-clarity #top .hero :is(.hero-copy,.hero-live-panel,#focusCompanion),html body.home-clarity #top .hero #studyCompanion :is(.countdown-wall,.daily-learning-sign,.drift-bottle-board),html body.home-clarity #appShell .sidebar {backdrop-filter:blur(30px) saturate(150%)!important;-webkit-backdrop-filter:blur(30px) saturate(150%)!important;}
 
 /* Keep nested cards translucent; let the outer panel blur the scene once. */
 html body.home-clarity #top .overview-samples, html body.home-clarity #top .overview-samples span {background:transparent!important;}
