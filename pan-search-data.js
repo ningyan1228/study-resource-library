@@ -1,5 +1,5 @@
 window.PAN_SEARCH_DATA = {
-  "generatedAt": "2026-11-03T09:42:37.578Z",
+  "generatedAt": "2026-11-06T01:28:16.809Z",
   "sourceDir": "F:/DeskTop/网盘链接.txt; C:/Users/zhiwu/.codex/attachments/5fe01c05-d295-45d7-93b9-e083ff9e2f7e/pasted-text.txt; F:/DeskTop/国省考电子资料/百度网盘链接.txt",
   "missingSources": [],
   "totals": {
@@ -23057,7 +23057,7 @@ window.PAN_SEARCH_DATA = {
       "id": "r1354",
       "title": "袁东合集",
       "platform": "quark",
-      "url": "https://pan.quark.cn/s/136b334a64ce",
+      "url": "https://pan.quark.cn/s/9e90978f8606",
       "code": "",
       "section": "夸克批量新增",
       "context": "夸克网盘批量导入：袁东合集",
@@ -23068,7 +23068,7 @@ window.PAN_SEARCH_DATA = {
           "section": "夸克批量新增"
         }
       ],
-      "searchText": "袁东合集 夸克批量新增 夸克网盘批量导入：袁东合集 quark https://pan.quark.cn/s/136b334a64ce"
+      "searchText": "袁东合集 夸克批量新增 夸克网盘批量导入：袁东合集 quark https://pan.quark.cn/s/9e90978f8606"
     },
     {
       "id": "r1355",
@@ -30024,6 +30024,18 @@ window.PAN_SEARCH_DATA = {
     }
   ],
   "updateBatches": [
+    {
+      "id": "quark-35b09da93efea777077d48a1",
+      "platform": "quark",
+      "publishedAt": "2026-11-06T01:28:16.808Z",
+      "entries": [
+        {
+          "title": "袁东合集",
+          "url": "https://pan.quark.cn/s/9e90978f8606",
+          "code": ""
+        }
+      ]
+    },
     {
       "id": "quark-ab27615fdf7a9b1430dc9600",
       "platform": "quark",
