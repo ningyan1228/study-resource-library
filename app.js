@@ -911,6 +911,34 @@ function refreshPanSearchTotals() {
   panSearchData.totals.unique.baidu = panSearchData.items.filter((item) => item.platform === "baidu").length;
 }
 
+function isHiddenPanSearchItem(item) {
+  return hiddenPanUrls.has(canonicalResourceUrl(item?.url));
+}
+
+function mergePanSearchItems(items) {
+  const byUrl = new Map();
+  for (const item of items) {
+    if (!item?.url || isHiddenPanSearchItem(item)) continue;
+    const key = canonicalResourceUrl(item.url);
+    const previous = byUrl.get(key);
+    if (!previous) {
+      byUrl.set(key, item);
+      continue;
+    }
+    // The API can still contain an earlier copy of an entry updated in GitHub.
+    // Merge only the same URL; similarly named courses can be different resources.
+    const newer = getSearchUpdateTime(item) >= getSearchUpdateTime(previous) ? item : previous;
+    const older = newer === item ? previous : item;
+    const merged = { ...older, ...newer };
+    for (const field of ['title', 'section', 'context', 'sources', 'createdAt', 'updatedAt', 'addedAt']) {
+      if (!merged[field]) merged[field] = older[field];
+    }
+    merged.searchText = [merged.title, merged.section, merged.context, merged.code, merged.platform, merged.url].filter(Boolean).join(' ');
+    byUrl.set(key, merged);
+  }
+  return [...byUrl.values()];
+}
+
 async function loadLinkHealth() {
   if (!serverApiBase || linkHealthLoaded) return;
   linkHealthLoaded = true;
@@ -920,12 +948,14 @@ async function loadLinkHealth() {
     });
     if (!response.ok) return;
     const data = await response.json();
-    hiddenPanUrls = new Set(Array.isArray(data.hiddenUrls) ? data.hiddenUrls : []);
+    hiddenPanUrls = new Set((Array.isArray(data.hiddenUrls) ? data.hiddenUrls : []).map(canonicalResourceUrl));
     searchHealthByUrl = new Map((Array.isArray(data.items) ? data.items : []).filter(item => item?.url).map(item => [canonicalResourceUrl(item.url), item]));
-    panSearchData.items = panSearchData.items.filter((item) => !hiddenPanUrls.has(item?.url));
-    serverPanLinks = serverPanLinks.filter((item) => !hiddenPanUrls.has(item?.url));
+    panSearchData.items = mergePanSearchItems(panSearchData.items);
+    serverPanLinks = mergePanSearchItems(serverPanLinks);
     refreshPanSearchTotals();
     renderSearchSuggestions();
+    refreshSearchDiscovery();
+    if (!state.query.trim() && state.category === "all") renderResources();
     if (state.query.trim()) renderPanSearchResults();
   } catch (_) {
     // Keep search usable when the health service is temporarily unavailable.
@@ -942,50 +972,25 @@ async function loadServerPanLinks() {
     if (!response.ok) return;
 
     const data = await response.json();
-    const items = Array.isArray(data.items) ? data.items : [];
-    serverPanLinks = items;
-    if (!state.query.trim() && state.category === "all") renderResources();
-    if (!items.length) return;
-
-    const existingUrls = new Set(panSearchData.items.map((item) => item.url));
-    let added = 0;
-
-    items.forEach((item) => {
-      if (!item || !item.url || hiddenPanUrls.has(item.url)) return;
-      if (existingUrls.has(item.url)) {
-        const existing = panSearchData.items.find(entry => entry.url === item.url);
-        Object.assign(existing, { title: item.title || existing.title, section: item.section || existing.section, context: item.context || existing.context, searchText: item.searchText || [item.title || existing.title, item.context || existing.context, item.section || existing.section].join(' '), updatedAt: item.updatedAt || existing.updatedAt, createdAt: item.createdAt || existing.createdAt });
-        return;
-      }
+    const items = (Array.isArray(data.items) ? data.items : []).filter(item => item?.url).map((item) => {
       const platform = item.platform === "baidu" ? "baidu" : "quark";
       const title = item.title || "未命名资料";
       const section = item.section || "后台新增";
       const context = item.context || title;
-
-      panSearchData.items.unshift({
-        title,
-        url: item.url,
-        platform,
-        section,
-        context,
+      return {
+        ...item, title, platform, section, context,
         code: item.code || "",
-        searchText: item.searchText || [title, section, context, item.code || "", platform].filter(Boolean).join(" "),
         sources: item.sources || [{ file: "server-admin", line: 1 }],
-        createdAt: item.createdAt || "",
-        updatedAt: item.updatedAt || ""
-      });
-      existingUrls.add(item.url);
-      added += 1;
+        searchText: item.searchText || [title, section, context, item.code || "", platform].filter(Boolean).join(" ")
+      };
     });
-
-    if (!added) { renderSearchSuggestions(); if (state.query.trim()) renderPanSearchResults(); return; }
-    panSearchData.totals = panSearchData.totals || {};
-    panSearchData.totals.unique = panSearchData.totals.unique || {};
-    panSearchData.totals.unique.total = panSearchData.items.length;
-    panSearchData.totals.unique.quark = panSearchData.items.filter((item) => item.platform === "quark").length;
-    panSearchData.totals.unique.baidu = panSearchData.items.filter((item) => item.platform === "baidu").length;
-
+    panSearchData.items = mergePanSearchItems([...panSearchData.items, ...items]);
+    const currentByUrl = new Map(panSearchData.items.map(item => [canonicalResourceUrl(item.url), item]));
+    serverPanLinks = mergePanSearchItems(items).map(item => currentByUrl.get(canonicalResourceUrl(item.url)) || item);
+    if (!state.query.trim() && state.category === "all") renderResources();
+    refreshPanSearchTotals();
     renderSearchSuggestions();
+    refreshSearchDiscovery();
     if (state.query.trim()) renderPanSearchResults();
   } catch (_) {
     // The static site should still work when the small API is temporarily unavailable.
@@ -1333,15 +1338,19 @@ function hideSearchSuggestBox() {
 }
 
 function getSearchUpdateTime(item) {
-  const values = [item.updatedAt, item.createdAt, item.addedAt].map(value => Date.parse(value || '')).filter(Number.isFinite);
+  const values = [item.updatedAt, item.createdAt, item.addedAt]
+    .map(value => typeof value === 'number' ? value : Date.parse(value || ''))
+    .filter(value => Number.isFinite(value) && value > 0);
   return values.length ? Math.max(...values) : 0;
 }
 
 function getSearchAvailability(item) {
   const health = searchHealthByUrl.get(canonicalResourceUrl(item.url));
-  if (hiddenPanUrls.has(item.url) || health?.status === 'hidden') return -2;
+  if (isHiddenPanSearchItem(item) || health?.status === 'hidden') return -2;
   if (getLinkCareStatus(item) === 'pending' || health?.status === 'suspected') return -1;
-  if (health?.status === 'healthy') return 2;
+  // Historical Quark checks only fetched the HTML app shell, which does not
+  // prove that its files still exist. Do not treat those records as verified.
+  if (health?.status === 'healthy' && item.platform !== 'quark') return 2;
   if (getLinkCareStatus(item) === 'recovered') return 1;
   return 0;
 }
@@ -1704,6 +1713,8 @@ function initAmbientBackgroundVideo() {
   }, 4000);
 }
 initAmbientBackgroundVideo();
+panSearchData.items = mergePanSearchItems(panSearchData.items);
+refreshPanSearchTotals();
 renderFeaturedResources();
 renderResources();
 renderPanSearchResults();
@@ -1904,13 +1915,17 @@ function renderSearchControls(items) {
 
 function sortSearchItems(items, queryTokens) {
   return items.map((item,index) => ({item,index})).sort((a,b) => {
-    const availability = getSearchAvailability(b.item) - getSearchAvailability(a.item);
+    const aAvailability = getSearchAvailability(a.item);
+    const bAvailability = getSearchAvailability(b.item);
+    const needsRepair = Number(aAvailability < 0) - Number(bAvailability < 0);
+    if (needsRepair) return needsRepair;
+    const availability = bAvailability - aAvailability;
     const relevance = panSearchMatchScore(b.item, queryTokens) - panSearchMatchScore(a.item, queryTokens);
     const latest = getSearchUpdateTime(b.item) - getSearchUpdateTime(a.item);
     if (resourceSearchExperience.sort === 'hot') return getItemClickCount(b.item) - getItemClickCount(a.item) || relevance || a.index - b.index;
     if (resourceSearchExperience.sort === 'latest') return latest || availability || relevance || a.index - b.index;
     if (resourceSearchExperience.sort === 'relevance') return relevance || availability || latest || a.index - b.index;
-    return availability || latest || relevance || a.index - b.index;
+    return latest || availability || relevance || a.index - b.index;
   }).map(entry => entry.item);
 }
 

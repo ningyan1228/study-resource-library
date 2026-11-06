@@ -237,7 +237,7 @@ function boundedNumber(value) {
 function cleanLinkHealthState(stats, activeUrls) {
   const allowed = new Set(activeUrls || []);
   Object.keys(stats.linkHealth || {}).forEach((url) => {
-    if (!allowed.has(url)) delete stats.linkHealth[url];
+    if (!allowed.has(url) && stats.linkHealth[url]?.retired !== true) delete stats.linkHealth[url];
   });
 }
 
@@ -289,6 +289,9 @@ async function inspectPublicPanLink(item) {
     }
     if (!response.ok) return { status: "skipped", detail: `HTTP ${response.status}` };
     if (normalized.length < 160) return { status: "skipped", detail: "页面内容不足，无法确认" };
+    // Quark serves the same SPA shell for active and deleted shares. A 200
+    // response proves reachability only; it does not verify shared contents.
+    if (item.platform === "quark") return { status: "skipped", detail: "分享页已响应，尚未验证分享内容" };
     return { status: "healthy", detail: "公开分享页可访问" };
   } catch (error) {
     return { status: "skipped", detail: error?.name === "AbortError" ? "检测超时" : "网络检测失败" };
@@ -303,9 +306,10 @@ async function getLinkHealthInventory() {
   const fileData = await githubRequest(`/repos/${config.owner}/${config.repo}/contents/${ghPath}?ref=${encodeURIComponent(config.branch)}`);
   const panData = extractPanSearchData(await readGitHubFileContent(fileData));
   const byUrl = new Map();
+  const health = readStats().linkHealth || {};
   [...(Array.isArray(panData.items) ? panData.items : []), ...readExtraLinks()].forEach((item) => {
     const url = String(item?.url || "").trim();
-    if (!/^https?:\/\//i.test(url) || byUrl.has(url)) return;
+    if (!/^https?:\/\//i.test(url) || byUrl.has(url) || health[url]?.retired === true) return;
     const platform = item?.platform === "baidu" || item?.platform === "quark" ? item.platform : platformFromUrl(url);
     if (platform !== "baidu" && platform !== "quark") return;
     byUrl.set(url, { url, title: String(item?.title || "未命名资料"), platform });
@@ -334,7 +338,10 @@ async function runLinkHealthCheck(options = {}) {
   try {
     const inventory = await getLinkHealthInventory();
     const stats = readStats();
+    const originalHealth = { ...stats.linkHealth };
     cleanLinkHealthState(stats, inventory.map((item) => item.url));
+    const prunedUrls = Object.keys(originalHealth).filter(url => !stats.linkHealth[url]);
+    const healthUpdates = new Map();
     const count = Math.max(1, Math.min(LINK_HEALTH_BATCH_SIZE, Number(options.limit || LINK_HEALTH_BATCH_SIZE), inventory.length || 1));
     const start = inventory.length ? stats.linkHealthCursor % inventory.length : 0;
     const selected = inventory.length ? Array.from({ length: count }, (_, offset) => inventory[(start + offset) % inventory.length]) : [];
@@ -356,7 +363,6 @@ async function runLinkHealthCheck(options = {}) {
         if (health.consecutiveFailures >= 2) {
           health.status = "hidden";
           health.hiddenAt = health.hiddenAt || checkedAt;
-          addAutomaticBrokenReport(stats, item, checkedAt);
           summary.hidden += 1;
         } else {
           health.status = "suspected";
@@ -366,12 +372,26 @@ async function runLinkHealthCheck(options = {}) {
         // A captcha, rate-limit, timeout or other inconclusive response is not a failure.
         summary.skipped += 1;
         continue;
-      }      stats.linkHealth[item.url] = health;
+      }
+      healthUpdates.set(item.url, health);
     }
-    stats.linkHealthCursor = inventory.length ? (start + selected.length) % inventory.length : 0;
-    stats.linkHealthLastCheckAt = checkedAt;
-    writeStats(stats);
-    return { ...summary, total: inventory.length, nextCursor: stats.linkHealthCursor, checkedAt };
+    // Network checks may overlap an import or incoming analytics. Apply only
+    // this batch's changes to fresh state; never revive a retired share or
+    // erase newer feedback/counters with the snapshot taken above.
+    const latestStats = readStats();
+    prunedUrls.forEach(url => {
+      if (latestStats.linkHealth[url]?.retired !== true && JSON.stringify(latestStats.linkHealth[url]) === JSON.stringify(originalHealth[url])) delete latestStats.linkHealth[url];
+    });
+    healthUpdates.forEach((health, url) => {
+      const current = latestStats.linkHealth[url];
+      if (current?.retired === true || Date.parse(current?.lastCheckedAt || '') > Date.parse(checkedAt)) return;
+      latestStats.linkHealth[url] = health;
+      if (health.status === "hidden") addAutomaticBrokenReport(latestStats, health, checkedAt);
+    });
+    latestStats.linkHealthCursor = inventory.length ? (start + selected.length) % inventory.length : 0;
+    latestStats.linkHealthLastCheckAt = checkedAt;
+    writeStats(latestStats);
+    return { ...summary, total: inventory.length, nextCursor: latestStats.linkHealthCursor, checkedAt };
   } finally {
     linkHealthCheckRunning = false;
   }
@@ -683,6 +703,8 @@ function makeGitHubPanItem(link, nextId) {
     code,
     section,
     context,
+    createdAt: link.createdAt || null,
+    updatedAt: link.updatedAt || link.createdAt || null,
     sources: [
       {
         file: "server/data/extra-links.json",
@@ -1388,6 +1410,20 @@ function normalizeQuarkUrl(rawUrl) {
   return parsed.toString();
 }
 
+function normalizeQuarkTitleForMatch(value) {
+  let title = String(value || "").normalize("NFKC")
+    .replace(/[\p{Extended_Pictographic}\uFE0F\u200D]/gu, "")
+    .replace(/\s*[(\[【]\s*(?:新增|新上|持续更新|更新中)\s*!*\s*[)\]】]\s*$/g, "")
+    .trim();
+  // A repeated subject label is presentation only. Keep labels which carry
+  // information (e.g. 事业单位】袁东合集), years, and substantive course suffixes.
+  const category = title.match(/^(?:【|\[)?(申论|面试|行测|公考资料|人民日报|事业单位)[】\]]\s*(.+)$/);
+  if (category && normalizeBaiduTitleForMatch(category[2]).includes(normalizeBaiduTitleForMatch(category[1]))) {
+    title = category[2];
+  }
+  return normalizeBaiduTitleForMatch(title);
+}
+
 function findPreviousQuarkBulkTitle(lines, startIndex) {
   for (let index = startIndex - 1; index >= 0 && index >= startIndex - 4; index -= 1) {
     const line = String(lines[index] || "").trim();
@@ -1418,7 +1454,7 @@ function parseBulkQuarkText(rawText) {
 
       try {
         const normalizedUrl = normalizeQuarkUrl(rawUrl);
-        const normalizedTitle = normalizeBaiduTitleForMatch(title);
+        const normalizedTitle = normalizeQuarkTitleForMatch(title);
         if (!title || !normalizedTitle) {
           invalid.push({ title: title || "未识别标题", url: normalizedUrl, reason: `第 ${lineIndex + 1} 行缺少可匹配标题` });
           continue;
@@ -1433,7 +1469,7 @@ function parseBulkQuarkText(rawText) {
   return { records, invalid };
 }
 
-function createBulkQuarkNewItem(record, nextId, defaultSection) {
+function createBulkQuarkNewItem(record, nextId, defaultSection, now = new Date().toISOString()) {
   const title = String(record.title || "未命名夸克资料").trim();
   const section = String(defaultSection || "夸克批量新增").trim() || "夸克批量新增";
   const context = `夸克网盘批量导入：${title}`;
@@ -1446,18 +1482,20 @@ function createBulkQuarkNewItem(record, nextId, defaultSection) {
     code: "",
     section,
     context,
+    createdAt: now,
+    updatedAt: now,
     sources: [{ file: "admin-bulk-quark", line: record.line || 1, section }],
     searchText: [title, section, context, "quark", url].filter(Boolean).join(" ")
   };
 }
 
-function createQuarkBulkPlan(rawText, panData, defaultSection = "夸克批量新增") {
+function createQuarkBulkPlan(rawText, panData, defaultSection = "夸克批量新增", extraLinks = []) {
   const parsed = parseBulkQuarkText(rawText);
   const titleMap = new Map();
 
   panData.items.forEach((item) => {
     if (item?.platform !== "quark") return;
-    const normalizedTitle = normalizeBaiduTitleForMatch(item.title);
+    const normalizedTitle = normalizeQuarkTitleForMatch(item.title);
     if (!normalizedTitle) return;
     const rows = titleMap.get(normalizedTitle) || [];
     rows.push(item);
@@ -1474,12 +1512,17 @@ function createQuarkBulkPlan(rawText, panData, defaultSection = "夸克批量新
     rawCount: parsed.records.length,
     defaultSection: String(defaultSection || "夸克批量新增").trim() || "夸克批量新增",
     replace: [],
+    extraReplace: [],
     add: [],
     unchanged: [],
     ignored: parsed.invalid.map((row) => ({ ...row, reason: row.reason || "无法解析标题或夸克链接" }))
   };
 
   finalRecords.forEach((record) => {
+    extraLinks.forEach((item) => {
+      if (item?.platform !== "quark" || normalizeQuarkTitleForMatch(item.title) !== record.normalizedTitle || item.url === record.url) return;
+      plan.extraReplace.push({ id: item.id, title: item.title, normalizedTitle: record.normalizedTitle, oldUrl: item.url, newUrl: record.url, reason: "同步替换服务器增量资料，防止旧链接再次合并到搜索结果" });
+    });
     const matches = titleMap.get(record.normalizedTitle) || [];
     if (!matches.length) {
       plan.add.push({
@@ -1525,6 +1568,7 @@ function createQuarkBulkPlan(rawText, panData, defaultSection = "夸克批量新
   plan.summary = {
     parsed: finalRecords.size,
     replace: plan.replace.reduce((sum, row) => sum + Number(row.matchedCount || 0), 0),
+    extraReplace: plan.extraReplace.length,
     add: plan.add.length,
     unchanged: plan.unchanged.length,
     ignored: plan.ignored.length
@@ -1550,27 +1594,61 @@ function serializeQuarkBulkPlan(plan) {
 
 async function previewBulkQuarkLinks(rawText, defaultSection = "夸克批量新增") {
   const { panData } = await readGitHubPanSearchDataFile();
-  return serializeQuarkBulkPlan(createQuarkBulkPlan(rawText, panData, defaultSection));
+  return serializeQuarkBulkPlan(createQuarkBulkPlan(rawText, panData, defaultSection, readExtraLinks()));
 }
 
 function refreshSearchTextForBulkQuark(item) {
   item.searchText = [item.title, item.section, item.context, item.code, item.platform, item.url].filter(Boolean).join(" ");
 }
 
+function retireReplacedQuarkUrls(replacements, activeItems, now) {
+  const activeUrls = new Set(activeItems.map(item => item?.url).filter(Boolean));
+  const retired = new Map();
+  replacements.forEach(row => {
+    if (!row.oldUrl || row.oldUrl === row.newUrl || activeUrls.has(row.oldUrl)) return;
+    const previous = retired.get(row.oldUrl);
+    retired.set(row.oldUrl, previous && previous.newUrl !== row.newUrl ? { ...row, newUrl: "" } : row);
+  });
+  if (!retired.size) return 0;
+  const stats = readStats();
+  retired.forEach(row => {
+    stats.linkHealth[row.oldUrl] = {
+      url: row.oldUrl, title: row.title, platform: "quark", status: "hidden", retired: true,
+      reason: "owner-replaced-share", detail: "管理员已替换此链接，旧入口不再展示",
+      hiddenAt: now, lastCheckedAt: now
+    };
+    (stats.brokenLinks || []).forEach(report => {
+      if (report?.resolvedAt || report?.url !== row.oldUrl) return;
+      report.resolvedAt = now;
+      report.replacementUrl = row.newUrl;
+      report.resolution = "replaced";
+    });
+  });
+  writeStats(stats);
+  return retired.size;
+}
+
 async function applyBulkQuarkLinks(rawText, defaultSection = "夸克批量新增") {
   const { config, ghPath, fileData, panData } = await readGitHubPanSearchDataFile();
-  const plan = createQuarkBulkPlan(rawText, panData, defaultSection);
-  const totalChanges = plan.summary.replace + plan.summary.add;
+  const plan = createQuarkBulkPlan(rawText, panData, defaultSection, readExtraLinks());
+  const totalChanges = plan.summary.replace + plan.summary.add + plan.summary.extraReplace;
   if (!totalChanges) {
     return { ok: false, ...serializeQuarkBulkPlan(plan), message: "没有需要替换或新增的夸克链接，未提交 GitHub" };
   }
 
+  const now = new Date().toISOString();
+  const replacements = [
+    ...plan.replace.flatMap(row => row.items.map(item => ({ title: item.title, oldUrl: item.url, newUrl: row.newUrl }))),
+    ...plan.extraReplace
+  ];
   plan.replace.forEach((row) => {
     row.items.forEach((item) => {
       const oldUrl = item.url || "";
+      if (oldUrl === row.newUrl) return;
       item.platform = "quark";
       item.url = row.newUrl;
       item.code = "";
+      item.updatedAt = now;
       if (oldUrl) {
         item.context = replaceTextValue(item.context, oldUrl, row.newUrl);
         item.searchText = replaceTextValue(item.searchText, oldUrl, row.newUrl);
@@ -1583,7 +1661,7 @@ async function applyBulkQuarkLinks(rawText, defaultSection = "夸克批量新增
 
   let nextId = getMaxPanResourceId(panData.items) + 1;
   plan.add.forEach((record) => {
-    const item = createBulkQuarkNewItem(record, nextId, plan.defaultSection);
+    const item = createBulkQuarkNewItem(record, nextId, plan.defaultSection, now);
     nextId += 1;
     panData.items.push(item);
   });
@@ -1602,13 +1680,34 @@ async function applyBulkQuarkLinks(rawText, defaultSection = "夸克批量新增
     })
   });
 
+  // Do not touch local records before GitHub accepts the commit. Re-read after
+  // the network operation, and require the expected old value so a concurrent
+  // administrator edit is not overwritten by this import.
+  const extraLinks = readExtraLinks();
+  let extraUpdated = 0;
+  plan.extraReplace.forEach((row) => {
+    extraLinks.forEach((item) => {
+      if (item?.platform !== "quark" || item.url !== row.oldUrl || item.id !== row.id || normalizeQuarkTitleForMatch(item.title) !== row.normalizedTitle) return;
+      item.url = row.newUrl;
+      item.code = "";
+      item.updatedAt = now;
+      item.context = replaceTextValue(item.context, row.oldUrl, row.newUrl);
+      refreshSearchTextForBulkQuark(item);
+      extraUpdated += 1;
+    });
+  });
+  if (extraUpdated) writeExtraLinks(extraLinks);
+  const retired = retireReplacedQuarkUrls(replacements, [...panData.items, ...extraLinks], now);
+
   githubResourceSummaryCache = null;
   updateBatchesCache = null;
   return {
     ok: true,
     ...serializeQuarkBulkPlan(plan),
     commitUrl: putData?.commit?.html_url || "",
-    message: `已替换 ${plan.summary.replace} 条夸克资源，直接新增 ${plan.summary.add} 条夸克资源`
+    extraUpdated,
+    retired,
+    message: `已替换 ${plan.summary.replace} 条夸克资源，直接新增 ${plan.summary.add} 条夸克资源，同步替换 ${extraUpdated} 条服务器增量资料`
 
   };
 }
@@ -1703,8 +1802,9 @@ function bump(bucket, key, extra = {}) {
 }
 
 function buildPublicResourceInsights(stats) {
+  const hiddenUrls = new Set(getHiddenLinkUrls(stats));
   const ranking = entryList(stats.clicks, 50)
-    .filter((item) => item?.href && Number(item.count || 0) > 0)
+    .filter((item) => item?.href && !hiddenUrls.has(item.href) && Number(item.count || 0) > 0)
     .map((item) => ({
       label: boundedText(item.label || item.text || "资料入口", 140),
       url: boundedText(item.href, 1024),
@@ -2242,20 +2342,22 @@ function renderBulkQuarkResult(notice = {}) {
       <div class="bulk-counts">
         <div><span>识别</span><strong>${summary.parsed || 0}</strong></div>
         <div><span>替换</span><strong>${summary.replace || 0}</strong></div>
+        <div><span>增量替换</span><strong>${summary.extraReplace || 0}</strong></div>
         <div><span>无变化</span><strong>${summary.unchanged || 0}</strong></div>
         <div><span>直接新增</span><strong>${summary.add || 0}</strong></div>
         <div><span>已忽略</span><strong>${summary.ignored || 0}</strong></div>
       </div>
       ${renderBulkDetailRows("替换", plan.replace || plan.update, "update")}
+      ${renderBulkDetailRows("服务器增量替换", plan.extraReplace, "update")}
       ${renderBulkDetailRows("无变化", plan.unchanged, "unchanged")}
       ${renderBulkDetailRows("直接新增", plan.add, "update")}
       ${renderBulkDetailRows("已忽略", plan.ignored || plan.invalid, "error")}
-      ${status === "preview" && (Number(summary.replace || 0) + Number(summary.add || 0)) > 0 ? `
+      ${status === "preview" && (Number(summary.replace || 0) + Number(summary.add || 0) + Number(summary.extraReplace || 0)) > 0 ? `
         <form method="post" action="/admin/bulk-quark-apply" class="bulk-confirm-form">
           <input type="hidden" name="confirm" value="1" />
           <input type="hidden" name="defaultSection" value="${escapeHtml(notice.quarkBulkDefaultSection || plan.defaultSection || "夸克批量新增")}" />
           <textarea name="rawText" hidden>${escapeHtml(notice.quarkBulkRawText || "")}</textarea>
-          <button type="submit">确认执行：替换 ${summary.replace || 0} 条，新增 ${summary.add || 0} 条</button>
+          <button type="submit">确认执行：替换 ${summary.replace || 0} 条，新增 ${summary.add || 0} 条，增量替换 ${summary.extraReplace || 0} 条</button>
         </form>
       ` : ""}
     </div>
@@ -2275,7 +2377,7 @@ function renderBulkQuarkPanel(notice = {}) {
         </label>
         <div class="full"><button type="submit">预览替换/新增</button></div>
       </form>
-      <p class="hint">只会按标准化完整标题匹配 GitHub 中 <code>platform=quark</code> 的资源；同名多条会全部替换，没有同名会直接新增，重复导入按最后一条生效。新增资料默认分类为 <code>夸克批量新增</code>，确认后一次 GitHub commit，不会修改百度资源。</p>
+      <p class="hint">按完整标题匹配夸克资料，忽略表情、“新增”等括号装饰和标题中重复出现的分类前缀；保留年份、课程名及专项说明。同名多条会全部替换，没有同名会新增，重复导入按最后一条生效。预览同时列出服务器增量中的旧链接，确认后随本次更新一起替换，并记录更新时间。标题实质不同的旧资料不会自动下架，需单独处理。不会修改百度资源。</p>
       ${renderBulkQuarkResult(notice)}
     </section>
   `;
