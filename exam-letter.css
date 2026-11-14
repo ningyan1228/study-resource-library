@@ -1,0 +1,16 @@
+#examLetter { box-sizing:border-box; width:min(460px,calc(100vw - 28px)); max-height:calc(100dvh - 32px); margin:auto; padding:30px 30px 18px; border:1px solid #dacfb6; border-radius:22px; background:#faf6e9; color:#294a3a; box-shadow:0 24px 90px #10241a55; font-family:system-ui,"Microsoft YaHei",sans-serif; }
+#examLetter::backdrop { background:#10241a70; backdrop-filter:blur(4px); }
+#examLetter form { margin:0; }
+#examLetter .exam-letter-close { position:absolute; right:14px; top:10px; width:36px; height:36px; border:0; background:transparent; color:#52705b; font-size:26px; cursor:pointer; }
+#examLetter .exam-letter-kicker { display:block; color:#778267; font-size:12px; letter-spacing:.12em; }
+#examLetter h2 { margin:14px 0 18px; font-family:SimSun,"Songti SC",serif; font-size:27px; line-height:1.45; }
+#examLetter .exam-letter-copy { font-size:14px; line-height:1.85; }
+#examLetter p { margin:0 0 14px; }
+#examLetter .exam-letter-wish { font-weight:650; color:#246547; }
+#examLetter .exam-letter-sign { position:relative; min-height:64px; padding:4px 90px 12px 0; font-size:12px; line-height:1.8; color:#71806b; }
+#examLetter .exam-letter-squirrel { position:absolute; right:0; bottom:0; width:72px; height:86px; background:url('assets/archive-squirrel-actions-v1-optimized.webp') 100% 0 / 400% 200% no-repeat; }
+#examLetter .exam-letter-accept { width:100%; border:0; border-radius:12px; padding:13px 8px; background:#2c684c; color:#fff; font-size:15px; cursor:pointer; }
+#examLetter .exam-letter-poem { margin:14px 0 0; text-align:center; color:#77866e; font-family:SimSun,"Songti SC",serif; font-size:12px; line-height:1.7; }
+.exam-letter-entry { border:1px solid #728e7760; background:#e8efdf; color:#2c684c; padding:8px 12px; border-radius:10px; font:inherit; cursor:pointer; }
+@media(max-width:480px) { #examLetter { padding:26px 20px 16px; } #examLetter h2 { font-size:24px; } #examLetter .exam-letter-copy { font-size:13px; line-height:1.75; } }
+@media(prefers-reduced-motion:no-preference) { #examLetter[open] { animation:exam-letter-enter .25s ease-out; } @keyframes exam-letter-enter { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } } }
