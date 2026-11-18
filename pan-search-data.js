@@ -1,5 +1,5 @@
 window.PAN_SEARCH_DATA = {
-  "generatedAt": "2026-11-18T09:26:50.590Z",
+  "generatedAt": "2026-11-18T09:27:00.622Z",
   "sourceDir": "F:/DeskTop/网盘链接.txt; C:/Users/zhiwu/.codex/attachments/5fe01c05-d295-45d7-93b9-e083ff9e2f7e/pasted-text.txt; F:/DeskTop/国省考电子资料/百度网盘链接.txt",
   "missingSources": [],
   "totals": {
@@ -20252,7 +20252,7 @@ window.PAN_SEARCH_DATA = {
       "id": "r1193",
       "title": "2027超哥国省考政治理论刷题课",
       "platform": "quark",
-      "url": "https://pan.quark.cn/s/71827af7b0a5",
+      "url": "https://pan.quark.cn/s/a5a1d0e94ab0",
       "code": "",
       "section": "后台新增",
       "context": "2027超哥国省考政治理论刷题课",
@@ -20263,13 +20263,13 @@ window.PAN_SEARCH_DATA = {
           "section": "后台新增"
         }
       ],
-      "searchText": "2027超哥国省考政治理论刷题课 后台新增 2027超哥国省考政治理论刷题课 quark https://pan.quark.cn/s/71827af7b0a5"
+      "searchText": "2027超哥国省考政治理论刷题课 后台新增 2027超哥国省考政治理论刷题课 server/data/extra-links.json"
     },
     {
       "id": "r1194",
       "title": "2027超哥政治理论时政热点小锦囊",
       "platform": "quark",
-      "url": "https://pan.quark.cn/s/5a9c0ea9bc8f",
+      "url": "https://pan.quark.cn/s/71827af7b0a5",
       "code": "",
       "section": "后台新增",
       "context": "2027超哥政治理论时政热点小锦囊",
@@ -20280,7 +20280,7 @@ window.PAN_SEARCH_DATA = {
           "section": "后台新增"
         }
       ],
-      "searchText": "2027超哥政治理论时政热点小锦囊 后台新增 2027超哥政治理论时政热点小锦囊 server/data/extra-links.json"
+      "searchText": "2027超哥政治理论时政热点小锦囊 后台新增 2027超哥政治理论时政热点小锦囊 quark https://pan.quark.cn/s/71827af7b0a5"
     },
     {
       "id": "r1195",
