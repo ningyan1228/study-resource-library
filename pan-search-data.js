@@ -1,5 +1,5 @@
 window.PAN_SEARCH_DATA = {
-  "generatedAt": "2026-11-18T09:27:00.622Z",
+  "generatedAt": "2026-11-19T13:00:07.679Z",
   "sourceDir": "F:/DeskTop/网盘链接.txt; C:/Users/zhiwu/.codex/attachments/5fe01c05-d295-45d7-93b9-e083ff9e2f7e/pasted-text.txt; F:/DeskTop/国省考电子资料/百度网盘链接.txt",
   "missingSources": [],
   "totals": {
@@ -21163,8 +21163,8 @@ window.PAN_SEARCH_DATA = {
           "section": "百度批量新增"
         }
       ],
-      "searchText": "26陈八十 百度批量新增 百度网盘批量导入：26陈八十 g967 baidu https://pan.baidu.com/s/15a_d7-OtzpH2I3dzBKi14Q?pwd=g967",
-      "url": "https://pan.baidu.com/s/15a_d7-OtzpH2I3dzBKi14Q?pwd=g967"
+      "searchText": "26陈八十 百度批量新增 百度网盘批量导入：26陈八十 g967 baidu https://pan.baidu.com/s/1kHuiLCks97VG5HUOVzej9g?pwd=brgk",
+      "url": "https://pan.baidu.com/s/1kHuiLCks97VG5HUOVzej9g?pwd=brgk"
     },
     {
       "id": "r1247",
