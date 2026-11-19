@@ -1,5 +1,5 @@
 window.PAN_SEARCH_DATA = {
-  "generatedAt": "2026-11-19T13:00:44.607Z",
+  "generatedAt": "2026-11-19T13:00:55.116Z",
   "sourceDir": "F:/DeskTop/网盘链接.txt; C:/Users/zhiwu/.codex/attachments/5fe01c05-d295-45d7-93b9-e083ff9e2f7e/pasted-text.txt; F:/DeskTop/国省考电子资料/百度网盘链接.txt",
   "missingSources": [],
   "totals": {
@@ -25582,8 +25582,8 @@ window.PAN_SEARCH_DATA = {
           "section": "百度批量新增"
         }
       ],
-      "searchText": "2027国省事考花生十三行测600题精讲课(1) 百度批量新增 百度网盘批量导入：2027国省事考花生十三行测600题精讲课(1) bssm baidu https://pan.baidu.com/s/1kHuiLCks97VG5HUOVzej9g?pwd=brgk",
-      "url": "https://pan.baidu.com/s/1kHuiLCks97VG5HUOVzej9g?pwd=brgk"
+      "searchText": "2027国省事考花生十三行测600题精讲课(1) 百度批量新增 百度网盘批量导入：2027国省事考花生十三行测600题精讲课(1) bssm baidu https://pan.baidu.com/s/10Is79_RvoR--o69NjekVBA?pwd=bssm",
+      "url": "https://pan.baidu.com/s/10Is79_RvoR--o69NjekVBA?pwd=bssm"
     },
     {
       "id": "r1521",
@@ -25946,7 +25946,7 @@ window.PAN_SEARCH_DATA = {
       "id": "r1542",
       "title": "2027年刘文超小马哥行测申论360全程班",
       "platform": "baidu",
-      "url": "https://pan.baidu.com/s/1_bZ-UL_GY17BDgomIvtETQ?pwd=bssm",
+      "url": "https://pan.baidu.com/s/1kHuiLCks97VG5HUOVzej9g?pwd=brgk",
       "code": "",
       "section": "百度批量新增",
       "context": "百度网盘批量导入：2027年刘文超小马哥行测申论360全程班",
@@ -25957,7 +25957,7 @@ window.PAN_SEARCH_DATA = {
           "section": "百度批量新增"
         }
       ],
-      "searchText": "2027年刘文超小马哥行测申论360全程班 百度批量新增 百度网盘批量导入：2027年刘文超小马哥行测申论360全程班 baidu https://pan.baidu.com/s/1_bZ-UL_GY17BDgomIvtETQ?pwd=bssm"
+      "searchText": "2027年刘文超小马哥行测申论360全程班 百度批量新增 百度网盘批量导入：2027年刘文超小马哥行测申论360全程班 baidu https://pan.baidu.com/s/1kHuiLCks97VG5HUOVzej9g?pwd=brgk"
     },
     {
       "id": "r1543",
