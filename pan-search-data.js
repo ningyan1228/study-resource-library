@@ -1,5 +1,5 @@
 window.PAN_SEARCH_DATA = {
-  "generatedAt": "2026-11-26T07:01:55.293Z",
+  "generatedAt": "2026-11-26T07:02:05.310Z",
   "sourceDir": "F:/DeskTop/网盘链接.txt; C:/Users/zhiwu/.codex/attachments/5fe01c05-d295-45d7-93b9-e083ff9e2f7e/pasted-text.txt; F:/DeskTop/国省考电子资料/百度网盘链接.txt",
   "missingSources": [],
   "totals": {
@@ -15594,10 +15594,10 @@ window.PAN_SEARCH_DATA = {
       "id": "r916",
       "title": "上岸村忠政·申论真题规范词（10组）.pdf",
       "platform": "baidu",
-      "url": "https://pan.baidu.com/s/1Mn6rQ3vVNqga9hczQm24Vw?pwd=ujvf",
+      "url": "https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?",
       "code": "ujvf",
       "section": "公考类",
-      "context": "上岸村忠政·申论真题规范词（10组）.pdf 链接：https://pan.baidu.com/s/1Mn6rQ3vVNqga9hczQm24Vw?pwd=ujvf 提取码：ujvf",
+      "context": "上岸村忠政·申论真题规范词（10组）.pdf 链接：https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw? 提取码：ujvf",
       "sources": [
         {
           "file": "百度网盘链接.txt",
@@ -15605,7 +15605,7 @@ window.PAN_SEARCH_DATA = {
           "section": "公考类"
         }
       ],
-      "searchText": "上岸村忠政·申论真题规范词（10组）.pdf 公考类 上岸村忠政·申论真题规范词（10组）.pdf 链接：https://pan.baidu.com/s/1Mn6rQ3vVNqga9hczQm24Vw?pwd=ujvf 提取码：ujvf ujvf baidu https://pan.baidu.com/s/1Mn6rQ3vVNqga9hczQm24Vw?pwd=ujvf"
+      "searchText": "上岸村忠政·申论真题规范词（10组）.pdf 公考类 上岸村忠政·申论真题规范词（10组）.pdf 链接：https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw? 提取码：ujvf ujvf baidu https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?"
     },
     {
       "id": "r917",
@@ -21129,8 +21129,8 @@ window.PAN_SEARCH_DATA = {
           "section": "百度批量新增"
         }
       ],
-      "searchText": "26苏金朋 百度批量新增 百度网盘批量导入：26苏金朋 g967 baidu https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?",
-      "url": "https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?"
+      "searchText": "26苏金朋 百度批量新增 百度网盘批量导入：26苏金朋 g967 baidu https://pan.baidu.com/s/1NH1XjizeUIv5Ttrumx-lfw?pwd=g967",
+      "url": "https://pan.baidu.com/s/1NH1XjizeUIv5Ttrumx-lfw?pwd=g967"
     },
     {
       "id": "r1245",
