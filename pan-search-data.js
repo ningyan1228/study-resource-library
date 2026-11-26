@@ -1,5 +1,5 @@
 window.PAN_SEARCH_DATA = {
-  "generatedAt": "2026-11-26T07:02:05.310Z",
+  "generatedAt": "2026-11-26T07:02:15.298Z",
   "sourceDir": "F:/DeskTop/网盘链接.txt; C:/Users/zhiwu/.codex/attachments/5fe01c05-d295-45d7-93b9-e083ff9e2f7e/pasted-text.txt; F:/DeskTop/国省考电子资料/百度网盘链接.txt",
   "missingSources": [],
   "totals": {
@@ -14880,10 +14880,10 @@ window.PAN_SEARCH_DATA = {
       "id": "r874",
       "title": "2027花生十三资料分析600题精讲课",
       "platform": "baidu",
-      "url": "https://pan.baidu.com/s/1t01B9d-1FF059s0JJ02slQ?pwd=vfih",
+      "url": "https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?",
       "code": "vfih",
       "section": "公考类",
-      "context": "2027花生十三资料分析600题精讲课 链接：https://pan.baidu.com/s/1t01B9d-1FF059s0JJ02slQ?pwd=vfih 提取码：vfih",
+      "context": "2027花生十三资料分析600题精讲课 链接：https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw? 提取码：vfih",
       "sources": [
         {
           "file": "百度网盘链接.txt",
@@ -14891,7 +14891,7 @@ window.PAN_SEARCH_DATA = {
           "section": "公考类"
         }
       ],
-      "searchText": "2027花生十三资料分析600题精讲课 公考类 2027花生十三资料分析600题精讲课 链接：https://pan.baidu.com/s/1t01B9d-1FF059s0JJ02slQ?pwd=vfih 提取码：vfih vfih baidu https://pan.baidu.com/s/1t01B9d-1FF059s0JJ02slQ?pwd=vfih"
+      "searchText": "2027花生十三资料分析600题精讲课 公考类 2027花生十三资料分析600题精讲课 链接：https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw? 提取码：vfih vfih baidu https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?"
     },
     {
       "id": "r875",
@@ -15594,10 +15594,10 @@ window.PAN_SEARCH_DATA = {
       "id": "r916",
       "title": "上岸村忠政·申论真题规范词（10组）.pdf",
       "platform": "baidu",
-      "url": "https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?",
+      "url": "https://pan.baidu.com/s/1Mn6rQ3vVNqga9hczQm24Vw?pwd=ujvf",
       "code": "ujvf",
       "section": "公考类",
-      "context": "上岸村忠政·申论真题规范词（10组）.pdf 链接：https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw? 提取码：ujvf",
+      "context": "上岸村忠政·申论真题规范词（10组）.pdf 链接：https://pan.baidu.com/s/1Mn6rQ3vVNqga9hczQm24Vw?pwd=ujvf 提取码：ujvf",
       "sources": [
         {
           "file": "百度网盘链接.txt",
@@ -15605,7 +15605,7 @@ window.PAN_SEARCH_DATA = {
           "section": "公考类"
         }
       ],
-      "searchText": "上岸村忠政·申论真题规范词（10组）.pdf 公考类 上岸村忠政·申论真题规范词（10组）.pdf 链接：https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw? 提取码：ujvf ujvf baidu https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?"
+      "searchText": "上岸村忠政·申论真题规范词（10组）.pdf 公考类 上岸村忠政·申论真题规范词（10组）.pdf 链接：https://pan.baidu.com/s/1Mn6rQ3vVNqga9hczQm24Vw?pwd=ujvf 提取码：ujvf ujvf baidu https://pan.baidu.com/s/1Mn6rQ3vVNqga9hczQm24Vw?pwd=ujvf"
     },
     {
       "id": "r917",
