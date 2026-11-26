@@ -1,5 +1,5 @@
 window.PAN_SEARCH_DATA = {
-  "generatedAt": "2026-11-19T13:00:55.116Z",
+  "generatedAt": "2026-11-26T07:01:22.329Z",
   "sourceDir": "F:/DeskTop/网盘链接.txt; C:/Users/zhiwu/.codex/attachments/5fe01c05-d295-45d7-93b9-e083ff9e2f7e/pasted-text.txt; F:/DeskTop/国省考电子资料/百度网盘链接.txt",
   "missingSources": [],
   "totals": {
@@ -21476,7 +21476,7 @@ window.PAN_SEARCH_DATA = {
       "id": "r1265",
       "title": "2027kiwi申论全程班",
       "platform": "baidu",
-      "url": "https://pan.baidu.com/s/1RLNk67ljrNVohbfQcI9oMA?pwd=8gir",
+      "url": "https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?",
       "code": "8gir",
       "section": "申论",
       "context": "2027kiwi申论全程班",
@@ -21487,7 +21487,7 @@ window.PAN_SEARCH_DATA = {
           "section": "申论"
         }
       ],
-      "searchText": "2027kiwi申论全程班 申论 2027kiwi申论全程班 8gir baidu https://pan.baidu.com/s/1RLNk67ljrNVohbfQcI9oMA?pwd=8gir"
+      "searchText": "2027kiwi申论全程班 申论 2027kiwi申论全程班 8gir baidu https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?"
     },
     {
       "id": "r1266",
@@ -22445,7 +22445,7 @@ window.PAN_SEARCH_DATA = {
       "id": "r1322",
       "title": "2027kiwi申论全程班",
       "platform": "baidu",
-      "url": "https://pan.baidu.com/s/1RLNk67ljrNVohbfQcI9oMA?pwd=8gir",
+      "url": "https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?",
       "code": "8gir",
       "section": "申论",
       "context": "2027kiwi申论全程班",
@@ -22456,7 +22456,7 @@ window.PAN_SEARCH_DATA = {
           "section": "申论"
         }
       ],
-      "searchText": "2027kiwi申论全程班 申论 2027kiwi申论全程班 8gir baidu https://pan.baidu.com/s/1RLNk67ljrNVohbfQcI9oMA?pwd=8gir"
+      "searchText": "2027kiwi申论全程班 申论 2027kiwi申论全程班 8gir baidu https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?"
     },
     {
       "id": "r1323",
@@ -22938,7 +22938,7 @@ window.PAN_SEARCH_DATA = {
       "id": "r1351",
       "title": "2027kiwi申论全程班",
       "platform": "baidu",
-      "url": "https://pan.baidu.com/s/1RLNk67ljrNVohbfQcI9oMA?pwd=8gir",
+      "url": "https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?",
       "code": "8gir",
       "section": "申论",
       "context": "2027kiwi申论全程班",
@@ -22949,7 +22949,7 @@ window.PAN_SEARCH_DATA = {
           "section": "申论"
         }
       ],
-      "searchText": "2027kiwi申论全程班 申论 2027kiwi申论全程班 8gir baidu https://pan.baidu.com/s/1RLNk67ljrNVohbfQcI9oMA?pwd=8gir"
+      "searchText": "2027kiwi申论全程班 申论 2027kiwi申论全程班 8gir baidu https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?"
     },
     {
       "id": "r1352",
@@ -25199,7 +25199,7 @@ window.PAN_SEARCH_DATA = {
       "id": "r1498",
       "title": "2027kiwi申论全程班",
       "platform": "baidu",
-      "url": "https://pan.baidu.com/s/1RLNk67ljrNVohbfQcI9oMA?pwd=8gir",
+      "url": "https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?",
       "code": "8gir",
       "section": "申论",
       "context": "2027kiwi申论全程班",
@@ -25210,7 +25210,7 @@ window.PAN_SEARCH_DATA = {
           "section": "申论"
         }
       ],
-      "searchText": "2027kiwi申论全程班 申论 2027kiwi申论全程班 8gir baidu https://pan.baidu.com/s/1RLNk67ljrNVohbfQcI9oMA?pwd=8gir"
+      "searchText": "2027kiwi申论全程班 申论 2027kiwi申论全程班 8gir baidu https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?"
     },
     {
       "id": "r1499",
