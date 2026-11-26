@@ -1,5 +1,5 @@
 window.PAN_SEARCH_DATA = {
-  "generatedAt": "2026-11-26T07:02:15.298Z",
+  "generatedAt": "2026-11-26T07:02:27.718Z",
   "sourceDir": "F:/DeskTop/网盘链接.txt; C:/Users/zhiwu/.codex/attachments/5fe01c05-d295-45d7-93b9-e083ff9e2f7e/pasted-text.txt; F:/DeskTop/国省考电子资料/百度网盘链接.txt",
   "missingSources": [],
   "totals": {
@@ -14880,10 +14880,10 @@ window.PAN_SEARCH_DATA = {
       "id": "r874",
       "title": "2027花生十三资料分析600题精讲课",
       "platform": "baidu",
-      "url": "https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?",
+      "url": "https://pan.baidu.com/s/1t01B9d-1FF059s0JJ02slQ?pwd=vfih",
       "code": "vfih",
       "section": "公考类",
-      "context": "2027花生十三资料分析600题精讲课 链接：https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw? 提取码：vfih",
+      "context": "2027花生十三资料分析600题精讲课 链接：https://pan.baidu.com/s/1t01B9d-1FF059s0JJ02slQ?pwd=vfih 提取码：vfih",
       "sources": [
         {
           "file": "百度网盘链接.txt",
@@ -14891,7 +14891,7 @@ window.PAN_SEARCH_DATA = {
           "section": "公考类"
         }
       ],
-      "searchText": "2027花生十三资料分析600题精讲课 公考类 2027花生十三资料分析600题精讲课 链接：https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw? 提取码：vfih vfih baidu https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?"
+      "searchText": "2027花生十三资料分析600题精讲课 公考类 2027花生十三资料分析600题精讲课 链接：https://pan.baidu.com/s/1t01B9d-1FF059s0JJ02slQ?pwd=vfih 提取码：vfih vfih baidu https://pan.baidu.com/s/1t01B9d-1FF059s0JJ02slQ?pwd=vfih"
     },
     {
       "id": "r875",
@@ -21146,8 +21146,8 @@ window.PAN_SEARCH_DATA = {
           "section": "百度批量新增"
         }
       ],
-      "searchText": "26上岸智路白天 百度批量新增 百度网盘批量导入：26上岸智路白天 g967 baidu https://pan.baidu.com/s/1JOhTz99a_VUxMzyeDKovig?pwd=g967",
-      "url": "https://pan.baidu.com/s/1JOhTz99a_VUxMzyeDKovig?pwd=g967"
+      "searchText": "26上岸智路白天 百度批量新增 百度网盘批量导入：26上岸智路白天 g967 baidu https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?",
+      "url": "https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?"
     },
     {
       "id": "r1246",
