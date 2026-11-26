@@ -1,5 +1,5 @@
 window.PAN_SEARCH_DATA = {
-  "generatedAt": "2026-11-26T07:01:34.418Z",
+  "generatedAt": "2026-11-26T07:01:45.436Z",
   "sourceDir": "F:/DeskTop/网盘链接.txt; C:/Users/zhiwu/.codex/attachments/5fe01c05-d295-45d7-93b9-e083ff9e2f7e/pasted-text.txt; F:/DeskTop/国省考电子资料/百度网盘链接.txt",
   "missingSources": [],
   "totals": {
@@ -21027,8 +21027,8 @@ window.PAN_SEARCH_DATA = {
           "section": "百度批量新增"
         }
       ],
-      "searchText": "26四川 百度批量新增 百度网盘批量导入：26四川 g967 baidu https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?",
-      "url": "https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?"
+      "searchText": "26四川 百度批量新增 百度网盘批量导入：26四川 g967 baidu https://pan.baidu.com/s/1qVxk5RDe7Xi8ANjRY6_POg?pwd=g967",
+      "url": "https://pan.baidu.com/s/1qVxk5RDe7Xi8ANjRY6_POg?pwd=g967"
     },
     {
       "id": "r1239",
@@ -26524,7 +26524,7 @@ window.PAN_SEARCH_DATA = {
       "id": "r1576",
       "title": "2027小马哥申论理论+刷题全程班",
       "platform": "baidu",
-      "url": "https://pan.baidu.com/s/1NItGo0FJVZFua28KG1GmsQ?pwd=241b",
+      "url": "https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?",
       "code": "",
       "section": "百度批量新增",
       "context": "百度网盘批量导入：2027小马哥申论理论+刷题全程班",
@@ -26535,7 +26535,7 @@ window.PAN_SEARCH_DATA = {
           "section": "百度批量新增"
         }
       ],
-      "searchText": "2027小马哥申论理论+刷题全程班 百度批量新增 百度网盘批量导入：2027小马哥申论理论+刷题全程班 baidu https://pan.baidu.com/s/1NItGo0FJVZFua28KG1GmsQ?pwd=241b"
+      "searchText": "2027小马哥申论理论+刷题全程班 百度批量新增 百度网盘批量导入：2027小马哥申论理论+刷题全程班 baidu https://pan.baidu.com/s/5VwuoIE8Ig2As1YNMkVnRgw?"
     },
     {
       "id": "r1577",
